@@ -51,3 +51,15 @@ public/build/
 
 #Ignore node_modules directories
 node_modules/
+
+### Python ###
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.env
+.pytest_cache
+venv/
+.idea/
+.vscode/
+.DS_Store
