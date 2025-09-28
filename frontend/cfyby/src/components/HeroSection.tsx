@@ -11,12 +11,14 @@ export default function HeroSection() {
         backgroundSize: "cover", // cover entire area
         backgroundPosition: "center", // center the image
         display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
-        color: "darkorchid",
+        alignItems: "left",
+        alignContent: "stretch",
+        padding: "1rem",
+        //justifyContent: "center",
+        color: "deepskyblue",
       }}
     >
-      <Typography variant="h3">Curated For You By You</Typography>
+      <Typography variant="h3">Curated For You, By You</Typography>
     </Box>
   );
 }

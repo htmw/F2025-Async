@@ -8,7 +8,10 @@ const buttonTheme = createTheme({
       styleOverrides: {
         root: {
           padding: "16px 16px",
+          margin: "16px",
           fontSize: "1.25rem",
+          backgroundColor: "deepskyblue",
+          display: "flex",
         },
       },
     },
@@ -25,8 +28,6 @@ export default function BasicButtons() {
       <Button
         onClick={() => showMessage("Hello")}
         variant="contained"
-        color="success"
-        size="large"
         endIcon={<PlayCircleIcon />}
       >
         Let's Get Searching

@@ -9,10 +9,9 @@ export default function Footer() {
         py: { xs: 3, sm: 4 }, // smaller padding on mobile
         px: 2,
         mt: "auto",
-        backgroundColor: (theme) =>
-          theme.palette.mode === "dark"
-            ? theme.palette.grey[200]
-            : theme.palette.grey[800],
+        display: "flex",
+        justifySelf: "bottom",
+        backgroundColor: "deepskyblue",
       }}
     >
       <Container maxWidth="lg">
