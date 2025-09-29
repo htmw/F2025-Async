@@ -1,4 +1,3 @@
-import React from "react";
 import { Box, Container, Grid, Typography, Link } from "@mui/material";
 
 export default function Footer() {
@@ -7,10 +6,11 @@ export default function Footer() {
       component="footer"
       sx={{
         py: { xs: 3, sm: 4 }, // smaller padding on mobile
-        px: 2,
-        mt: "auto",
-        display: "flex",
-        justifySelf: "bottom",
+        px: 1,
+        width: "100%",
+        position: "fixed",
+        bottom: 0,
+        left: 0,
         backgroundColor: "deepskyblue",
       }}
     >

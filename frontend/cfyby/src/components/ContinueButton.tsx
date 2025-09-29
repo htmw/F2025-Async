@@ -19,7 +19,7 @@ const buttonTheme = createTheme({
   },
 });
 
-export default function BasicButtons() {
+export default function ContinueButton() {
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -27,14 +27,16 @@ export default function BasicButtons() {
   };
 
   return (
-    <ThemeProvider theme={buttonTheme}>
-      <Button
-        onClick={handleClick()}
-        variant="contained"
-        endIcon={<PlayCircleIcon />}
-      >
-        Let's Get Searching
-      </Button>
-    </ThemeProvider>
+    <div style={{ display: "flex", justifyContent: "center" }}>
+      <ThemeProvider theme={buttonTheme}>
+        <Button
+          onClick={handleClick}
+          variant="contained"
+          endIcon={<PlayCircleIcon />}
+        >
+          Let's Get Searching
+        </Button>
+      </ThemeProvider>
+    </div>
   );
 }
