@@ -3,17 +3,20 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 
-import BasicButtons from "./components/ContinueButton";
-import HeroSection from "./components/HeroSection";
-import Footer from "./components/Footer";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+// Pages
+import Home from "./pages/Home";
+import Search from "./pages/Search"; // optional additional page
 
 function App() {
   return (
-    <>
-      <HeroSection />
-      <BasicButtons />
-      <Footer />
-    </>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/search" element={<Search />} />
+      </Routes>
+    </Router>
   );
 }
 

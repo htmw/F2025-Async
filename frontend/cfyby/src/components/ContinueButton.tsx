@@ -1,6 +1,7 @@
 import Button from "@mui/material/Button";
 import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useNavigate } from "react-router-dom";
 
 const buttonTheme = createTheme({
   components: {
@@ -19,14 +20,16 @@ const buttonTheme = createTheme({
 });
 
 export default function BasicButtons() {
-  const showMessage: (message: string) => void = (message) => {
-    console.log(message);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate("/search"); // this routes to the Search page
   };
 
   return (
     <ThemeProvider theme={buttonTheme}>
       <Button
-        onClick={() => showMessage("Hello")}
+        onClick={handleClick()}
         variant="contained"
         endIcon={<PlayCircleIcon />}
       >
