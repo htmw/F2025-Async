@@ -1,24 +1,34 @@
 import { Box, Typography } from "@mui/material";
-import bgImage from "../assets/hands-holding-music-instruments.jpg";
+import bgImage from "../assets/Headphone.jpg";
+import ContinueButton from "./ContinueButton";
 
 export default function HeroSection() {
   return (
     <Box
       sx={{
-        height: { xs: "40vh", md: "60vh" }, // responsive
-        width: "100%",
-        backgroundImage: `url(${bgImage})`, // path to your image
-        backgroundSize: "cover", // cover entire area
-        backgroundPosition: "center", // center the image
+        position:"fixed",
+        height: "100vh", // responsive
+        width: "100vw",
+        top: 0,
+        left: 0,
+        backgroundImage: `url(${bgImage})`, 
+        backgroundSize: "cover", // covers entire area
+        backgroundPosition: "center", // centers image
         display: "flex",
-        alignItems: "left",
+        flexDirection: "column",
+        alignItems: "flex-start",
         alignContent: "stretch",
         padding: "1rem",
-        //justifyContent: "center",
+        justifyContent: "flex-start",
         color: "deepskyblue",
+        pt: "25vh",//height
+        pl: "5vw",//width
+        gap: 2,
       }}
     >
-      <Typography variant="h3">Curated For You, By You</Typography>
+      <Typography variant="h2">Curated For You, By You</Typography>
+      <ContinueButton/> {/* included in this section bc of the fixed position of the background photo*/}
     </Box>
+    
   );
 }

@@ -1,77 +1,83 @@
-import { Box, Container, Grid, Typography, Link } from "@mui/material";
+import Box from "@mui/material/Box";
+import Grid2 from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import Link from "@mui/material/Link";
+//had to change import style due to outdated Grid component
 
 export default function Footer() {
   return (
     <Box
       component="footer"
       sx={{
-        py: { xs: 3, sm: 4 }, // smaller padding on mobile
-        px: 1,
-        width: "100%",
         position: "fixed",
         bottom: 0,
         left: 0,
-        backgroundColor: "deepskyblue",
+        width: "100%",
+        px: 2,
+        py: 0.5,
+        backgroundColor: "rgba(255, 255, 255, 0.4)",
+        backdropFilter: "blur(4px)",
+        zIndex: 1000,
+        fontSize: "0.85rem",
       }}
     >
-      <Container maxWidth="lg">
-        <Grid container spacing={4}>
-          {/* Column 1: Brand */}
-          <Grid item xs={12} sm={6} md={4}>
-            <Typography variant="h6" gutterBottom>
-              Team Cache Me If You Can
-            </Typography>
-            <Typography variant="body2" color="text.secondary">
-              © {new Date().getFullYear()} Curated For You By You.
-              <br />
-              All rights reserved.
-            </Typography>
-          </Grid>
+      <Grid2
+        container
+        alignItems="center"
+        justifyContent="space-between"
+        sx={{ flexWrap: "nowrap" }}
+      > 
+        {/* Left side footer content*/}
+        <Grid2>
+          <Typography sx={{ fontSize: "0.9rem", fontWeight: 500, whiteSpace: "nowrap" }}>
+            © {new Date().getFullYear()} Curated For You By You.
+          </Typography>
+          <Typography
+            sx={{ fontSize: "0.75rem", color: "text.secondary", whiteSpace: "nowrap" }}
+          >
+            All rights reserved.
+          </Typography>
+        </Grid2>
 
-          {/* Column 2: Links */}
-          <Grid item xs={6} sm={3} md={4}>
-            <Typography
-              variant="subtitle1"
-              gutterBottom
-              sx={{ fontWeight: 600 }}
-            >
-              Links
-            </Typography>
-            <Link href="#" variant="body2" color="inherit" display="block">
-              Home
-            </Link>
-            <Link href="#" variant="body2" color="inherit" display="block">
-              About
-            </Link>
-            <Link href="#" variant="body2" color="inherit" display="block">
-              Services
-            </Link>
-            <Link href="#" variant="body2" color="inherit" display="block">
-              Contact
-            </Link>
-          </Grid>
+      {/* center side footer content*/}
+        <Grid2>
+          <Typography
+            sx={{ fontSize: "0.85rem", fontWeight: 500, whiteSpace: "nowrap" }}
+          >
+            Team Cache Me If You Can
+          </Typography>
+        </Grid2>
 
-          {/* Column 3: Social */}
-          <Grid item xs={6} sm={3} md={4}>
-            <Typography
-              variant="subtitle1"
-              gutterBottom
-              sx={{ fontWeight: 600 }}
-            >
-              Follow Us
-            </Typography>
-            <Link href="#" variant="body2" color="inherit" display="block">
-              Twitter
-            </Link>
-            <Link href="#" variant="body2" color="inherit" display="block">
-              LinkedIn
-            </Link>
-            <Link href="#" variant="body2" color="inherit" display="block">
-              GitHub
-            </Link>
-          </Grid>
-        </Grid>
-      </Container>
+        
+        <Grid2
+          sx={{
+            pr: "5vw", 
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              alignItems: "center",
+              gap: 1.5,
+              whiteSpace: "nowrap",
+            }}
+          >{/* right side footer content*/}
+            {["Home", "About", "Services", "Contact Us"].map((label) => (
+              <Link
+                key={label}
+                href="#"
+                underline="hover"
+                sx={{
+                  fontSize: "0.8rem",
+                  color: "inherit",
+                }}
+              >
+                {label}
+              </Link>
+            ))}
+          </Box>
+        </Grid2>
+      </Grid2>
     </Box>
   );
 }
