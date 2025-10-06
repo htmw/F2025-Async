@@ -1,7 +1,7 @@
-from dataclass import dataclass
+from dataclasses import dataclass
 
 @dataclass(frozen=True)
-class MusicQuery:
+class InputQuery:
     genre: str
     country: str
     city: str
