@@ -28,8 +28,7 @@ def format_artist_output(artist: dict):
     name = artist.get("name", "Unknown")
     country = artist.get("country", "Unknown")
 
-    city = artist.get("begin-area", {}).get("name") \ 
-           or artist.get("area", {}).get("name", "Unknown city")
+    city = artist.get("begin-area", {}).get("name") or artist.get("area", {}).get("name", "Unknown city")
 
     genres = [g["name"] for g in artist.get("genres", [])]
     if not genres:
