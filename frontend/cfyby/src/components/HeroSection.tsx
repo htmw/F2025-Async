@@ -6,12 +6,12 @@ export default function HeroSection() {
   return (
     <Box
       sx={{
-        position:"fixed",
+        position: "fixed",
         height: "100vh", // responsive
         width: "100vw",
         top: 0,
         left: 0,
-        backgroundImage: `url(${bgImage})`, 
+        backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover", // covers entire area
         backgroundPosition: "center", // centers image
         display: "flex",
@@ -20,15 +20,16 @@ export default function HeroSection() {
         alignContent: "stretch",
         padding: "1rem",
         justifyContent: "flex-start",
-        color: "deepskyblue",
-        pt: "25vh",//height
-        pl: "5vw",//width
+        pt: "25vh", //height
+        pl: "5vw", //width
         gap: 2,
       }}
     >
-      <Typography variant="h2">Curated For You, By You</Typography>
-      <ContinueButton/> {/* included in this section bc of the fixed position of the background photo*/}
+      <Typography variant="h2" color="deepskyblue">
+        Curated For You, By You
+      </Typography>
+      <ContinueButton />
+      {/* included in this section bc of the fixed position of the background photo*/}
     </Box>
-    
   );
 }
