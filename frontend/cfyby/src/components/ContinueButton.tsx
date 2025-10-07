@@ -11,8 +11,11 @@ const buttonTheme = createTheme({
           padding: "16px 16px",
           margin: "16px",
           fontSize: "1.25rem",
-          backgroundColor: "deepskyblue",
+          backgroundColor: "#00bfff",
           display: "flex",
+          ":hover": {
+            backgroundColor: "#005f7f",
+          },
         },
       },
     },
