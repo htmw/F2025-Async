@@ -24,44 +24,39 @@ export default function Footer() {
       <Grid2
         container
         alignItems="center"
-        justifyContent="space-between"
-        sx={{ flexWrap: "nowrap" }}
-      > 
+        justifyContent={{ xs: "center", sm: "space-between" }}
+        sx={{ flexWrap: "wrap", rowGap: 1 }}
+      >
         {/* Left side footer content*/}
-        <Grid2>
-          <Typography sx={{ fontSize: "0.9rem", fontWeight: 500, whiteSpace: "nowrap" }}>
+        <Grid2 sx={{ textAlign: { xs: "center", sm: "left" } }}>
+          <Typography sx={{ fontSize: "0.9rem", fontWeight: 500 }}>
             © {new Date().getFullYear()} Curated For You By You.
           </Typography>
-          <Typography
-            sx={{ fontSize: "0.75rem", color: "text.secondary", whiteSpace: "nowrap" }}
-          >
+          <Typography sx={{ fontSize: "0.75rem", color: "text.secondary" }}>
             All rights reserved.
           </Typography>
         </Grid2>
 
-      {/* center side footer content*/}
-        <Grid2>
-          <Typography
-            sx={{ fontSize: "0.85rem", fontWeight: 500, whiteSpace: "nowrap" }}
-          >
+        {/* center side footer content*/}
+        <Grid2 sx={{ textAlign: "center" }}>
+          <Typography sx={{ fontSize: "0.85rem", fontWeight: 500 }}>
             Team Cache Me If You Can
           </Typography>
         </Grid2>
 
-        
-        <Grid2
-          sx={{
-            pr: "5vw", 
-          }}
-        >
+        {/* right side footer content*/}
+        <Grid2>
           <Box
             sx={{
+              textAlign: { xs: "center", sm: "right" },
               display: "flex",
+              flexWrap: "wrap",
+              justifyContent: "center",
               alignItems: "center",
               gap: 1.5,
-              whiteSpace: "nowrap",
+              paddingRight: { xs: 0, sm: 3 },
             }}
-          >{/* right side footer content*/}
+          >
             {["Home", "About", "Services", "Contact Us"].map((label) => (
               <Link
                 key={label}
