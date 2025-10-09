@@ -1,9 +1,13 @@
 :root {
-    font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: "urbanist", system-ui, Avenir, Helvetica, Arial, sans-serif;
     background-color: #fafbf8;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+html, body, #root{
+    font-family: "Urbanist", system-ui, Avenir, Helvetica, Arial, sans-serif;
 }
