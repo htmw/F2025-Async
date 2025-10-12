@@ -63,3 +63,4 @@ venv/
 .idea/
 .vscode/
 .DS_Store
+.venv
