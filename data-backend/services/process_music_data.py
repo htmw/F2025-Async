@@ -3,7 +3,7 @@ import json
 from uuid import UUID
 
 
-def process_music_data(filename="../resources/musicbrainz_pull_clean_more_data.csv"):
+def process_music_data(filename="data-backend/resources/musicbrainz_pull_clean_more_data.csv"):
     """
     Processes a CSV file of music data, filtering and storing unique artists.
 
