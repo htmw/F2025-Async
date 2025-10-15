@@ -16,7 +16,6 @@ def process_music_data(filename="data-backend/resources/musicbrainz_pull_clean_m
     """
     allowed_tags = {"rock", "pop", "jazz", "hip hop", "techno", "classical", "country"}
     music_data = {}
-    infolist = []
 
     try:
         with open(filename, "r", encoding="utf-8") as csvfile:
@@ -36,20 +35,13 @@ def process_music_data(filename="data-backend/resources/musicbrainz_pull_clean_m
                 area_name = row.get("area_name")
                 begin_area_name = row.get("begin_area_name")
 
-                if name:
-                    infolist.append(
-                        {
-                            "name": name,
-                            "country": area_name,
-                            "city": begin_area_name,
-                        }
-                    )
-
-                    if tag in allowed_tags:
-                        if area_name and begin_area_name:
-                            music_data[tag] = music_data.get(tag, [])
-                            music_data[tag].append(infolist[-1])
-
+                if tag not in allowed_tags:
+                    continue
+                
+                key: str = (f"{tag};{area_name};{begin_area_name}").lower()
+                value: str = name.lower()
+                music_data[key] = value
+    
     except FileNotFoundError:
         print(f"Error: The file {filename} was not found.")
     except Exception as e:
