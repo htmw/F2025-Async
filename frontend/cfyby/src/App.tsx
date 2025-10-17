@@ -1,5 +1,3 @@
-import "@fontsource/urbanist";
-import "@fontsource/urbanist/400.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { createTheme, ThemeProvider, CssBaseline } from "@mui/material";
 
