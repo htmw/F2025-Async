@@ -4,7 +4,7 @@ from models.input_query import InputQuery
 # TODO Make a class to encapsulate different backend sources so theyre not hardcoded into service files
 BASE_URL = "https://musicbrainz.org/ws/2"
 
-def search_artists(search_query, limit=5):
+def search_artists(search_query, limit=100):
     query_sections = []
     query_sections.append(f"tag:{search_query.genre}")
     query_sections.append(f'area:"{search_query.city}"') 
@@ -24,15 +24,15 @@ def search_artists(search_query, limit=5):
     return response.json()
 
 # Music Brainz JSON output has some nested fields so check if theyre null or not and add to format string
-def format_artist_output(artist: dict):
+def format_artist_output(artist: dict, query: InputQuery):
     name = artist.get("name", "Unknown")
     country = artist.get("country", "Unknown")
 
     city = artist.get("begin-area", {}).get("name") or artist.get("area", {}).get("name", "Unknown city")
 
-    genres = [g["name"] for g in artist.get("genres", [])]
+    genres = [g["name"] for g in artist.get("genres", []) if g["name"].lower() == query.genre.lower()]
     if not genres:
-        genres = [t["name"] for t in artist.get("tags", [])]
+        genres = [t["name"] for t in artist.get("tags", []) if t["name"].lower() == query.genre.lower()]
 
     genre_str = ", ".join(genres) if genres else "Unknown genre"
     return f"{name} ({country}) ({city}) ({genre_str})"
@@ -43,4 +43,4 @@ if __name__ == "__main__":
     myquery = InputQuery("metal", "US", "")
     data = search_artists(myquery)
     for artist in data.get("artists", []):
-        print(format_artist_output(artist))
+        print(format_artist_output(artist, myquery))
