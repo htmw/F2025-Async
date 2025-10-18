@@ -14,8 +14,9 @@ def process_music_data(filename="data-backend/resources/musicbrainz_pull_clean_m
         dict: A dictionary containing the processed music data,
               with artist names as keys.
     """
-    allowed_tags = {"rock", "pop", "jazz", "hip hop", "techno", "classical", "country"}
+    allowed_genres = {"rock", "pop", "jazz", "hip hop", "techno", "classical", "country"}
     music_data = {}
+    infolist = []
 
     try:
         with open(filename, "r", encoding="utf-8") as csvfile:
@@ -31,16 +32,29 @@ def process_music_data(filename="data-backend/resources/musicbrainz_pull_clean_m
             reader = csv.DictReader(csvfile, dialect=dialect)
             for row in reader:
                 name = row.get("name")
-                tag = row.get("tag")
-                area_name = row.get("area_name")
-                begin_area_name = row.get("begin_area_name")
+                genre = row.get("tag")
+                country = row.get("area_name")
+                city = row.get("begin_area_name")
 
-                if tag not in allowed_tags:
+                if genre not in allowed_genres:
                     continue
-                
-                key: str = (f"{tag};{area_name};{begin_area_name}").lower()
-                value: str = name.lower()
-                music_data[key] = value
+
+                if name:
+                    infolist.append(
+                        {
+                            "name": name,
+                            "country": country,
+                            "city": city,
+                        }
+                    )
+
+                if tag in allowed_tags:
+                        if country and city:
+                            music_data[genre] = music_data.get(tag, [])
+                            music_data[genre].append(infolist[-1])
+
+
+
     
     except FileNotFoundError:
         print(f"Error: The file {filename} was not found.")
