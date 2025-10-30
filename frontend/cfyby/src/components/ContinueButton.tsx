@@ -3,7 +3,7 @@ import PlayCircleIcon from "@mui/icons-material/PlayCircle";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useNavigate } from "react-router-dom";
 
-// 🎨 Customize the button's appearance + font
+
 const buttonTheme = createTheme({
   components: {
     MuiButton: {
@@ -19,7 +19,7 @@ const buttonTheme = createTheme({
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
-          textTransform: "none", // keeps font’s natural shape
+          textTransform: "none", 
           borderRadius: "12px",
           "&:hover": {
             backgroundColor: "dodgerblue",

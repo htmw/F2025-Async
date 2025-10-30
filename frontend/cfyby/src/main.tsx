@@ -1,6 +1,6 @@
-import "@fontsource/urbanist";         // loads font
-import "@fontsource/urbanist/400.css"; // optional weight
-import "./App.css";                    // <-- must be imported here
+import "@fontsource/urbanist";        
+import "@fontsource/urbanist/400.css"; 
+import "./App.css";                   
 
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
