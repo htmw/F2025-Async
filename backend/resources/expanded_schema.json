@@ -1,0 +1,81 @@
+{
+  "rock": [
+    {
+      "name": "Bruce Springsteen",
+      "country": "United States",
+      "city": "Long Branch",
+      "summary": "A Description of Artist",
+      "image": "https://example.com/bruce-springsteen.jpg",
+      "albums": [
+        {
+          "title": "Born to Run",
+          "year": 1975,
+          "image": "https://example.com/born-to-run.jpg",
+          "rating": 5,
+          "tracks": [
+            {
+              "title": "Jungleland",
+              "duration": 240
+            },
+            {
+              "title": "Thunder Road",
+              "duration": 210
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "pop": [
+    {
+      "name": "Michael Jackson",
+      "country": "United States",
+      "city": "Gary",
+      "summary": "A Description of Artist",
+      "image": "https://example.com/michael-jackson.jpg",
+      "albums": [
+        {
+          "title": "Thriller",
+          "year": 1982,
+          "image": "https://example.com/thriller.jpg",
+          "rating": 5,
+          "tracks": [
+            {
+              "title": "Billie Jean",
+              "duration": 240
+            },
+            {
+              "title": "Beat It",
+              "duration": 210
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Madonna",
+      "country": "United States",
+      "city": "Hollywood",
+      "summary": "A Description of Artist",
+      "image": "https://example.com/madonna.jpg",
+      "albums": [
+        {
+          "title": "Like a Virgin",
+          "year": 1984,
+          "image": "https://example.com/like-a-virgin.jpg",
+          "rating": 5,
+          "tracks": [
+            {
+              "title": "Like a Virgin",
+              "duration": 240
+            },
+            {
+              "title": "Material Girl",
+              "duration": 210
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
