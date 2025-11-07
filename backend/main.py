@@ -4,10 +4,9 @@ import json
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
-from services.process_music_data import process_music_data
 
 # TODO make something cleaner for Sprint 2
-file = open('backend/resources/expanded_schema.json', 'r')
+file = open("backend/resources/expanded_schema.json", "r")
 global_music_data = json.load(file)
 
 # Create the FastAPI app instance
@@ -30,6 +29,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
+
 @app.get("/")
 def get_root():
     return {
@@ -43,9 +43,10 @@ def get_root():
             "artist_image": "/artists/{name}/image",
             "artist_albums": "/artists/{name}/albums",
             "album_description": "/albums/{title}/description",
-            "docs": "/docs"
-        }
+            "docs": "/docs",
+        },
     }
+
 
 """
 Get a list of artists by location and genre
@@ -62,6 +63,20 @@ Get a list of artists by location and genre
     list
         An array of artists
 """
+
+### Onion Archeticture
+##
+# Front End (IN Public internet ) View (How the data is displayed on the screen)
+#   ^
+#   |
+# MiddleWare (Gives Data to Front End) Controller (Where the data goes)
+#   ^
+#   |
+# Backend (Stores Data) (DATA) Models | Brain is here with Pete
+#   ^
+# ###
+
+
 @app.get("/artists")
 def get_artists(genre: str = None, country: str = None, city: str = None):
     # if we don't have a valid genre, we want to at least filter for artists by city and country alone, so lets just make a
@@ -86,6 +101,7 @@ def get_artists(genre: str = None, country: str = None, city: str = None):
         filtered_output.append(artist)
 
     return {"results": filtered_output}
+
 
 """
 Get all available information for an artist
@@ -118,17 +134,20 @@ Get all available information for an artist
             ]
         }
 """
+
+
 @app.get("/artists/{name}")
 def get_artist_info(name: str = None):
     if name is None:
         raise HTTPException(status_code=400, detail=f"A name was not provided!")
-    
+
     for artists in global_music_data.values():
         for artist in artists:
             if artist.get("name", "").strip().lower() == name.strip().lower():
                 return artist
 
     raise HTTPException(status_code=404, detail=f"No artist found with name '{name}'!")
+
 
 """
 Get a description of an artist
@@ -141,17 +160,20 @@ Get a description of an artist
     summary
         A description of an artist
 """
+
+
 @app.get("/artists/{name}/description")
 def get_artist_description(name: str):
     if name is None:
         raise HTTPException(status_code=400, detail=f"A name was not provided!")
-    
+
     for artists in global_music_data.values():
         for artist in artists:
             if artist.get("name", "").strip().lower() == name.strip().lower():
                 return {"summary": artist.get("summary", "No summary available")}
 
     raise HTTPException(status_code=404, detail=f"No artist found with name '{name}'!")
+
 
 """
 Get an image URL of an artist
@@ -164,17 +186,20 @@ Get an image URL of an artist
     image_url
         A URL to an image of the artist
 """
+
+
 @app.get("/artists/{name}/image")
 def get_artist_image(name: str):
     if name is None:
         raise HTTPException(status_code=400, detail=f"A name was not provided!")
-    
+
     for artists in global_music_data.values():
         for artist in artists:
             if artist.get("name", "").strip().lower() == name.strip().lower():
                 return {"image": artist.get("image", None)}
 
     raise HTTPException(status_code=404, detail=f"No artist found with name '{name}'!")
+
 
 """
 Get a list of albums by an artist
@@ -186,7 +211,7 @@ Get a list of albums by an artist
     -------
     list
         An array of album info
-    
+
         [
             {
                 "title": "Born to Run",
@@ -202,17 +227,20 @@ Get a list of albums by an artist
             }
         ]
 """
+
+
 @app.get("/artists/{name}/albums")
 def get_artist_albums(name: str):
     if name is None:
         raise HTTPException(status_code=400, detail=f"A name was not provided!")
-    
+
     for artists in global_music_data.values():
         for artist in artists:
             if artist.get("name", "").strip().lower() == name.strip().lower():
                 return {"albums": artist.get("albums", [])}
 
     raise HTTPException(status_code=404, detail=f"No artist found with name '{name}'!")
+
 
 """
 Get all available info for an album
@@ -234,20 +262,25 @@ Get all available info for an album
                 "duration": 240
               }
             ]
-        }    
+        }
 """
+
+
 @app.get("/albums/{title}/description")
 def get_album_description(title: str):
     if title is None:
         raise HTTPException(status_code=400, detail=f"An album title was not provided!")
-    
+
     for artists in global_music_data.values():
         for artist in artists:
             for album in artist.get("albums", []):
                 if album.get("title", "").strip().lower() == title.strip().lower():
                     return album
 
-    raise HTTPException(status_code=404, detail=f"No album title found with name '{title}'!")
+    raise HTTPException(
+        status_code=404, detail=f"No album title found with name '{title}'!"
+    )
+
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
