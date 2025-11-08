@@ -64,6 +64,7 @@ Get a list of artists by location and genre
         An array of artists
 """
 
+<<<<<<< HEAD
 ### Onion Archeticture
 ##
 # Front End (IN Public internet ) View (How the data is displayed on the screen)
@@ -76,6 +77,8 @@ Get a list of artists by location and genre
 #   ^
 # ###
 
+=======
+>>>>>>> d0db3e4 (Added happy/sad path test for endpoints)
 
 @app.get("/artists")
 def get_artists(genre: str = None, country: str = None, city: str = None):
