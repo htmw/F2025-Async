@@ -57,15 +57,18 @@ export default function ResultList({ results, show }: Props) {
               }}
             >
               <ListItemText
+
                 primary={
                   item.name || item.title || item.artistName || "Unknown Artist"
                 }
                 secondary={
-                  item.genre || item.city
-                    ? `${item.genre || ""}${
-                        item.genre && item.city ? " • " : ""
-                      }${item.city ? `${item.city}, ${item.country || ""}` : ""}`
-                    : ""
+                  <Typography variant="body2" sx={{ color: "rgba(0,0,0,0.6)" }}>
+                    {item.genre || item.city
+                      ? `${item.genre || ""}${
+                          item.genre && item.city ? " • " : ""
+                        }${item.city ? `${item.city}, ${item.country || ""}` : ""}`
+                      : ""}
+                  </Typography>
                 }
               />
             </ListItemButton>
