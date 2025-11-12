@@ -1,6 +1,6 @@
 import { Box, Typography } from "@mui/material";
 import Footer from "../components/Footer";
-import LocationSearch from "../components/LocationSearch";
+import LocationSearch from "../components/Search/LocationSearch";
 import bgImage from "../assets/recordplayer.jpg";
 
 export default function Search() {
@@ -14,7 +14,7 @@ export default function Search() {
         height: "100vh",
         display: "flex",
         flexDirection: "column",
-        justifyContent: "center",
+        justifyContent: "flex-start",
         alignItems: "center",
         backgroundImage: `url(${bgImage})`,
         backgroundSize: "cover",
@@ -22,6 +22,7 @@ export default function Search() {
         backgroundRepeat: "no-repeat",
         zIndex: 1,
         overflow: "hidden",
+        pt: 12,
       }}
     >
       <Box
