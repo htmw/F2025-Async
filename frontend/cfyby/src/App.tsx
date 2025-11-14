@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { createTheme, ThemeProvider, CssBaseline, Box, Button } from "@mui/material";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
-import ArtistPage from "./components/ArtistPage";
+import ArtistPage from "./components/Artist/ArtistPage";
 
 const theme = createTheme({
   palette: {
@@ -88,7 +88,7 @@ export default function App() {
             Search
           </Button>
 
-          <Button
+          {/* <Button
             component={Link}
             to="/artist/lana-del-rey"
             sx={{
@@ -99,7 +99,7 @@ export default function App() {
             }}
           >
             Artist Page
-          </Button>
+          </Button> */}
         </Box>
 
         <Routes>

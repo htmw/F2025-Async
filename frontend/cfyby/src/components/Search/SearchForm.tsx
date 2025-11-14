@@ -15,8 +15,8 @@ type Props = {
 export default function SearchForm({ onSearch, loading }: Props) {
   const [locationOptions] = useState([
     { city: "Gary", country: "United States" },
-    { city: "Chicago", country: "United States" },
-    { city: "Los Angeles", country: "United States" },
+    { city: "Hollywood", country: "United States" },
+    { city: "Long Branch", country: "United States" },
   ]);
 
   const [genreOptions] = useState(["Rock", "Hip Hop", "Jazz", "Pop", "Country"]);

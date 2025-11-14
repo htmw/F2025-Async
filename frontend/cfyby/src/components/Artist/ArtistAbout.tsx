@@ -2,9 +2,9 @@ import { Box, Typography, Stack } from "@mui/material";
 
 type ArtistAboutProps = {
   artist: {
-    bio: string;
-    followers: string;
-    origin: string;
+    summary: string;
+    country: string;
+    city: string;
   };
 };
 
@@ -32,11 +32,11 @@ export default function ArtistAbout({ artist }: ArtistAboutProps) {
           mb: 2,
         }}
       >
-        {artist.bio}
+        {artist.summary}
       </Typography>
 
       <Stack spacing={1.5}>
-        <Box>
+        {/* <Box>
           <Typography
             sx={{
               color: "rgba(255,255,255,0.6)",
@@ -57,7 +57,7 @@ export default function ArtistAbout({ artist }: ArtistAboutProps) {
           >
             {artist.followers}
           </Typography>
-        </Box>
+        </Box> */}
 
         <Box>
           <Typography
@@ -78,7 +78,7 @@ export default function ArtistAbout({ artist }: ArtistAboutProps) {
               fontSize: "0.95rem",
             }}
           >
-            {artist.origin}
+            {`${artist.city}, ${artist.country}`}
           </Typography>
         </Box>
       </Stack>

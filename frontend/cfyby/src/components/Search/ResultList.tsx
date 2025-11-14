@@ -43,7 +43,7 @@ export default function ResultList({ results, show }: Props) {
             <ListItemButton
               key={index}
               component={Link}
-              to={`/artist/${item.name?.split(" ").join("-")}`}
+              to={`/artist/${item.name}`}
               divider
               sx={{
                 alignItems: "flex-start",

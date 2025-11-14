@@ -3,23 +3,28 @@ import {
   Typography,
   Stack,
   Avatar,
-  IconButton,
   Divider,
+  CircularProgress,
 } from "@mui/material";
-import PlayArrowRoundedIcon from "@mui/icons-material/PlayArrowRounded";
 
 type Track = {
   title: string;
-  plays: string;
+  // plays: string;
   duration: string;
-  cover: string;
 };
 
-type PopularTracksProps = {
+type AlbumWithTracks = {
+  title: string;
+  image: string;
   tracks: Track[];
 };
 
-export default function PopularTracks({ tracks }: PopularTracksProps) {
+type PopularTracksProps = {
+  albums: AlbumWithTracks[];
+  loading: boolean;
+};
+
+export default function PopularTracks({ albums, loading }: PopularTracksProps) {
   return (
     <Box sx={{ mb: 4 }}>
       <Typography
@@ -36,99 +41,111 @@ export default function PopularTracks({ tracks }: PopularTracksProps) {
           overflow: "hidden",
         }}
       >
-        {tracks.map((track, index) => (
-          <Box key={track.title}>
-            <Stack
-              direction="row"
-              alignItems="center"
-              spacing={2}
-              sx={{
-                px: 2,
-                py: 1.5,
-                "&:hover": {
-                  backgroundColor: "rgba(255,255,255,0.07)",
-                },
-              }}
-            >
-              <Box
-                sx={{
-                  width: "32px",
-                  display: "flex",
-                  justifyContent: "center",
-                  color: "rgba(255,255,255,0.6)",
-                  fontSize: "0.9rem",
-                  fontWeight: 500,
-                  position: "relative",
-                }}
+        {loading ? (
+          <Stack
+            alignItems="center"
+            justifyContent="center"
+            sx={{ py: 4 }}
+          >
+            <CircularProgress size={28} color="inherit" />
+          </Stack>
+        ) : (
+          albums.map((album) => (
+            <Box key={album.title} sx={{ mb: 3 }}>
+              {/* Album Header */}
+              <Stack
+                direction="row"
+                spacing={2}
+                alignItems="center"
+                sx={{ px: 2, py: 1.5 }}
               >
-                {index + 1}
-                <IconButton
-                  size="small"
+                <Avatar
+                  variant="rounded"
+                  src={album.image}
+                  sx={{ width: 56, height: 56 }}
+                />
+
+                <Box>
+                  <Typography sx={{ color: "white", fontWeight: 600 }}>
+                    {album.title}
+                  </Typography>
+                  <Typography
+                    sx={{
+                      color: "rgba(255,255,255,0.5)",
+                      fontSize: "0.85rem",
+                    }}
+                  >
+                    {album.tracks.length} tracks
+                  </Typography>
+                </Box>
+              </Stack>
+
+              <Divider sx={{ borderColor: "rgba(255,255,255,0.1)" }} />
+
+              {/* Track List */}
+              {album.tracks.map((track, index) => (
+                <Stack
+                  key={track.title}
+                  direction="row"
+                  alignItems="center"
+                  spacing={2}
                   sx={{
-                    position: "absolute",
-                    opacity: 0,
-                    transition: "0.15s",
-                    "& svg": { fontSize: "1.5rem", color: "white" },
-                    "&:hover": { backgroundColor: "rgba(255,255,255,0.15)" },
-                    left: "50%",
-                    transform: "translateX(-50%)",
+                    px: 2,
+                    py: 1.25,
+                    "&:hover": {
+                      backgroundColor: "rgba(255,255,255,0.07)",
+                    },
                   }}
                 >
-                  <PlayArrowRoundedIcon />
-                </IconButton>
-              </Box>
+                  <Typography
+                    sx={{
+                      width: "24px",
+                      color: "rgba(255,255,255,0.6)",
+                      fontSize: "0.9rem",
+                      textAlign: "center",
+                    }}
+                  >
+                    {index + 1}
+                  </Typography>
 
-              <Avatar
-                variant="rounded"
-                src={track.cover}
-                sx={{ width: 48, height: 48, flexShrink: 0 }}
-              />
+                  <Box sx={{ flexGrow: 1 }}>
+                    <Typography
+                      sx={{
+                        color: "white",
+                        fontWeight: 500,
+                        fontSize: "0.9rem",
+                        whiteSpace: "nowrap",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                      }}
+                    >
+                      {track.title}
+                    </Typography>
+                    <Typography
+                      sx={{
+                        color: "rgba(255,255,255,0.5)",
+                        fontSize: "0.8rem",
+                      }}
+                    >
+                      {/* {track.plays} plays */}
+                    </Typography>
+                  </Box>
 
-              <Box sx={{ flexGrow: 1, minWidth: 0 }}>
-                <Typography
-                  sx={{
-                    color: "white",
-                    fontWeight: 500,
-                    fontSize: "0.95rem",
-                    lineHeight: 1.3,
-                    whiteSpace: "nowrap",
-                    textOverflow: "ellipsis",
-                    overflow: "hidden",
-                  }}
-                >
-                  {track.title}
-                </Typography>
-                <Typography
-                  sx={{
-                    color: "rgba(255,255,255,0.5)",
-                    fontSize: "0.8rem",
-                  }}
-                >
-                  {track.plays} plays
-                </Typography>
-              </Box>
+                  <Typography
+                    sx={{
+                      color: "rgba(255,255,255,0.6)",
+                      fontSize: "0.8rem",
+                    }}
+                  >
+                    {track.duration}
+                  </Typography>
+                </Stack>
+              ))}
 
-              <Typography
-                sx={{
-                  color: "rgba(255,255,255,0.6)",
-                  fontSize: "0.8rem",
-                  fontVariantNumeric: "tabular-nums",
-                }}
-              >
-                {track.duration}
-              </Typography>
-            </Stack>
-
-            {index !== tracks.length - 1 && (
-              <Divider
-                sx={{
-                  borderColor: "rgba(255,255,255,0.07)",
-                  ml: "64px",
-                }}
-              />
-            )}
-          </Box>
-        ))}
+              <Divider sx={{ borderColor: "rgba(255,255,255,0.05)" }} />
+            </Box>
+          ))
+        )}
       </Box>
     </Box>
   );

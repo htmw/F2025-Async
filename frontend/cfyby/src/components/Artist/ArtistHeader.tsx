@@ -3,9 +3,10 @@ import { Box, Avatar, Typography, Button, Stack } from "@mui/material";
 type ArtistHeaderProps = {
   artist: {
     name: string;
-    bannerUrl: string;
-    avatarUrl: string;
-    monthlyListeners: string;
+    image: string;
+    // bannerUrl: string;
+    // avatarUrl: string;
+    // monthlyListeners: string;
   };
 };
 
@@ -16,11 +17,11 @@ export default function ArtistHeader({ artist }: ArtistHeaderProps) {
         position: "relative",
         width: "100%",
         minHeight: { xs: 240, md: 320 },
-        backgroundImage: `linear-gradient(
-          to bottom,
-          rgba(0,0,0,0.4) 0%,
-          rgba(0,0,0,0.8) 70%
-        ), url(${artist.bannerUrl})`,
+        // backgroundImage: `linear-gradient(
+        //   to bottom,
+        //   rgba(0,0,0,0.4) 0%,
+        //   rgba(0,0,0,0.8) 70%
+        // ), url(${artist.bannerUrl})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
         p: { xs: 2, md: 4 },
@@ -30,7 +31,7 @@ export default function ArtistHeader({ artist }: ArtistHeaderProps) {
     >
       <Stack direction="row" spacing={2} alignItems="flex-end">
         <Avatar
-          src={artist.avatarUrl}
+          src={artist.image}
           alt={artist.name}
           sx={{
             width: { xs: 80, md: 140 },
@@ -57,7 +58,7 @@ export default function ArtistHeader({ artist }: ArtistHeaderProps) {
             variant="body2"
             sx={{ color: "rgba(255,255,255,0.8)", fontSize: "0.9rem" }}
           >
-            {artist.monthlyListeners} monthly listeners
+            {/* {artist.monthlyListeners} monthly listeners */}
           </Typography>
 
           <Stack direction="row" spacing={2} sx={{ mt: 2 }}>

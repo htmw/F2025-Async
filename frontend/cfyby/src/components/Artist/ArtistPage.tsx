@@ -1,63 +1,53 @@
 import { Box, Stack } from "@mui/material";
 import ArtistHeader from "./ArtistHeader";
 import PopularTracks from "./PopularTracks";
-import FansAlsoLike from "./FansAlsoLike";
+// import FansAlsoLike from "./FansAlsoLike";
 import ArtistAbout from "./ArtistAbout";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 
 export default function ArtistPage() {
-  const artist = {
-    name: "Lana Del Rey",
-    monthlyListeners: "62,345,129",
-    bannerUrl:
-      " ",
-    avatarUrl:
-      " ",
-    bio: "Lana Del Rey is a singer, songwriter, and record producer known for cinematic sound, melancholic glamour, and themes of tragic romance.",
-    followers: "45,102,998",
-    origin: "New York, USA",
+  const { id } = useParams();
+
+  const [artist, setArtist] = useState<any>({});
+  const [albums, setAlbums] = useState([])
+
+  const [loading, setLoading] = useState(false);
+
+useEffect(() => {
+  if (!id) return;
+
+  const fetchArtist = async () => {
+    setLoading(true);
+
+    try {
+      const requestUrl = `/artists/${id}`;
+      console.log("Fetching:", requestUrl);
+
+      const response = await fetch(requestUrl);
+      const data = await response.json();
+
+
+      const payload = data.artist || data.result || data || null;
+      console.log(payload.albums[0]);
+      setArtist(payload);
+
+      const albumsList = payload?.albums || [];
+      console.log(albumsList);
+
+      setAlbums(albumsList);
+
+    } catch (err) {
+      console.error(err);
+      setArtist({});
+    } finally {
+      setLoading(false);
+    }
   };
 
-  const popularTracks = [
-    {
-      title: "Video Games",
-      plays: "1,234,567,890",
-      duration: "4:42",
-      cover:
-        " ",
-    },
-    {
-      title: "Summertime Sadness",
-      plays: "2,109,443,220",
-      duration: "4:25",
-      cover:
-        " ",
-    },
-    {
-      title: "Young and Beautiful",
-      plays: "987,331,221",
-      duration: "3:56",
-      cover:
-        " ",
-    },
-  ];
+  fetchArtist();
+}, [id]);
 
-  const similarArtists = [
-    {
-      name: "Florence + The Machine",
-      img: " ",
-      listeners: "28,904,112 monthly listeners",
-    },
-    {
-      name: "Halsey",
-      img: " ",
-      listeners: "45,110,992 monthly listeners",
-    },
-    {
-      name: "Billie Eilish",
-      img: " ",
-      listeners: "77,401,021 monthly listeners",
-    },
-  ];
 
   return (
     <Box
@@ -75,8 +65,8 @@ export default function ArtistPage() {
         sx={{ px: { xs: 2, md: 4 }, mt: 4 }}
       >
         <Box sx={{ flex: 2, minWidth: 0 }}>
-          <PopularTracks tracks={popularTracks} />
-          <FansAlsoLike artists={similarArtists} />
+          <PopularTracks albums={albums} loading={loading} />
+          {/* <FansAlsoLike artists={similarArtists} /> */}
         </Box>
         <Box sx={{ flex: 1, minWidth: 0 }}>
           <ArtistAbout artist={artist} />
