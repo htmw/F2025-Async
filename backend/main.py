@@ -1,12 +1,13 @@
 # main.py
-import uvicorn
 import json
-from fastapi import FastAPI, HTTPException
-from fastapi.middleware.cors import CORSMiddleware
 from typing import Optional
 
+import uvicorn
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+
 # TODO make something cleaner for Sprint 2
-file = open("backend/resources/expanded_schema.json", "r")
+file = open("resources/expanded_schema.json", "r")
 global_music_data = json.load(file)
 
 # Create the FastAPI app instance
