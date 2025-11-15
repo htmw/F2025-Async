@@ -1,8 +1,8 @@
 import { Box, Stack } from "@mui/material";
-import ArtistHeader from "./ArtistHeader";
-import PopularTracks from "./PopularTracks";
+import ArtistHeader from "../components/Artist/ArtistHeader";
+import PopularTracks from "../components/Artist/PopularTracks";
 // import FansAlsoLike from "./FansAlsoLike";
-import ArtistAbout from "./ArtistAbout";
+import ArtistAbout from "../components/Artist/ArtistAbout";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
@@ -10,44 +10,41 @@ export default function ArtistPage() {
   const { id } = useParams();
 
   const [artist, setArtist] = useState<any>({});
-  const [albums, setAlbums] = useState([])
+  const [albums, setAlbums] = useState([]);
 
   const [loading, setLoading] = useState(false);
 
-useEffect(() => {
-  if (!id) return;
+  useEffect(() => {
+    if (!id) return;
 
-  const fetchArtist = async () => {
-    setLoading(true);
+    const fetchArtist = async () => {
+      setLoading(true);
 
-    try {
-      const requestUrl = `/artists/${id}`;
-      console.log("Fetching:", requestUrl);
+      try {
+        const requestUrl = `/artists/${id}`;
+        console.log("Fetching:", requestUrl);
 
-      const response = await fetch(requestUrl);
-      const data = await response.json();
+        const response = await fetch(requestUrl);
+        const data = await response.json();
 
+        const payload = data.artist || data.result || data || null;
+        console.log(payload.albums[0]);
+        setArtist(payload);
 
-      const payload = data.artist || data.result || data || null;
-      console.log(payload.albums[0]);
-      setArtist(payload);
+        const albumsList = payload?.albums || [];
+        console.log(albumsList);
 
-      const albumsList = payload?.albums || [];
-      console.log(albumsList);
+        setAlbums(albumsList);
+      } catch (err) {
+        console.error(err);
+        setArtist({});
+      } finally {
+        setLoading(false);
+      }
+    };
 
-      setAlbums(albumsList);
-
-    } catch (err) {
-      console.error(err);
-      setArtist({});
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  fetchArtist();
-}, [id]);
-
+    fetchArtist();
+  }, [id]);
 
   return (
     <Box
