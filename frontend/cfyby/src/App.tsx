@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { createTheme, ThemeProvider, CssBaseline, Box, Button } from "@mui/material";
 import Home from "./pages/Home";
 import Search from "./pages/Search";
-import ArtistPage from "./components/Artist/ArtistPage";
+import ArtistPage from "./pages/ArtistPage";
 
 const theme = createTheme({
   palette: {

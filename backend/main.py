@@ -31,6 +31,77 @@ app.add_middleware(
 )
 
 
+@app.get("/artists/genre")
+def get_artists_by_genre(genre: str, n: int):
+    """
+    Returns an array of N artists based on a genre
+
+    Parameters
+    ----------
+    genre : str
+        An allowed genre that's searchable.
+    n : int
+        The second of artists to return if possible.
+    Returns
+    -------
+    list
+        An array of N artists or
+        an array of < N artists or
+        an array of zero artists
+    """
+    key = genre.lower()
+    artists_of_genre = global_music_data[key]
+
+    output_list = []
+    for i in range(len(artists_of_genre)):
+        if i >= n:
+            break
+        output_list.append(artists_of_genre[i])
+
+    output_list = artists_of_genre[:n]
+    return {"results": output_list}
+
+
+@app.get("/artists/city")
+def get_artists_by_genre_city(genre: str, city: str, n: int):
+    """
+    Returns an array of N artists based on a genre and city
+
+    Parameters
+    ----------
+    genre : str
+        An allowed genre that's searchable.
+    city : str
+        An allowed city
+    n : int
+        The second of artists to return if possible.
+    Returns
+    -------
+    list
+        An array of N artists or
+        an array of < N artists or
+        an array of zero artists
+    """
+    search_genre = genre.lower()
+    search_city = city.lower()
+
+    artists_of_genre = global_music_data[search_genre]
+    artists_of_city = []
+
+    for i in range(len(artists_of_genre)):
+        if artists_of_genre[i]["city"].lower() == search_city:
+            artists_of_city.append(artists_of_genre[i])
+
+    output_list = []
+    for i in range(len(artists_of_city)):
+        if i >= n:
+            break
+        output_list.append(artists_of_city[i])
+
+    output_list = artists_of_city[:n]
+    return {"results": output_list}
+
+
 @app.get("/")
 def get_root():
     return {
@@ -269,6 +340,7 @@ def get_album_description(title: str):
     raise HTTPException(
         status_code=404, detail=f"No album title found with name '{title}'!"
     )
+
 
 
 if __name__ == "__main__":
