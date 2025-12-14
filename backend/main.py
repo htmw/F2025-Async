@@ -1,13 +1,38 @@
 # main.py
+from codecs import namereplace_errors
+from gzip import READ
 import json
-from typing import Optional
+import logging
+import os
+from pydantic import BaseModel
 
+import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse
+
+# Import cloud service client
+from services.cloud_service_client import (
+    CloudServiceAuthenticationError,
+    CloudServiceClient,
+    CloudServiceConnectionError,
+    CloudServiceError,
+    CloudServiceTimeoutError,
+)
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 # TODO make something cleaner for Sprint 2
-file = open("resources/expanded_schema.json", "r")
-global_music_data = json.load(file)
+file_path = os.path.join(
+    os.path.dirname(os.path.realpath(__file__)),
+    "resources",
+    "audioDB_200_in_order.json",
+)
+with open(file_path, "r", encoding="utf-8") as file:
+    global_music_data = json.load(file)
+
 
 # Create the FastAPI app instance
 app = FastAPI(
@@ -19,8 +44,18 @@ app = FastAPI(
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "http://localhost:8080",
+    "http://localhost:5173",
 ]
 
+""" #ip whitelist
+
+ALLOWED_IPS = [
+
+    "108.4.250.32" #pete's ip
+
+]
+ """
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -28,6 +63,19 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+""" @app.middleware("http")
+async def ip_whitelist_middleware(request: Request, call_next):
+    #get client ip
+    client_ip = request.client.host
+
+    #check if ip is in ALLOWED_IPS
+    if client_ip not in ALLOWED_IPS:
+        raise HTTPException(status_code=403, detail=f"IP {client_ip} has not been whitelisted")
+
+    #if ip is whitelisted, the request will continue
+    return await call_next(request)
+    return response """
 
 
 @app.get("/artists/genre")
@@ -61,7 +109,7 @@ def get_artists_by_genre(genre: str, n: int):
     return {"results": output_list}
 
 
-@app.get("/artists/city")
+@app.get("/artists/location")
 def get_artists_by_genre_city(genre: str, city: str, n: int):
     """
     Returns an array of N artists based on a genre and city
@@ -70,8 +118,8 @@ def get_artists_by_genre_city(genre: str, city: str, n: int):
     ----------
     genre : str
         An allowed genre that's searchable.
-    city : str
-        An allowed city
+    location : str
+        An location city
     n : int
         The second of artists to return if possible.
     Returns
@@ -82,7 +130,7 @@ def get_artists_by_genre_city(genre: str, city: str, n: int):
         an array of zero artists
     """
     search_genre = genre.lower()
-    search_city = city.lower()
+    search_city = location.lower()
 
     artists_of_genre = global_music_data[search_genre]
     artists_of_city = []
@@ -125,39 +173,57 @@ Get a list of artists by location and genre
     ----------
     genre : str
         An allowed genre that's searchable.
-    country : str
-        The country an artist is potentially from
-    city : str
-        The city an artist is potentially from
+    location : str
+        The country and city an artist is potentially from
     Returns
     -------
     list
         An array of artists
 """
 
+### Onion Archeticture
+##
+# Front End (IN Public internet ) View (How the data is displayed on the screen)
+#   ^
+#   |
+# MiddleWare (Gives Data to Front End) Controller (Where the data goes)
+#   ^
+#   |
+# Backend (Stores Data) (DATA) Models | Brain is here with Pete
+#   ^
+# ###
+
 
 @app.get("/artists")
-def get_artists(genre: str = None, country: str = None, city: str = None):
-    # if we don't have a valid genre, we want to at least filter for artists by city and country alone, so lets just make a
-    # huge list with every artist combined
+def get_artists(genre: str = None, country: str = None, city: str = None, location: str = None):
     artists_to_search = []
-    if genre is None:
-        for artists in global_music_data.values():
-            artists_to_search.extend(artists)
-
-    else:
+    if genre:
         key = genre.lower()
         if key not in global_music_data:
             raise HTTPException(status_code=404, detail=f"Genre '{genre}' not found.")
         artists_to_search = global_music_data[key]
+    else:
+        for artists in global_music_data.values():
+            artists_to_search.extend(artists)
 
-    filtered_output = []
-    for artist in artists_to_search:
-        if country and artist["country"].lower() != country.lower():
-            continue
-        if city and artist["city"].lower() != city.lower():
-            continue
-        filtered_output.append(artist)
+    filtered_output = artists_to_search
+    if country:
+        filtered_output = [
+            artist for artist in filtered_output if artist.get("country", "").lower() == country.lower()
+        ]
+
+    if city:
+        filtered_output = [
+            artist for artist in filtered_output if artist.get("city", "").lower() == city.lower()
+        ]
+
+    if location:
+        location_lower = location.lower()
+        filtered_output = [
+            artist for artist in filtered_output if artist.get("location", "").lower() == location_lower
+        ]
+        if not filtered_output and location is not None:
+            raise HTTPException(status_code=404, detail=f"Location '{location}' not found.")
 
     return {"results": filtered_output}
 
@@ -173,8 +239,7 @@ Get all available information for an artist
     artist information
         {
             "name": "Bruce Springsteen",
-            "country": "United States",
-            "city": "Long Branch",
+            "location": "United States Long Branch",
             "summary": "A Description of Artist",
             "image": "https://example.com/bruce-springsteen.jpg",
             "albums": [
@@ -339,6 +404,96 @@ def get_album_description(title: str):
     raise HTTPException(
         status_code=404, detail=f"No album title found with name '{title}'!"
     )
+
+
+@app.get("/cloud/artists")
+async def get_cloud_artists(genre: str = None, country: str = None, city: str = None):
+    """
+    Example endpoint that fetches artist data from the cloud service.
+
+    This demonstrates integration with the external cloud service API.
+
+    Query Parameters:
+        genre: Filter by genre (optional)
+        country: Filter by country (optional)
+        city: Filter by city (optional)
+
+    Returns:
+        JSON response with cloud service data
+    """
+    try:
+        # Create cloud service client
+        client = CloudServiceClient()
+
+        # Build query parameters
+        params = {}
+        if genre:
+            params["genre"] = genre
+        if country:
+            params["country"] = country
+        if city:
+            params["city"] = city
+
+        # Make request to cloud service
+        logger.info(f"Fetching artists from cloud service with params: {params}")
+        data = client.get("/artists", params=params)
+
+        return JSONResponse(
+            status_code=200,
+            content={
+                "status": "success",
+                "source": "cloud_service",
+                "data": data,
+                "message": "Successfully retrieved data from cloud service",
+            },
+        )
+
+    except CloudServiceAuthenticationError as e:
+        # Log error for monitoring
+        logger.error(f"ERROR: Authentication failed: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=401,
+            detail="Failed to authenticate with cloud service. Check configuration.",
+        )
+
+    except CloudServiceTimeoutError as e:
+        logger.error(f"ERROR: Request timeout: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=504,
+            detail="Cloud service request timed out. Please try again later.",
+        )
+
+    except CloudServiceConnectionError as e:
+        logger.error(f"ERROR: Connection failed: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=503,
+            detail="Unable to connect to cloud service. Please try again later.",
+        )
+
+    except CloudServiceError as e:
+        logger.error(f"ERROR: Cloud service error: {str(e)}", exc_info=True)
+        raise HTTPException(
+            status_code=502, detail=f"Error communicating with cloud service: {str(e)}"
+        )
+
+    except Exception as e:
+        logger.error(f"ERROR: Unexpected error: {str(e)}", exc_info=True)
+        raise HTTPException(status_code=500, detail="Internal server error")
+
+#schema for artists to register
+class RegisteredArtist(BaseModel):
+    genre: str
+    name: str
+    location: str
+    summary: str | None = None
+    image: str | None = None
+
+@app.post("artists/register")
+async def register_artist(RegisteredArtist: RegisteredArtist):
+    """ register your own artist profile and write to our .json file"""
+    return RegisteredArtist
+
+
 
 
 if __name__ == "__main__":

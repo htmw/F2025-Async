@@ -1,0 +1,49 @@
+# Docker specific
+Dockerfile
+.dockerignore
+
+# Git
+.git
+.gitignore
+
+# Environment variables
+.env
+.env.*
+
+# Python virtual environment
+.venv
+venv/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache
+.cache
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# IDE and editor files
+.idea/
+.vscode/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.swp
+*.sublime-project
+*.sublime-workspace
+
+# Log files
+*.log
+npm-debug.log
+yarn-error.log
+
+# Build artifacts
+build/
+dist/

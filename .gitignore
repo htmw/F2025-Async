@@ -63,3 +63,8 @@ __pycache__/
 .idea/
 .vscode/
 .DS_Store
+
+# documentation files (local only)
+backend/IMPLEMENTATION_COMPLETE.md
+backend/DEPLOY_TO_ECR.md
+backend/SETUP_GUIDE.md

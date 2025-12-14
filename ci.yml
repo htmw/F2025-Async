@@ -1,0 +1,62 @@
+name: Monorepo Build and Test CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+    branches:
+      - main
+      - master
+
+jobs:
+  # --- Frontend Job ---
+  frontend-build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./frontend/cfyby # Change this to your frontend directory name
+    steps:
+      - name: 🛎️ Checkout code
+        uses: actions/checkout@v4
+
+      - name: 📦 Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20" # Use the Node.js version your project requires
+          cache: "npm" # Or 'yarn', 'pnpm'
+
+      - name: 📥 Install dependencies
+        run: npm install # Or yarn install, pnpm install
+
+      - name: 🏗️ Build Frontend
+        run: npm run build # Use your actual build command
+
+      # Optional: Add steps for running frontend tests here, e.g., 'npm run test'
+
+  # --- Backend Job ---
+  backend-test:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./backend # Change this to your backend directory name
+    steps:
+      - name: 🛎️ Checkout code
+        uses: actions/checkout@v4
+
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11" # Use the Python version your project requires
+          cache: "pip" # Or 'pipenv', 'poetry'
+
+      - name: 📥 Install dependencies
+        run: pip install -r requirements.txt # Use your actual installation command (e.g., pip install -r requirements.txt)
+
+      - name: 🧪 Run Backend Tests
+        # Assuming you use pytest and have a test client setup for FastAPI.
+        run: pytest # Use your actual test command (e.g., pytest, python -m unittest)
+
+
+      # Optional: Add steps for linting or other checks here (e.g., 'flake8 .')

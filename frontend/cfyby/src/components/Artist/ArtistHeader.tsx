@@ -1,12 +1,9 @@
-import { Box, Avatar, Typography, Button, Stack } from "@mui/material";
+import { Box, Typography, Stack } from "@mui/material";
 
 type ArtistHeaderProps = {
-  artist: {
-    name: string;
-    image: string;
-    // bannerUrl: string;
-    // avatarUrl: string;
-    // monthlyListeners: string;
+  artist?: {
+    name?: string;
+    image?: string;
   };
 };
 
@@ -16,84 +13,92 @@ export default function ArtistHeader({ artist }: ArtistHeaderProps) {
       sx={{
         position: "relative",
         width: "100%",
-        minHeight: { xs: 240, md: 320 },
-        // backgroundImage: `linear-gradient(
-        //   to bottom,
-        //   rgba(0,0,0,0.4) 0%,
-        //   rgba(0,0,0,0.8) 70%
-        // ), url(${artist.bannerUrl})`,
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        p: { xs: 2, md: 4 },
+        minHeight: { xs: 280, md: 360 },
+
+        // Sharp image + gradient blend in ONE background
+        backgroundImage: `
+          linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.25) 0%,
+            rgba(0,0,0,0.35) 25%,
+            rgba(0,0,0,0.55) 55%,
+            rgba(0,0,0,0.85) 80%,
+            #000000 100%
+          ),
+          url(${artist?.image || ''})
+        `,
+        backgroundSize: "cover",        // fill area, crop instead of showing edges
+        backgroundPosition: "center",   // center the important part of the image
+        backgroundRepeat: "no-repeat",
+
         display: "flex",
         alignItems: "flex-end",
+        px: { xs: 3, md: 4 },
+        pb: { xs: 3, md: 4 },
+        pt: { xs: 10, md: 12 },
       }}
     >
-      <Stack direction="row" spacing={2} alignItems="flex-end">
-        <Avatar
-          src={artist.image}
-          alt={artist.name}
+      <Stack
+        spacing={1}
+        sx={{
+          position: "relative",
+          zIndex: 1,
+        }}
+      >
+        <Typography
+          variant="h1"
           sx={{
-            width: { xs: 80, md: 140 },
-            height: { xs: 80, md: 140 },
-            border: "3px solid rgba(255,255,255,0.4)",
-            boxShadow: "0 20px 40px rgba(0,0,0,0.8)",
+            fontWeight: 800,
+            fontSize: { xs: "2.4rem", md: "4.2rem" },
+            letterSpacing: "-0.04em",
+            lineHeight: 1,
+            color: "white",
           }}
-        />
+        >
+          {artist?.name || 'Artist'}
+        </Typography>
 
-        <Box>
-          <Typography
-            variant="h2"
+        {/* Buttons kept for later, but commented out */}
+        {/*
+        <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
+          <Button
+            variant="contained"
             sx={{
-              fontWeight: 700,
-              fontSize: { xs: "2rem", md: "4rem" },
-              lineHeight: 1.1,
-              color: "white",
+              textTransform: "none",
+              borderRadius: "999px",
+              px: 4,
+              py: 1,
+              fontWeight: 600,
+              bgcolor: "#1ed760",
+              color: "#000",
+              "&:hover": {
+                bgcolor: "#1ad150",
+                transform: "scale(1.03)",
+              },
             }}
           >
-            {artist.name}
-          </Typography>
+            Play
+          </Button>
 
-          <Typography
-            variant="body2"
-            sx={{ color: "rgba(255,255,255,0.8)", fontSize: "0.9rem" }}
+          <Button
+            variant="outlined"
+            sx={{
+              textTransform: "none",
+              borderRadius: "999px",
+              px: 3.5,
+              py: 0.9,
+              color: "white",
+              borderColor: "rgba(255,255,255,0.7)",
+              "&:hover": {
+                borderColor: "white",
+                backgroundColor: "rgba(255,255,255,0.08)",
+              },
+            }}
           >
-            {/* {artist.monthlyListeners} monthly listeners */}
-          </Typography>
-
-          <Stack direction="row" spacing={2} sx={{ mt: 2 }}>
-            <Button
-              variant="contained"
-              sx={{
-                textTransform: "none",
-                borderRadius: "24px",
-                fontWeight: 600,
-                px: 3,
-                backgroundColor: "#1d88b9ff",
-                "&:hover": { backgroundColor: "#1d88b9ff" },
-              }}
-            >
-              Follow
-            </Button>
-            <Button
-              variant="outlined"
-              sx={{
-                textTransform: "none",
-                borderRadius: "24px",
-                borderColor: "rgba(255,255,255,0.5)",
-                color: "white",
-                fontWeight: 600,
-                px: 3,
-                "&:hover": {
-                  borderColor: "white",
-                  backgroundColor: "rgba(255,255,255,0.1)",
-                },
-              }}
-            >
-              Play
-            </Button>
-          </Stack>
-        </Box>
+            Follow
+          </Button>
+        </Stack>
+        */}
       </Stack>
     </Box>
   );

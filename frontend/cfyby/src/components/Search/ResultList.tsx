@@ -63,10 +63,10 @@ export default function ResultList({ results, show }: Props) {
                 }
                 secondary={
                   <Typography variant="body2" sx={{ color: "rgba(0,0,0,0.6)" }}>
-                    {item.genre || item.city
+                    {item.genre || item.location
                       ? `${item.genre || ""}${
                           item.genre && item.city ? " • " : ""
-                        }${item.city ? `${item.city}, ${item.country || ""}` : ""}`
+                        }${item.location ? `${item.location}` : ""}`
                       : ""}
                   </Typography>
                 }

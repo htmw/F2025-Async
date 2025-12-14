@@ -88,18 +88,6 @@ export default function App() {
             Search
           </Button>
 
-          {/* <Button
-            component={Link}
-            to="/artist/lana-del-rey"
-            sx={{
-              color: "white",
-              textTransform: "none",
-              fontWeight: 600,
-              fontSize: "0.9rem"
-            }}
-          >
-            Artist Page
-          </Button> */}
         </Box>
 
         <Routes>
@@ -107,6 +95,8 @@ export default function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/artist/:id" element={<ArtistPage />} />
         </Routes>
+
+        
       </Router>
     </ThemeProvider>
   );

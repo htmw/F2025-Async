@@ -56,16 +56,23 @@ def test_get_artists_by_invalid_genre():
     assert response.json() == {"detail": "Genre 'nonexistentgenre' not found."}
 
 
-def test_get_artists_by_country_and_city():
-    """Happy Path: Tests filtering artists by country and city."""
-    response = client.get("/artists?country=United States&city=Long Branch")
+def test_get_artists_by_location():
+    """Happy Path: Tests filtering artists by location."""
+    response = client.get("/artists?location=Seattle, USA")
     assert response.status_code == 200
     data = response.json()
     assert "results" in data
     assert len(data["results"]) > 0
-    for artist in data["results"]:
-        assert artist["country"].lower() == "united states"
-        assert artist["city"].lower() == "long branch"
+    assert data["results"][0]["location"].lower() == "seattle, usa"
+
+
+def test_get_artists_by_invalid_location():
+    """Sad Path: Tests filtering artists by an invalid location."""
+    response = client.get("/artists?location=nonexistentcity, nonexistentcountry")
+    assert response.status_code == 404
+    assert response.json() == {
+        "detail": "Location 'nonexistentcity, nonexistentcountry' not found."
+    }
 
 
 def test_get_artists_no_results_found():

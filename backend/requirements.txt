@@ -1,4 +1,6 @@
 fastapi
 uvicorn
+python-dotenv
 requests
 pytest
+httpx  # Required for FastAPI TestClient

@@ -11,18 +11,16 @@ export default function LocationSearch() {
 
   const handleSearch = async (values: {
     genre: string;
-    city: string;
-    country: string;
+    location: string;
   }) => {
     setLoading(true);
     try {
       const params = new URLSearchParams();
       if (values.genre.trim()) params.append("genre", values.genre);
-      if (values.city.trim()) params.append("city", values.city);
-      if (values.country.trim()) params.append("country", values.country);
+      if (values.location.trim()) params.append("location", values.location);
       params.append("n", "50");
 
-      const request_url = `/artists?${params.toString()}`;
+      const request_url = `http://localhost:8000/artists?${params.toString()}`;
       console.log("Request URL:", request_url);
 
       const response = await fetch(request_url);
@@ -30,6 +28,8 @@ export default function LocationSearch() {
       const payload = Array.isArray(data)
         ? data
         : data.results || data.artists || [];
+
+      console.log(payload)
 
       setResults(payload);
       setShowResults(true);
@@ -49,7 +49,7 @@ export default function LocationSearch() {
       spacing={4}
       sx={{ justifyContent: "center", p: 4, width: "100%" }}
     >
-      <SearchForm onSearch={handleSearch} loading={loading} />
+      <SearchForm onSearch={handleSearch} loading={loading}/>
       <ResultsList results={results} show={showResults} />
     </Stack>
   );

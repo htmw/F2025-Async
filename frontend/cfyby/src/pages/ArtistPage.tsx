@@ -1,7 +1,6 @@
 import { Box, Stack } from "@mui/material";
 import ArtistHeader from "../components/Artist/ArtistHeader";
 import PopularTracks from "../components/Artist/PopularTracks";
-// import FansAlsoLike from "../../components/Artist/FansAlsoLike";
 import ArtistAbout from "../components/Artist/ArtistAbout";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
@@ -10,8 +9,7 @@ export default function ArtistPage() {
   const { id } = useParams();
 
   const [artist, setArtist] = useState<any>({});
-  const [albums, setAlbums] = useState([]);
-
+  const [albums, setAlbums] = useState<any[]>([]);
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
@@ -21,23 +19,17 @@ export default function ArtistPage() {
       setLoading(true);
 
       try {
-        const requestUrl = `/artists/${id}`;
-        console.log("Fetching:", requestUrl);
-
-        const response = await fetch(requestUrl);
+        const response = await fetch(`http://localhost:8000/artists/${id}`);
         const data = await response.json();
 
-        const payload = data.artist || data.result || data || null;
-        console.log(payload.albums[0]);
+        const payload = data.artist || data.result || data;
         setArtist(payload);
 
         const albumsList = payload?.albums || [];
-        console.log(albumsList);
-
         setAlbums(albumsList);
-      } catch (err) {
-        console.error(err);
+      } catch {
         setArtist({});
+        setAlbums([]);
       } finally {
         setLoading(false);
       }
@@ -56,6 +48,7 @@ export default function ArtistPage() {
       }}
     >
       <ArtistHeader artist={artist} />
+
       <Stack
         direction={{ xs: "column", md: "row" }}
         spacing={4}
@@ -63,8 +56,8 @@ export default function ArtistPage() {
       >
         <Box sx={{ flex: 2, minWidth: 0 }}>
           <PopularTracks albums={albums} loading={loading} />
-          {/* <FansAlsoLike artists={similarArtists} /> */}
         </Box>
+
         <Box sx={{ flex: 1, minWidth: 0 }}>
           <ArtistAbout artist={artist} />
         </Box>
