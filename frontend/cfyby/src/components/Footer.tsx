@@ -3,17 +3,12 @@ import Box from "@mui/material/Box";
 import Grid2 from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
-import Registration from "../pages/Registration";
- 
+import {Link as RouterLink} from "react-router-dom";
 
 //had to change import style due to outdated Grid component
 
 export default function Footer() {
-  const [openRegister, setOpenRegister] = useState(false);
-
-  
   return (
-    <>
     <Box
       component="footer"
       sx={{
@@ -26,7 +21,7 @@ export default function Footer() {
         backgroundColor: "rgba(255, 255, 255, 0.4)",
         backdropFilter: "blur(4px)",
         zIndex: 1000,
-        pointerEvents: "auto",
+        fontSize: "0.85rem",
       }}
     >
       <Grid2
@@ -85,13 +80,13 @@ export default function Footer() {
               </Link>
             ))}
             <Link
-            component = "button"
+              component={RouterLink}
+              to="/register"
               underline="hover"
               sx={{
                 fontSize: "0.8rem",
                 color: "inherit",
               }}
-              onClick={() => setOpenRegister(true)}
             >
               Register
             </Link>
@@ -99,10 +94,5 @@ export default function Footer() {
         </Grid2>
       </Grid2>
     </Box>
-
-    <Registration 
-      open={openRegister} onClose={() => setOpenRegister(false)} 
-      /> 
-    </>
   );
 }

@@ -4,6 +4,8 @@ import PopularTracks from "../components/Artist/PopularTracks";
 import ArtistAbout from "../components/Artist/ArtistAbout";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import ArtistRecommendationsWidget from "../components/Artist/ArtistRecommendationsWidget";
+
 
 export default function ArtistPage() {
   const { id } = useParams();
@@ -38,6 +40,11 @@ export default function ArtistPage() {
     fetchArtist();
   }, [id]);
 
+  // Try to get a numeric artistId that we can pass to the widget
+  const artistId =
+    artist?.id ??
+    (id ? Number(id) : undefined);
+
   return (
     <Box
       sx={{
@@ -59,7 +66,10 @@ export default function ArtistPage() {
         </Box>
 
         <Box sx={{ flex: 1, minWidth: 0 }}>
-          <ArtistAbout artist={artist} />
+          <Stack spacing={3}>
+            <ArtistAbout artist={artist} />
+            <ArtistRecommendationsWidget currentArtist={artist?.name || id} />
+          </Stack>
         </Box>
       </Stack>
     </Box>
