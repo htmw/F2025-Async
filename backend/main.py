@@ -1,7 +1,11 @@
 # main.py
+from codecs import namereplace_errors
+from gzip import READ
 import json
 import logging
 import os
+from pydantic import BaseModel
+from pydantic import field_validator
 
 import uvicorn
 from fastapi import FastAPI, HTTPException
@@ -25,7 +29,7 @@ logger = logging.getLogger(__name__)
 file_path = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),
     "resources",
-    "audioDB_200_in_order.json",
+    "audioDB_200_test.json",
 )
 with open(file_path, "r", encoding="utf-8") as file:
     global_music_data = json.load(file)
@@ -41,6 +45,8 @@ app = FastAPI(
 origins = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "http://localhost:8080",
+    "http://localhost:5173",
 ]
 
 """ #ip whitelist
@@ -187,6 +193,10 @@ Get a list of artists by location and genre
 # Backend (Stores Data) (DATA) Models | Brain is here with Pete
 #   ^
 # ###
+
+@app.get("/local/audio")
+def get_audio_db():
+    return global_music_data
 
 
 @app.get("/artists")
@@ -474,6 +484,50 @@ async def get_cloud_artists(genre: str = None, country: str = None, city: str = 
     except Exception as e:
         logger.error(f"ERROR: Unexpected error: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail="Internal server error")
+
+#schema for artists to register
+class RegisteredArtist(BaseModel):
+    genre: str
+    name: str
+    location: str
+    summary: str or None
+    image: str or None
+
+@app.post("/artists/register")
+async def register_artist(artist: RegisteredArtist):
+    """ register your own artist profile and write to our .json file"""
+    normalized_input = {
+        "name": artist.name.strip(),
+        "location": artist.location.strip(),
+        "summary": artist.summary.strip() if artist.summary else None,
+        "image": artist.image.strip() if artist.image else None
+    }
+    #read in audioDB_200_in_order.json
+    with open(file_path, "r", encoding="utf-8") as file:
+        data = json.load(file)
+
+    #normalize inputted genre to lowercase to match our keys
+    genre = artist.genre.strip().lower()
+
+    #if inputted genre is not in our file, add new genre
+    if genre not in data:
+        data[genre] = []
+
+    #append the artist to the genre
+    artist_name = normalized_input["name"]
+    if any(existing_artist.get("name") == artist_name for existing_artist in data[genre]):
+        raise HTTPException(status_code=409, detail=f"Artist '{artist.name}' already exists in our data")
+
+
+    #append the artist to the genre
+    data[genre].append(normalized_input)
+
+    #write the data to the file
+    with open(file_path, "w", encoding="utf-8") as file:
+        json.dump(data, file, indent=2, ensure_ascii=False)
+
+    return {"message": "Artist registered successfully", "artist": normalized_input}
+
 
 
 if __name__ == "__main__":

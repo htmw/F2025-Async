@@ -20,7 +20,7 @@ export default function LocationSearch() {
       if (values.location.trim()) params.append("location", values.location);
       params.append("n", "50");
 
-      const request_url = `/artists?${params.toString()}`;
+      const request_url = `http://localhost:8000/artists?${params.toString()}`;
       console.log("Request URL:", request_url);
 
       const response = await fetch(request_url);

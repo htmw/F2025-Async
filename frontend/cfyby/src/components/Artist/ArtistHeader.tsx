@@ -1,9 +1,9 @@
-import { Box, Typography, Stack, Button } from "@mui/material";
+import { Box, Typography, Stack } from "@mui/material";
 
 type ArtistHeaderProps = {
-  artist: {
-    name: string;
-    image: string;
+  artist?: {
+    name?: string;
+    image?: string;
   };
 };
 
@@ -25,7 +25,7 @@ export default function ArtistHeader({ artist }: ArtistHeaderProps) {
             rgba(0,0,0,0.85) 80%,
             #000000 100%
           ),
-          url(${artist.image})
+          url(${artist?.image || ''})
         `,
         backgroundSize: "cover",        // fill area, crop instead of showing edges
         backgroundPosition: "center",   // center the important part of the image
@@ -55,7 +55,7 @@ export default function ArtistHeader({ artist }: ArtistHeaderProps) {
             color: "white",
           }}
         >
-          {artist.name}
+          {artist?.name || 'Artist'}
         </Typography>
 
         {/* Buttons kept for later, but commented out */}

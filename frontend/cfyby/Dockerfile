@@ -24,9 +24,6 @@ FROM nginx:stable-alpine AS production
 # This configuration handles client-side routing for SPAs
 COPY --from=build /app/nginx.conf /etc/nginx/conf.d/default.conf
 
-# Remove default Nginx configuration (if any)
-RUN rm /etc/nginx/conf.d/default.conf
-
 # Copy the built React app from the build stage to Nginx's public directory
 COPY --from=build /app/dist /usr/share/nginx/html
 
@@ -35,5 +32,3 @@ EXPOSE 80
 
 # Start Nginx
 CMD ["nginx", "-g", "daemon off;"]
-
-#
