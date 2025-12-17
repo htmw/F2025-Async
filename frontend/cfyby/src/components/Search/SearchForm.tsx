@@ -27,10 +27,11 @@ type SearchValues = {
 
 type Props = {
   onSearch: (values: SearchValues) => void;
+  onTextSearch: (query: string) => void;
   loading: boolean;
 };
 
-export default function SearchForm({ onSearch, loading }: Props) {
+export default function SearchForm({ onSearch, onTextSearch, loading }: Props) {
   const [locationOptions] = useState(LOCATION_LIST);
 
   const [genreOptions] = useState(GENRE_LIST);
@@ -94,6 +95,11 @@ export default function SearchForm({ onSearch, loading }: Props) {
 
   const hasLocation = useCurrentLocation || values.location.trim();
   const isDisabled = loading || (!values.genre && !hasLocation);
+  const handleTextSearch = () => {
+    onTextSearch(textQuery);
+  };
+
+  const [textQuery, setTextQuery] = useState("");
 
   return (
 <Box
@@ -103,7 +109,7 @@ export default function SearchForm({ onSearch, loading }: Props) {
     borderRadius: 3,
     p: 4,
     display: "flex",
-    flexDirection: { xs: "column", md: "row" },
+    flexDirection: { xs: "column"},
     alignItems: { xs: "center", md: "center" },
     justifyContent: { xs: "center", md: "center" },
     gap: 2,
@@ -118,6 +124,16 @@ export default function SearchForm({ onSearch, loading }: Props) {
     },
   }}
 >
+      <Box
+        sx={{
+          display: "flex",
+          flexDirection: { xs: "column", md: "row" },
+          alignItems: "center",
+          justifyContent: "center",
+          gap: 2,
+          width: "100%",
+        }}
+      >
       <FormControlLabel
         control={<Checkbox checked={useCurrentLocation}/>}
         onChange={handleLocationCheckChange}
@@ -180,7 +196,6 @@ export default function SearchForm({ onSearch, loading }: Props) {
         onChange={(_, newValue) => handleInputChange("genre", newValue || "")}
         renderInput={(params) => <TextField {...params} label="Genre" />}
       />
-
       <Button
         variant="contained"
         size="large"
@@ -199,6 +214,54 @@ export default function SearchForm({ onSearch, loading }: Props) {
       >
         {loading ? "Searching..." : "Search"}
       </Button>
+      </Box>
+
+      <Box
+        sx={{
+        width: "100%",
+        display: "flex",
+        flexDirection: { xs: "column", md: "row" },
+        alignItems: "center",
+        gap: 2,
+        }}
+      >
+      <TextField
+        label="Type Something Like 'Rock band from Chicago'."
+        variant="outlined"
+        value={textQuery}
+        onChange={(e) => setTextQuery(e.target.value)}
+        onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); handleTextSearch(); } }}
+        sx={{
+          flexGrow: 1,
+          backgroundColor: "rgba(255,255,255,0.95)",
+          borderRadius: "10px",
+          "& .MuiInputBase-input": {
+            color: "black",
+            fontWeight: 500,
+            padding: "10px 14px",
+          },
+          "& label": { color: "black !important" },
+        }}
+      />
+      <Button
+        variant="contained"
+        size="large"
+        onClick={(e) => { e.preventDefault(); handleTextSearch(); }}
+        disabled={loading || !textQuery}
+        endIcon={
+          loading ? <CircularProgress size={18} color="inherit" /> : null
+        }
+        sx={{
+          bgcolor: "#1d88b9ff",
+          borderRadius: "20px",
+          fontWeight: 600,
+          px: 3,
+          "&:hover": { bgcolor: "#1d88b9ff" },
+        }}
+        >
+        {loading ? "Searching..." : "Search"}
+      </Button>
+      </Box>
     </Box>
   );
 }

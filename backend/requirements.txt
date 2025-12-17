@@ -8,3 +8,4 @@ pydantic
 aiohttp
 geopy>=2.4.0
 pymongo
+whoosh

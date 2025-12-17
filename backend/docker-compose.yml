@@ -8,6 +8,10 @@ services:
     depends_on:
       - mongodb
     command: uvicorn main:app --host 0.0.0.0 --port 8000 --reload
+    volumes:
+      - ./backend:/app
+      - ./backend/indexdir:/app/indexdir
+      - ./backend/resources:/app/resources
 
   mongodb:
     image: mongo
