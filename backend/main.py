@@ -29,7 +29,7 @@ logger = logging.getLogger(__name__)
 file_path = os.path.join(
     os.path.dirname(os.path.realpath(__file__)),
     "resources",
-    "audioDB_200_test.json",
+    "audioDB_200_in_order.json",
 )
 with open(file_path, "r", encoding="utf-8") as file:
     global_music_data = json.load(file)

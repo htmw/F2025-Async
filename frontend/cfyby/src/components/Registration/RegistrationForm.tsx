@@ -20,6 +20,8 @@ export default function Registration() {
     state: "",
     country: "",
     genre: "",
+    summary: "",
+    image: "",
   });
 
 
@@ -29,6 +31,42 @@ export default function Registration() {
       [field]: value,
     }));
   };
+
+const handleSubmit = async () => {
+  try {
+    const location = [formData.city, formData.state, formData.country]
+      .filter(Boolean)
+      .join(", ");
+
+    const payload = {
+      name: formData.artistName,
+      genre: formData.genre,
+      location,
+      summary: formData.summary, // optional, backend allows None
+      image: formData.image,   // optional
+    };
+
+    const response = await fetch("http://localhost:8000/artists/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!response.ok) {
+      const error = await response.json();
+      throw new Error(error.detail || "Registration failed");
+    }
+
+    setSubmitted(true);
+  } catch (err) {
+    console.error(err);
+    alert(err instanceof Error ? err.message : "Something went wrong");
+  }
+};
+
+
   //after users are done submitting, reset form and close pop up
   const handleClose = () => {
     setSubmitted(false);
@@ -38,6 +76,8 @@ export default function Registration() {
       state: "",
       country: "",
       genre: "",
+      summary: "",
+      image: "",
     });
   };
 
@@ -109,6 +149,23 @@ export default function Registration() {
             onChange={(e) => handleInputChange("genre", e.target.value)}
           />
 
+          <RegistrationStyling
+            label="Artist Summary"
+            autoComplete="off"
+            multiline
+            rows={3}
+            value={formData.summary}
+            onChange={(e) => handleInputChange("summary", e.target.value)}
+          />
+
+          <RegistrationStyling
+            label="Image URL"
+            autoComplete="off"
+            value={formData.image}
+            onChange={(e) => handleInputChange("image", e.target.value)}
+          />
+
+
           <Button
             fullWidth
             variant="contained"
@@ -119,9 +176,7 @@ export default function Registration() {
               background: "linear-gradient(90deg, lightblue, deepskyblue)",
               borderRadius: 2,
             }}
-            onClick={() => {
-              setSubmitted(true);
-            }}
+            onClick={handleSubmit}
           >
             Continue
           </Button>
