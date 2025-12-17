@@ -55,7 +55,7 @@ export default function ArtistRecommendationsWidget({
       setResults([]);
 
       try {
-        const res = await fetch("http://127.0.0.1:8000/local/audio");
+        const res = await fetch("http://127.0.0.1:8001/local/audio");
 
         if (!res.ok) {
           throw new Error(`Backend returned HTTP ${res.status}`);

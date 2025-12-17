@@ -64,3 +64,6 @@ venv/
 .vscode/
 .DS_Store
 .venv
+
+# Ignore audioDB_200_test.json file
+backend/resources/audioDB_200_test.json

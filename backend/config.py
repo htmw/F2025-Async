@@ -14,6 +14,9 @@ load_dotenv()
 class Config:
     """Application configuration loaded from environment variables."""
 
+    # MongoDB configuration
+    MONGO_URL = os.getenv("MONGO_URL", "mongodb://mongodb:27017/")
+
     # Cloud service configuration
     AWS_URL = os.getenv("AWS_URL", "")
     AWS_TOKEN = os.getenv("AWS_TOKEN", "")

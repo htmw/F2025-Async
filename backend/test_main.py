@@ -1,20 +1,20 @@
 import json
 import os
-from tkinter.constants import N
 
 import pytest
 from fastapi.testclient import TestClient
 
 # Assuming pytest is run from the project root, which is the parent of 'backend'
-from backend.main import app
+from main import app, db
 
 client = TestClient(app)
 
-file_path = os.path.join(
-    os.path.dirname(os.path.realpath(__file__)),
-    "resources",
-    "audioDB_200_test.json",
-)
+@pytest.fixture(autouse=True)
+def setup_teardown():
+    """Fixture to clear the database before and after each test."""
+    db.artists.delete_many({})
+    yield
+    db.artists.delete_many({})
 
 
 def test_get_root():
@@ -41,47 +41,49 @@ def test_get_root():
 # Tests for the /artists endpoint
 def test_get_artists_no_filters():
     """Happy Path: Tests fetching all artists without any filters."""
+    db.artists.insert_one({"name": "Test Artist", "genre": "rock"})
     response = client.get("/artists")
     assert response.status_code == 200
     data = response.json()
     assert "results" in data
     assert isinstance(data["results"], list)
-    # This assumes the data file is not empty
     assert len(data["results"]) > 0
 
 
 def test_get_artists_by_valid_genre():
     """Happy Path: Tests filtering artists by a valid genre."""
+    db.artists.insert_one({"name": "Artist 1", "genre": "rock"})
+    db.artists.insert_one({"name": "Artist 2", "genre": "pop"})
     response = client.get("/artists?genre=rock")
     assert response.status_code == 200
     data = response.json()
-    assert "results" in data
-    assert len(data["results"]) > 0
+    assert len(data["results"]) == 1
+    assert data["results"][0]["name"] == "Artist 1"
 
 
 def test_get_artists_by_invalid_genre():
-    """Sad Path: Tests filtering artists by an invalid genre."""
+    """Sad Path: Tests filtering artists by an invalid genre, should return empty list."""
     response = client.get("/artists?genre=nonexistentgenre")
-    assert response.status_code == 404
-    assert response.json() == {"detail": "Genre 'nonexistentgenre' not found."}
+    assert response.status_code == 200
+    assert response.json() == {"results": []}
 
 
 def test_get_artists_by_location():
     """Happy Path: Tests filtering artists by location."""
-    response = client.get("/artists?location=Seattle, Washington, USA")
+    db.artists.insert_one({"name": "Artist 1", "location": "Seattle, Washington, USA"})
+    response = client.get("/artists?location=Seattle")
     assert response.status_code == 200
     data = response.json()
-    assert "results" in data
-    assert len(data["results"]) > 0
-    assert "Seattle, Washington, USA" in data["results"][0]["location"]
+    assert len(data["results"]) == 1
+    assert data["results"][0]["name"] == "Artist 1"
 
 
 def test_get_artists_by_invalid_location():
     """Sad Path: Tests filtering artists by an invalid location."""
-    response = client.get("/artists?location=nonexistentcity, nonexistentcountry")
+    response = client.get("/artists?location=nonexistentcity")
     assert response.status_code == 404
     assert response.json() == {
-        "detail": "Location 'nonexistentcity, nonexistentcountry' not found."
+        "detail": "Location 'nonexistentcity' not found."
     }
 
 
@@ -95,6 +97,7 @@ def test_get_artists_no_results_found():
 # Tests for /artists/{name}
 def test_get_artist_info_happy_path():
     """Happy Path: Tests fetching a specific artist by name."""
+    db.artists.insert_one({"name": "Bruce Springsteen", "summary": "A summary", "albums": []})
     response = client.get("/artists/Bruce Springsteen")
     assert response.status_code == 200
     data = response.json()
@@ -105,6 +108,7 @@ def test_get_artist_info_happy_path():
 
 def test_get_artist_info_case_insensitive():
     """Happy Path: Tests that artist name matching is case-insensitive."""
+    db.artists.insert_one({"name": "Bruce Springsteen"})
     response = client.get("/artists/bruce springsteen")
     assert response.status_code == 200
     assert response.json()["name"] == "Bruce Springsteen"
@@ -122,6 +126,7 @@ def test_get_artist_info_not_found():
 # Tests for /artists/{name}/description
 def test_get_artist_description_happy_path():
     """Happy Path: Tests fetching the description of a specific artist."""
+    db.artists.insert_one({"name": "Bruce Springsteen", "summary": "A summary"})
     response = client.get("/artists/Bruce Springsteen/description")
     assert response.status_code == 200
     data = response.json()
@@ -141,6 +146,7 @@ def test_get_artist_description_not_found():
 # Tests for /artists/{name}/image
 def test_get_artist_image_happy_path():
     """Happy Path: Tests fetching the image URL of a specific artist."""
+    db.artists.insert_one({"name": "Bruce Springsteen", "image": "http://example.com/image.jpg"})
     response = client.get("/artists/Bruce Springsteen/image")
     assert response.status_code == 200
     data = response.json()
@@ -160,13 +166,13 @@ def test_get_artist_image_not_found():
 # Tests for /artists/{name}/albums
 def test_get_artist_albums_happy_path():
     """Happy Path: Tests fetching albums for a specific artist."""
+    db.artists.insert_one({"name": "Bruce Springsteen", "albums": [{"title": "Born to Run"}]})
     response = client.get("/artists/Bruce Springsteen/albums")
     assert response.status_code == 200
     data = response.json()
     assert "albums" in data
     assert isinstance(data["albums"], list)
     assert len(data["albums"]) > 0
-    # Assuming "Born to Run" is in the test data for Bruce Springsteen
     assert any(album["title"] == "Born to Run" for album in data["albums"])
 
 
@@ -182,6 +188,7 @@ def test_get_artist_albums_not_found():
 # Tests for /albums/{title}/description
 def test_get_album_description_happy_path():
     """Happy Path: Tests fetching information for a specific album by title."""
+    db.artists.insert_one({"name": "Bruce Springsteen", "albums": [{"title": "Born to Run", "year": 1975, "tracks": []}]})
     response = client.get("/albums/Born to Run/description")
     assert response.status_code == 200
     data = response.json()
@@ -192,6 +199,7 @@ def test_get_album_description_happy_path():
 
 def test_get_album_description_case_insensitive():
     """Happy Path: Tests that album title matching is case-insensitive."""
+    db.artists.insert_one({"name": "Bruce Springsteen", "albums": [{"title": "Born to Run", "year": 1975, "tracks": []}]})
     response = client.get("/albums/born to run/description")
     assert response.status_code == 200
     assert response.json()["title"] == "Born to Run"
@@ -217,91 +225,31 @@ def test_register_artist_passes():
     }
     response = client.post("/artists/register", json=test_artist)
     assert response.status_code == 200
+    artist_in_db = db.artists.find_one({"name": "Test Artist"})
+    assert artist_in_db is not None
+    assert artist_in_db["location"] == "Test City"
 
 
-def test_register_artist_existing_genre_json_updates():
-    """Happy Path: Tests that the post end point passes without error and updates the JSON database with a new artist."""
+def test_register_artist_duplicate_fails():
+    """Sad Path: Tests that registering a duplicate artist fails."""
     test_artist = {
         "genre": "rock",
-        "name": "Test Artist1",
+        "name": "Test Artist",
         "location": "Test City",
         "summary": "Test artist summary",
         "image": "http://example.com/image.jpg",
     }
-
-    response = client.post("/artists/register", json=test_artist)
-
-    # read in audioDB_200_in_order.json
-    with open(file_path, "r", encoding="utf-8") as file:
-        data = json.load(file)
-
-    assert response.status_code == 200
-
-
-def test_register_artist_new_genre_json_updates():
-    """Happy Path: Tests that the post end point passes without error and updates the JSON database with a new genre and artist entry."""
-    test_artist = {
-        "genre": "vaporwave",
-        "name": "Guy Who Does Vaporwave",
-        "location": "Miami",
-        "summary": "His summary",
-        "image": "http://example.com/image.jpg",
-    }
-
-    response = client.post("/artists/register", json=test_artist)
-    # read in audioDB_200_in_order.json
-    with open(file_path, "r", encoding="utf-8") as file:
-        data = json.load(file)
-
-    assert response.status_code == 200
-    assert "vaporwave" in data
-    assert any(
-        artist.get("name") == "Guy Who Does Vaporwave" for artist in data["vaporwave"]
-    )
-
-
-def test_register_artist_new_genre_json_updates_assert_if_duplicate_exists():
-    f"""Sad Path: Tests that the post end point passes without error and updates the JSON database with a new genre and artist entry."""
-    test_artist = {
-        "genre": "vaporwave",
-        "name": "Guy Who Does Vaporwave",
-        "location": "Miami",
-        "summary": "His summary",
-        "image": "http://example.com/image.jpg",
-    }
-
+    client.post("/artists/register", json=test_artist)
     response = client.post("/artists/register", json=test_artist)
     assert response.status_code == 409
     assert response.json() == {
-        "detail": "Artist 'Guy Who Does Vaporwave' already exists in our data"
+        "detail": "Artist 'Test Artist' already exists in our data"
     }
 
 
-@pytest.fixture
-def setup_discography_test():
-    # Before each test, read the original content of the file
-    with open(file_path, "r", encoding="utf-8") as f:
-        original_content = f.read()
-
-    # Register a test artist
-    test_artist = {
-        "genre": "vaporwave",
-        "name": "Guy Who Does Vaporwave",
-        "location": "Miami",
-        "summary": "His summary",
-        "image": "http://example.com/image.jpg",
-    }
-    client.post("/artists/register", json=test_artist)
-
-    yield
-
-    # After each test, write the original content back to the file
-    with open(file_path, "w", encoding="utf-8") as f:
-        f.write(original_content)
-
-
-def test_register_discography(setup_discography_test):
+def test_register_discography():
     """Happy Path: Tests that the post end point passes without error and updates the JSON database with a new discography entry."""
+    db.artists.insert_one({"name": "Vaporwave Guy", "genre": "vaporwave", "albums": []})
     test_discography = {
         "title": "Vaporwave Vol. 1",
         "year": "1999",
@@ -313,23 +261,17 @@ def test_register_discography(setup_discography_test):
     }
 
     response = client.post(
-        "/artists/register/discography?artist_name=Guy Who Does Vaporwave",
+        "/artists/register/discography?artist_name=Vaporwave Guy",
         json=test_discography,
     )
-
-    with open(file_path, "r", encoding="utf-8") as file:
-        data = json.load(file)
-
     assert response.status_code == 200
-    assert "vaporwave" in data
-    assert any(
-        album.get("title") == "Vaporwave Vol. 1"
-        for artist in data["vaporwave"]
-        for album in artist.get("albums", [])
-    )
+    
+    artist = db.artists.find_one({"name": "Vaporwave Guy"})
+    assert len(artist["albums"]) == 1
+    assert artist["albums"][0]["title"] == "Vaporwave Vol. 1"
 
 
-def test_register_discography_should_error():
+def test_register_discography_artist_not_found():
     """Sad Path: Tests that the post end point errors when the artist name is missing."""
     test_discography = {
         "title": "Vaporwave Vol. 2",
@@ -342,9 +284,9 @@ def test_register_discography_should_error():
     }
 
     response = client.post(
-        "/artists/register/discography",
+        "/artists/register/discography?artist_name=NonExistent",
         json=test_discography,
     )
 
     assert response.status_code == 404
-    assert response.json()["detail"] == "Artist name is required"
+    assert response.json()["detail"] == "Artist 'NonExistent' does not exist in our data"

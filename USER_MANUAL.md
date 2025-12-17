@@ -8,7 +8,7 @@ This manual will guide you through the features of the application and how to us
 
 ## Getting Started with Docker (Recommended)
 
-The easiest way to run "Curated For You By You" is with Docker. Docker ensures that the application runs in a consistent environment on any computer (Windows, macOS, or Linux).
+The easiest way to run "Curated For You By You" is with Docker Compose. This ensures that the application and its database run in a consistent environment on any computer (Windows, macOS, or Linux).
 
 ### Prerequisites
 - Install [Docker Desktop](https://www.docker.com/products/docker-desktop/) for your operating system and ensure it is running.
@@ -17,31 +17,21 @@ The easiest way to run "Curated For You By You" is with Docker. Docker ensures t
 
 1.  **Open your terminal or command prompt.**
 
-2.  **Build the backend service:**
-    Navigate to the `backend` directory and run the following command:
+2.  **Navigate to the root directory of the project.**
+
+3.  **Start the application:**
+    Run the following command to build and start the frontend, backend, and database services:
     ```sh
-    docker build -t cfyby-backend .
+    docker-compose up --build -d
     ```
 
-3.  **Build the frontend service:**
-    Navigate to the `frontend/cfyby` directory and run the following command:
+4.  **Seed the database:**
+    Once the services are running, you need to populate the database with music data. Run this command from the root project directory:
     ```sh
-    docker build -t cfyby-frontend .
+    docker-compose exec backend python seed_db.py
     ```
 
-4.  **Start the backend service:**
-    After the images are built, run this command to start the backend:
-    ```sh
-    docker run -d -p 8000:8000 --name cfyby-api cfyby-backend
-    ```
-
-5.  **Start the frontend service:**
-    Finally, run this command to start the frontend:
-    ```sh
-    docker run -d -p 8080:80 --name cfyby-frontend-app cfyby-frontend
-    ```
-
-6.  **Access the application:**
+5.  **Access the application:**
     Open your web browser and go to: **[http://localhost:8080](http://localhost:8080)**
 
 ## How to Use the Application
@@ -76,17 +66,15 @@ If you encounter any issues, here are a few things to check:
 
 *   **Application Not Loading**:
     *   Make sure Docker Desktop is running.
-    *   Check if the containers are running with the command `docker ps`. You should see `cfyby-api` and `cfyby-frontend-app` in the list.
-    *   If a container is not running, you can check its logs for errors:
+    *   Check if the containers are running with the command `docker ps`. You should see containers for `frontend`, `backend`, and `mongodb`.
+    *   If a container is not running, you can check its logs for errors. For example:
         ```sh
-        docker logs cfyby-api
-        docker logs cfyby-frontend-app
+        docker-compose logs backend
+        docker-compose logs frontend
         ```
-*   **"Port is already allocated" error**: This means another service is using port 8080 or 8000. You can stop the conflicting service or change the port mapping in the `docker run` command. For example, to use port 8081 for the frontend: `docker run -d -p 8081:80 ...`
-*   **"Unable to find image" or "pull access denied" error**: This error means Docker cannot find the specified image locally. Make sure you have successfully built the Docker image for the service you are trying to run. For example, before running `cfyby-frontend`, you must first build it with `docker build -t cfyby-frontend .` inside the `frontend/cfyby` directory.
-*   **Running without Docker**: The application is configured to work both in Docker and when run locally. If you run the backend with `uvicorn` and the frontend with `npm run dev`, the frontend will still correctly connect to the backend at `http://localhost:8000`.
-*   **No Search Results**: This is likely not a setup issue. Try broadening your search criteria.
-*   **API Errors**: If the frontend is running but you see API errors, check the logs of the backend container (`docker logs cfyby-api`) to see if it's running correctly.
+*   **"Port is already allocated" error**: This means another service is using a required port (e.g., 8080, 8001, 27017). You can stop the conflicting service or change the port mapping in the `docker-compose.yml` file.
+*   **No Search Results**: Make sure you have seeded the database by running `docker-compose exec backend python seed_db.py`. If you have, try broadening your search criteria.
+*   **API Errors**: If the frontend is running but you see API errors, check the logs of the backend container (`docker-compose logs backend`) to see if it's running correctly.
 
 ## Contact & Feedback
 

@@ -1,82 +1,68 @@
 # Curated For You By You
 
-This project consists of a frontend (React/Vite) and a backend application. This README provides instructions on how to set up and run both components using Docker.
+This project consists of a frontend (React/Vite) and a backend (FastAPI) application. This README provides instructions on how to set up and run the entire application using Docker Compose.
 
 ## Table of Contents
-- [Frontend (React/Vite)](#frontend-reactvite)
-  - [Building the Docker Image](#building-the-docker-image)
-  - [Running the Docker Container](#running-the-docker-container)
-- [Backend](#backend)
-  - [Building the Docker Image](#building-the-docker-image-1)
-  - [Running the Docker Container](#running-the-docker-container-1)
-- [Running Both Together](#running-both-together)
+- [Getting Started](#getting-started)
+- [Services](#services)
+- [Seeding the Database](#seeding-the-database)
+- [Development](#development)
 
-## Frontend (React/Vite)
+## Getting Started
 
-The frontend application is a React project built with Vite and utilizes Material UI. A Dockerfile is provided to containerize the application.
+The easiest way to run the entire application is with Docker Compose.
 
-### Building the Docker Image
+### Prerequisites
+- Install [Docker Desktop](https://www.docker.com/products/docker-desktop/) for your operating system and ensure it is running.
 
-1. Navigate to the frontend directory:
-   ```bash
-   cd F2025-Async/frontend/cfyby
-   ```
-2. Build the Docker image. We'll tag it as `cfyby-frontend`:
-   ```bash
-   docker build -t cfyby-frontend .
-   ```
+### Running the Application
 
-### Running the Docker Container
+1.  **Clone the repository.**
 
-After building the image, you can run the frontend application:
-
-```bash
-docker run -p 80:80 --name cfyby-frontend-app -d cfyby-frontend
-```
-This command maps port 80 of your host to port 80 of the container and runs the container in detached mode. You can access the frontend application at `http://localhost`.
-
-## Backend
-
-The backend application is a Python application served with Uvicorn. A Dockerfile is provided to containerize the application.
-
-### Building the Docker Image
-
-1. Navigate to the backend directory:
-   ```bash
-   cd F2025-Async/backend
-   ```
-2. Build the Docker image. We'll tag it as `cfyby-backend`:
-   ```bash
-   docker build -t cfyby-backend .
-   ```
-
-### Running the Docker Container
-
-After building the image, you can run the backend application:
-
-```bash
-docker run -p 8000:8000 --name cfyby-backend-app -d cfyby-backend
-```
-This command maps port 8000 of your host to port 8000 of the container and runs the container in detached mode. You can access the backend API at `http://localhost:8000`.
-
-## Running Both Together
-
-To run both the frontend and backend applications simultaneously, ensure you have built both Docker images as described above. Then, you can run them as separate containers:
-
-1.  **Start the Backend:**
-    ```bash
-    docker run -p 8000:8000 --name cfyby-backend-app -d cfyby-backend
+2.  **Start the services:**
+    From the root directory of the project, run:
+    ```sh
+    docker-compose up --build -d
     ```
-2.  **Start the Frontend:**
-    ```bash
-    docker run -p 80:80 --name cfyby-frontend-app -d cfyby-frontend
+    This command will build the images for the frontend and backend services and start all the necessary containers in detached mode.
+
+3.  **Seed the database:**
+    The backend service uses a MongoDB database. To populate it with initial data, run the following command after the services have started:
+    ```sh
+    docker-compose exec backend python seed_db.py
     ```
 
-You can then access your frontend application at `http://localhost` and it should be able to communicate with the backend at `http://localhost:8000` (assuming your backend listens on port 8000).
+4.  **Access the application:**
+    - Frontend application: **[http://localhost:8080](http://localhost:8080)**
+    - Backend API: **[http://localhost:8001](http://localhost:8001)**
+    - Mongo Express (database admin): **[http://localhost:8081](http://localhost:8081)**
 
-To stop and remove the containers:
-
-```bash
-docker stop cfyby-frontend-app cfyby-backend-app
-docker rm cfyby-frontend-app cfyby-backend-app
+To stop all the services, run:
+```sh
+docker-compose down
 ```
+
+## Services
+
+The `docker-compose.yml` file defines the following services:
+
+- **frontend**: The React/Vite frontend application.
+- **backend**: The FastAPI backend application.
+- **mongodb**: The MongoDB database.
+- **mongo-express**: A web-based admin interface for MongoDB.
+
+## Development
+
+### Backend-only Development
+
+If you want to work only on the backend, you can use the `docker-compose.yml` file located in the `backend` directory. This will start the backend service along with the MongoDB database and Mongo Express.
+
+1. Navigate to the `backend` directory:
+   ```bash
+   cd backend
+   ```
+2. Start the services:
+   ```bash
+   docker-compose up --build -d
+   ```
+This setup uses a volume mount for the backend code, allowing for hot-reloading. Refer to `backend/README.md` for more details.

@@ -21,7 +21,7 @@ export default function ArtistPage() {
       setLoading(true);
 
       try {
-        const response = await fetch(`http://localhost:8000/artists/${id}`);
+        const response = await fetch(`http://localhost:8001/artists/${id}`);
         const data = await response.json();
 
         const payload = data.artist || data.result || data;
@@ -39,11 +39,6 @@ export default function ArtistPage() {
 
     fetchArtist();
   }, [id]);
-
-  // Try to get a numeric artistId that we can pass to the widget
-  const artistId =
-    artist?.id ??
-    (id ? Number(id) : undefined);
 
   return (
     <Box

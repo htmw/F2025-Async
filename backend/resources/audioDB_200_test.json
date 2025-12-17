@@ -194261,18 +194261,6 @@
       "location": "Test City",
       "summary": "Test artist summary",
       "image": "http://example.com/image.jpg"
-    },
-    {
-      "name": "Test Artist - Passes",
-      "location": "Test City",
-      "summary": "Test artist summary",
-      "image": "http://example.com/image.jpg"
-    },
-    {
-      "name": "Test Artist1 - Existing Genre",
-      "location": "Test City",
-      "summary": "Test artist summary",
-      "image": "http://example.com/image.jpg"
     }
   ],
   "indie": [
@@ -551088,53 +551076,7 @@
       "name": "Guy Who Does Vaporwave",
       "location": "Miami",
       "summary": "His summary",
-      "image": "http://example.com/image.jpg",
-      "albums": [
-        {
-          "title": "Vaporwave Vol. 1",
-          "year": "1999",
-          "image": "https://r2.theaudiodb.com/images/media/album/thumb/hjy4lj1642529894.jpg",
-          "rating": null,
-          "tracks": [
-            {
-              "title": "Vapors",
-              "duration": "3:30"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "name": "Guy Who Does Vaporwave - New Genre",
-      "location": "Miami",
-      "summary": "His summary",
       "image": "http://example.com/image.jpg"
-    },
-    {
-      "name": "Guy Who Does Vaporwave - Duplicate",
-      "location": "Miami",
-      "summary": "His summary",
-      "image": "http://example.com/image.jpg"
-    },
-    {
-      "name": "Guy Who Does Vaporwave - Discography",
-      "location": "Miami",
-      "summary": "His summary",
-      "image": "http://example.com/image.jpg",
-      "albums": [
-        {
-          "title": "Vaporwave Vol. 1",
-          "year": "1999",
-          "image": "https://r2.theaudiodb.com/images/media/album/thumb/hjy4lj1642529894.jpg",
-          "rating": null,
-          "tracks": [
-            {
-              "title": "Vapors",
-              "duration": "3:30"
-            }
-          ]
-        }
-      ]
     }
   ]
 }
