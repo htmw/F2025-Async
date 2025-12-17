@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import {
   Box,
   Button,
@@ -34,11 +34,11 @@ export default function SearchForm({ onSearch, loading }: Props) {
     radius: 5,
   });
 
-  const geoOptions: PositionOptions = {
+  const geoOptions = useMemo(() => ({
     enableHighAccuracy: true,
     timeout: 5000,
     maximumAge: 0,
-  }
+  }), []);
 
   const [useCurrentLocation, setUseCurrentLocation] = useState(false);
 

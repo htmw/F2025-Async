@@ -20,79 +20,53 @@ const useGeolocation = (options?: GeolocationOptions): GeolocationState => {
   const [locLoading, setLocLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
-const reverseGeocode = async (lat: number, lon: number) => {
-  const stored = localStorage.getItem("locationData");
-  if (stored) {
-    console.log("API Skipped")
-    return JSON.parse(stored);
-  }
+  const reverseGeocode = async (lat: number, lon: number) => {
+    try {
+      const token = import.meta.env.VITE_LOCATION_IQ_TOKEN;
+      const url = `https://us1.locationiq.com/v1/reverse?key=${token}&lat=${lat}&lon=${lon}&format=json&addressdetails=1`;
+      const resp = await fetch(url);
+      const result = await resp.json();
+      const addr = result.address || {};
 
-  try {
-    console.log("API Running")
-    const token = import.meta.env.VITE_LOCATION_IQ_TOKEN;
-    if (!token) throw new Error("LocationIQ token not defined");
+      const city = addr.city || addr.town || addr.village || addr.state || null;
+      let country = addr.country || null;
+      if (country === "United States of America") country = "USA";
 
-    const url = `https://us1.locationiq.com/v1/reverse?key=${token}&lat=${lat}&lon=${lon}&format=json&addressdetails=1`;
-    const resp = await fetch(url);
-    if (!resp.ok) throw new Error(`Reverse geocoding failed: ${resp.status}`);
-
-    const result = await resp.json();
-    const addr = result.address || {};
-
-    const city = addr.city || addr.town || addr.village || addr.state || null;
-    const country = addr.country || null;
-
-    const locationData = { lat, lon, city, country };
-    return locationData;
-  } catch (err: any) {
-    console.error("Reverse geocoding error:", err);
-    return { city: null, country: null };
-  }
-};
-
+      return {
+        latitude: lat,
+        longitude: lon,
+        timestamp: Date.now(),
+        location: city ? `${city}, ${country}` : country,
+      };
+    } catch (err) {
+      return null;
+    }
+  };
 
   useEffect(() => {
-    if (!navigator.geolocation) {
-      setError(new Error("Geolocation is not supported by your browser"));
-      setLocLoading(false);
-      return;
-    }
-
     const onSuccess = async (position: GeolocationPosition) => {
       const { latitude, longitude } = position.coords;
 
-      const hasMovedSignificantly = (
-        lat1: number,
-        lon1: number,
-        lat2: number,
-        lon2: number,
-        threshold = 0.01 // roughly ~1 km, depends on latitude
-      ) => {
-        return Math.abs(lat1 - lat2) > threshold || Math.abs(lon1 - lon2) > threshold;
-      };
+      // 1. Check movement logic BEFORE calling API
+      const stored = localStorage.getItem("locationData");
+      const prevData = stored ? JSON.parse(stored) : null;
 
-      // Usage
-      const storedCoords = JSON.parse(localStorage.getItem("coords") || "{}");
-      if (storedCoords.lat && storedCoords.lon) {
-        if (hasMovedSignificantly(latitude, longitude, storedCoords.lat, storedCoords.lon)) {
-          localStorage.removeItem("locationData");
-          console.log("User moved far enough to update location");
+      const threshold = 0.01;
+      const hasMoved = prevData && (
+        Math.abs(latitude - prevData.latitude) > threshold ||
+        Math.abs(longitude - prevData.longitude) > threshold
+      );
+
+      // 2. Use cached data if they haven't moved, otherwise fetch new
+      if (prevData && !hasMoved) {
+        setData(prevData);
+      } else {
+        const fullData = await reverseGeocode(latitude, longitude);
+        if (fullData) {
+          setData(fullData);
+          localStorage.setItem("locationData", JSON.stringify(fullData));
         }
       }
-
-      const address = await reverseGeocode(latitude, longitude);
-      console.log(address)
-
-      if (address.country === "United States of America") {
-        address.country = "USA"
-      }
-
-      setData(address);
-
-      if (!localStorage.getItem('locationData')) {
-        localStorage.setItem('locationData', JSON.stringify(address))
-      }
-
       setLocLoading(false);
     };
 
@@ -102,7 +76,7 @@ const reverseGeocode = async (lat: number, lon: number) => {
     };
 
     navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
-  }, []);
+  }, [options]); // Ensure options is stable (memoized)
 
   return { data, locLoading, error };
 };

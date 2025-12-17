@@ -301,38 +301,32 @@ class RegisteredDiscography(BaseModel):
     title: str
     year: str
     image: Optional[str] = None
-    rating: Optional[float] = None
     tracks: Optional[List[RegisteredTrack]] = None
-
 
 @app.post("/artists/register/discography")
 def register_artist_discography(
-    discography: RegisteredDiscography, artist_name: Optional[str] = None
+    discography: List[RegisteredDiscography],
+    artist_name: Optional[str] = None
 ):
-    """register your own artist discography"""
     if not artist_name:
-        raise HTTPException(status_code=404, detail="Artist name is required")
+        raise HTTPException(status_code=400, detail="Artist name is required")
+
+    albums_to_add = [album.dict() for album in discography]
 
     result = db.artists.update_one(
         {"name": {"$regex": f"^{re.escape(artist_name)}$", "$options": "i"}},
-        {"$push": {"albums": discography.dict()}}
+        {"$push": {"albums": {"$each": albums_to_add}}}
     )
 
     if result.matched_count == 0:
         raise HTTPException(
-            status_code=404, detail=f"Artist '{artist_name}' does not exist in our data"
-        )
-
-    if result.modified_count == 0:
-        raise HTTPException(
-            status_code=500, detail="Failed to update artist discography."
+            status_code=404, detail=f"Artist '{artist_name}' not found"
         )
 
     return {
-        "message": "Artist discography registered successfully",
-        "artist": artist_name,
+        "message": f"Successfully added {len(albums_to_add)} albums",
+        "artist": artist_name
     }
-
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)
