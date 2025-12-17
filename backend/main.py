@@ -1,16 +1,15 @@
 # main.py
-from codecs import namereplace_errors
-from gzip import READ
 import json
 import logging
 import os
-from pydantic import BaseModel
-from pydantic import field_validator
+from codecs import namereplace_errors
+from gzip import READ
 
 import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
+from pydantic import BaseModel, field_validator
 
 # Import cloud service client
 from services.cloud_service_client import (
@@ -194,13 +193,16 @@ Get a list of artists by location and genre
 #   ^
 # ###
 
+
 @app.get("/local/audio")
 def get_audio_db():
     return global_music_data
 
 
 @app.get("/artists")
-def get_artists(genre: str = None, country: str = None, city: str = None, location: str = None):
+def get_artists(
+    genre: str = None, country: str = None, city: str = None, location: str = None
+):
     artists_to_search = []
     if genre:
         key = genre.lower()
@@ -214,21 +216,29 @@ def get_artists(genre: str = None, country: str = None, city: str = None, locati
     filtered_output = artists_to_search
     if country:
         filtered_output = [
-            artist for artist in filtered_output if artist.get("country", "").lower() == country.lower()
+            artist
+            for artist in filtered_output
+            if artist.get("country", "").lower() == country.lower()
         ]
 
     if city:
         filtered_output = [
-            artist for artist in filtered_output if artist.get("city", "").lower() == city.lower()
+            artist
+            for artist in filtered_output
+            if artist.get("city", "").lower() == city.lower()
         ]
 
     if location:
         location_lower = location.lower()
         filtered_output = [
-            artist for artist in filtered_output if artist.get("location", "").lower() == location_lower
+            artist
+            for artist in filtered_output
+            if location_lower in artist.get("location", "").lower()
         ]
         if not filtered_output and location is not None:
-            raise HTTPException(status_code=404, detail=f"Location '{location}' not found.")
+            raise HTTPException(
+                status_code=404, detail=f"Location '{location}' not found."
+            )
 
     return {"results": filtered_output}
 
@@ -485,7 +495,8 @@ async def get_cloud_artists(genre: str = None, country: str = None, city: str = 
         logger.error(f"ERROR: Unexpected error: {str(e)}", exc_info=True)
         raise HTTPException(status_code=500, detail="Internal server error")
 
-#schema for artists to register
+
+# schema for artists to register
 class RegisteredArtist(BaseModel):
     genre: str
     name: str
@@ -493,41 +504,94 @@ class RegisteredArtist(BaseModel):
     summary: str or None
     image: str or None
 
+
 @app.post("/artists/register")
 async def register_artist(artist: RegisteredArtist):
-    """ register your own artist profile and write to our .json file"""
+    """register your own artist profile and write to our .json file"""
     normalized_input = {
         "name": artist.name.strip(),
         "location": artist.location.strip(),
         "summary": artist.summary.strip() if artist.summary else None,
-        "image": artist.image.strip() if artist.image else None
+        "image": artist.image.strip() if artist.image else None,
     }
-    #read in audioDB_200_in_order.json
+    # read in audioDB_200_in_order.json
     with open(file_path, "r", encoding="utf-8") as file:
         data = json.load(file)
 
-    #normalize inputted genre to lowercase to match our keys
+    # normalize inputted genre to lowercase to match our keys
     genre = artist.genre.strip().lower()
 
-    #if inputted genre is not in our file, add new genre
+    # if inputted genre is not in our file, add new genre
     if genre not in data:
         data[genre] = []
 
-    #append the artist to the genre
+    # append the artist to the genre
     artist_name = normalized_input["name"]
-    if any(existing_artist.get("name") == artist_name for existing_artist in data[genre]):
-        raise HTTPException(status_code=409, detail=f"Artist '{artist.name}' already exists in our data")
+    if any(
+        existing_artist.get("name") == artist_name for existing_artist in data[genre]
+    ):
+        raise HTTPException(
+            status_code=409, detail=f"Artist '{artist.name}' already exists in our data"
+        )
 
-
-    #append the artist to the genre
+    # append the artist to the genre
     data[genre].append(normalized_input)
 
-    #write the data to the file
+    # write the data to the file
     with open(file_path, "w", encoding="utf-8") as file:
         json.dump(data, file, indent=2, ensure_ascii=False)
 
     return {"message": "Artist registered successfully", "artist": normalized_input}
 
+
+class RegisteredTrack(BaseModel):
+    title: str
+    duration: str
+
+
+class RegisteredDiscography(BaseModel):
+    title: str
+    year: str
+    image: str | None
+    rating: float | None
+    tracks: list[RegisteredTrack] | None
+
+
+@app.post("/artists/register/discography")
+def register_artist_discography(
+    discography: RegisteredDiscography, artist_name: str | None = None
+):
+    """register your own artist discography"""
+    if not artist_name:
+        raise HTTPException(status_code=404, detail="Artist name is required")
+
+    with open(file_path, "r", encoding="utf-8") as file:
+        data = json.load(file)
+
+    artist_found = False
+    for genre in data:
+        for artist in data[genre]:
+            if artist.get("name", "").strip().lower() == artist_name.strip().lower():
+                if "albums" not in artist:
+                    artist["albums"] = []
+                artist["albums"].append(discography.dict())
+                artist_found = True
+                break
+        if artist_found:
+            break
+
+    if not artist_found:
+        raise HTTPException(
+            status_code=404, detail=f"Artist '{artist_name}' does not exist in our data"
+        )
+
+    with open(file_path, "w", encoding="utf-8") as file:
+        json.dump(data, file, indent=2, ensure_ascii=False)
+
+    return {
+        "message": "Artist discography registered successfully",
+        "artist": artist_name,
+    }
 
 
 if __name__ == "__main__":

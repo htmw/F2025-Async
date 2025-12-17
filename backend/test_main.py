@@ -1,7 +1,9 @@
+import json
+import os
+from tkinter.constants import N
+
 import pytest
 from fastapi.testclient import TestClient
-import os
-import json
 
 # Assuming pytest is run from the project root, which is the parent of 'backend'
 from backend.main import app
@@ -66,12 +68,12 @@ def test_get_artists_by_invalid_genre():
 
 def test_get_artists_by_location():
     """Happy Path: Tests filtering artists by location."""
-    response = client.get("/artists?location=Seattle, USA")
+    response = client.get("/artists?location=Seattle, Washington, USA")
     assert response.status_code == 200
     data = response.json()
     assert "results" in data
     assert len(data["results"]) > 0
-    assert data["results"][0]["location"].lower() == "seattle, usa"
+    assert "Seattle, Washington, USA" in data["results"][0]["location"]
 
 
 def test_get_artists_by_invalid_location():
@@ -203,6 +205,7 @@ def test_get_album_description_not_found():
         "detail": "No album title found with name 'NonExistent Album'!"
     }
 
+
 def test_register_artist_passes():
     """Happy Path: Tests that the post end point passes without error."""
     test_artist = {
@@ -210,10 +213,11 @@ def test_register_artist_passes():
         "name": "Test Artist",
         "location": "Test City",
         "summary": "Test artist summary",
-        "image": "http://example.com/image.jpg"
+        "image": "http://example.com/image.jpg",
     }
     response = client.post("/artists/register", json=test_artist)
     assert response.status_code == 200
+
 
 def test_register_artist_existing_genre_json_updates():
     """Happy Path: Tests that the post end point passes without error and updates the JSON database with a new artist."""
@@ -222,16 +226,17 @@ def test_register_artist_existing_genre_json_updates():
         "name": "Test Artist1",
         "location": "Test City",
         "summary": "Test artist summary",
-        "image": "http://example.com/image.jpg"
+        "image": "http://example.com/image.jpg",
     }
 
     response = client.post("/artists/register", json=test_artist)
 
-    #read in audioDB_200_in_order.json
+    # read in audioDB_200_in_order.json
     with open(file_path, "r", encoding="utf-8") as file:
         data = json.load(file)
 
     assert response.status_code == 200
+
 
 def test_register_artist_new_genre_json_updates():
     """Happy Path: Tests that the post end point passes without error and updates the JSON database with a new genre and artist entry."""
@@ -240,17 +245,20 @@ def test_register_artist_new_genre_json_updates():
         "name": "Guy Who Does Vaporwave",
         "location": "Miami",
         "summary": "His summary",
-        "image": "http://example.com/image.jpg"
+        "image": "http://example.com/image.jpg",
     }
 
     response = client.post("/artists/register", json=test_artist)
-    #read in audioDB_200_in_order.json
+    # read in audioDB_200_in_order.json
     with open(file_path, "r", encoding="utf-8") as file:
         data = json.load(file)
 
     assert response.status_code == 200
     assert "vaporwave" in data
-    assert any(artist.get("name") == "Guy Who Does Vaporwave" for artist in data["vaporwave"])
+    assert any(
+        artist.get("name") == "Guy Who Does Vaporwave" for artist in data["vaporwave"]
+    )
+
 
 def test_register_artist_new_genre_json_updates_assert_if_duplicate_exists():
     f"""Sad Path: Tests that the post end point passes without error and updates the JSON database with a new genre and artist entry."""
@@ -259,7 +267,7 @@ def test_register_artist_new_genre_json_updates_assert_if_duplicate_exists():
         "name": "Guy Who Does Vaporwave",
         "location": "Miami",
         "summary": "His summary",
-        "image": "http://example.com/image.jpg"
+        "image": "http://example.com/image.jpg",
     }
 
     response = client.post("/artists/register", json=test_artist)
@@ -267,3 +275,76 @@ def test_register_artist_new_genre_json_updates_assert_if_duplicate_exists():
     assert response.json() == {
         "detail": "Artist 'Guy Who Does Vaporwave' already exists in our data"
     }
+
+
+@pytest.fixture
+def setup_discography_test():
+    # Before each test, read the original content of the file
+    with open(file_path, "r", encoding="utf-8") as f:
+        original_content = f.read()
+
+    # Register a test artist
+    test_artist = {
+        "genre": "vaporwave",
+        "name": "Guy Who Does Vaporwave",
+        "location": "Miami",
+        "summary": "His summary",
+        "image": "http://example.com/image.jpg",
+    }
+    client.post("/artists/register", json=test_artist)
+
+    yield
+
+    # After each test, write the original content back to the file
+    with open(file_path, "w", encoding="utf-8") as f:
+        f.write(original_content)
+
+
+def test_register_discography(setup_discography_test):
+    """Happy Path: Tests that the post end point passes without error and updates the JSON database with a new discography entry."""
+    test_discography = {
+        "title": "Vaporwave Vol. 1",
+        "year": "1999",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/hjy4lj1642529894.jpg",
+        "rating": None,
+        "tracks": [
+            {"title": "Vapors", "duration": "3:30"},
+        ],
+    }
+
+    response = client.post(
+        "/artists/register/discography?artist_name=Guy Who Does Vaporwave",
+        json=test_discography,
+    )
+
+    with open(file_path, "r", encoding="utf-8") as file:
+        data = json.load(file)
+
+    assert response.status_code == 200
+    assert "vaporwave" in data
+    assert any(
+        album.get("title") == "Vaporwave Vol. 1"
+        for artist in data["vaporwave"]
+        for album in artist.get("albums", [])
+    )
+
+
+def test_register_discography_should_error():
+    """Sad Path: Tests that the post end point errors when the artist name is missing."""
+    test_discography = {
+        "title": "Vaporwave Vol. 2",
+        "year": "1999",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/hjy4lj1642529894.jpg",
+        "rating": None,
+        "tracks": [
+            {"title": "Vapors", "duration": "3:30"},
+        ],
+    }
+
+    response = client.post(
+        "/artists/register/discography",
+        json=test_discography,
+    )
+
+    assert response.status_code == 404
+    assert response.json()["detail"] == "Artist name is required"
