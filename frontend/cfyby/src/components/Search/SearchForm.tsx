@@ -229,8 +229,7 @@ export default function SearchForm({ onSearch, onTextSearch, loading }: Props) {
         label="Type Something Like 'Rock band from Chicago'."
         variant="outlined"
         value={textQuery}
-        onChange={(e) => setTextQuery(e.target.value)}
-        onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); handleTextSearch(); } }}
+          onChange={(e) => setTextQuery(e.target.value)}
         sx={{
           flexGrow: 1,
           backgroundColor: "rgba(255,255,255,0.95)",
