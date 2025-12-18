@@ -1,7 +1,7 @@
 import { Box, Typography } from "@mui/material";
 import bgImage from "../assets/Headphone.jpg";
 import ContinueButton from "./ContinueButton";
-import { Link as RouterLink } from "react-router-dom";
+
 
 export default function HeroSection() {
   return (
