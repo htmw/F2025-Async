@@ -123,11 +123,23 @@ def get_artists(
     query = {}
     if genre:
         query["genre"] = {"$regex": f"^{genre}$", "$options": "i"}
-    
+
+    and_query = []
+    if country:
+        and_query.append({"location": {"$regex": country, "$options": "i"}})
+    if city:
+        and_query.append({"location": {"$regex": city, "$options": "i"}})
+    if location:
+        and_query.append({"location": {"$regex": location, "$options": "i"}})
+
+    if and_query:
+        query["$and"] = and_query
+
+
     use_radius_filtering = radius is not None and radius > 0
     search_lat = latitude
     search_lon = longitude
-    
+
     if use_radius_filtering and (latitude is None or longitude is None) and location:
         coords = geocode_location(location)
         if coords:
@@ -136,10 +148,10 @@ def get_artists(
         else:
             logger.warning(f"Could not geocode location '{location}', falling back to string matching")
             use_radius_filtering = False
-    
+
     if use_radius_filtering and (search_lat is None or search_lon is None):
         use_radius_filtering = False
-    
+
     if not use_radius_filtering:
         and_query = []
         if country:
@@ -148,13 +160,13 @@ def get_artists(
             and_query.append({"location": {"$regex": city, "$options": "i"}})
         if location:
             and_query.append({"location": {"$regex": location, "$options": "i"}})
-        
+
         if and_query:
             query["$and"] = and_query
-    
+
     artists = db.artists.find(query)
     all_artists = [serialize_doc(artist) for artist in artists]
-    
+
     if use_radius_filtering:
         results = []
         for artist in all_artists:
@@ -170,7 +182,7 @@ def get_artists(
                 artist_location = artist.get("location", "")
                 if location and location.lower() in artist_location.lower():
                     results.append(artist)
-        
+
         results.sort(key=lambda x: x.get("distance_mi", float("inf")))
     else:
         results = all_artists
@@ -187,9 +199,9 @@ def get_artists(
 def get_artist_info(name: str = None):
     if name is None:
         raise HTTPException(status_code=400, detail=f"A name was not provided!")
-    
+
     artist = db.artists.find_one({"name": {"$regex": f"^{re.escape(name)}$", "$options": "i"}})
-    
+
     if artist:
         return serialize_doc(artist)
 
@@ -241,7 +253,7 @@ def get_album_description(title: str):
         raise HTTPException(status_code=400, detail=f"An album title was not provided!")
 
     artist = db.artists.find_one({"albums.title": {"$regex": f"^{re.escape(title)}$", "$options": "i"}})
-    
+
     if artist:
         for album in artist.get("albums", []):
             if album.get("title", "").strip().lower() == title.strip().lower():
@@ -346,38 +358,32 @@ class RegisteredDiscography(BaseModel):
     title: str
     year: str
     image: Optional[str] = None
-    rating: Optional[float] = None
     tracks: Optional[List[RegisteredTrack]] = None
-
 
 @app.post("/artists/register/discography")
 def register_artist_discography(
-    discography: RegisteredDiscography, artist_name: Optional[str] = None
+    discography: List[RegisteredDiscography],
+    artist_name: Optional[str] = None
 ):
-    """register your own artist discography"""
     if not artist_name:
-        raise HTTPException(status_code=404, detail="Artist name is required")
+        raise HTTPException(status_code=400, detail="Artist name is required")
+
+    albums_to_add = [album.dict() for album in discography]
 
     result = db.artists.update_one(
         {"name": {"$regex": f"^{re.escape(artist_name)}$", "$options": "i"}},
-        {"$push": {"albums": discography.dict()}}
+        {"$push": {"albums": {"$each": albums_to_add}}}
     )
 
     if result.matched_count == 0:
         raise HTTPException(
-            status_code=404, detail=f"Artist '{artist_name}' does not exist in our data"
-        )
-    
-    if result.modified_count == 0:
-        raise HTTPException(
-            status_code=500, detail="Failed to update artist discography."
+            status_code=404, detail=f"Artist '{artist_name}' not found"
         )
 
     return {
-        "message": "Artist discography registered successfully",
-        "artist": artist_name,
+        "message": f"Successfully added {len(albums_to_add)} albums",
+        "artist": artist_name
     }
-
 
 if __name__ == "__main__":
     uvicorn.run("main:app", host="127.0.0.1", port=8000, reload=True)

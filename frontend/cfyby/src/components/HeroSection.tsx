@@ -1,12 +1,13 @@
 import { Box, Typography } from "@mui/material";
 import bgImage from "../assets/Headphone.jpg";
 import ContinueButton from "./ContinueButton";
+import { Link as RouterLink } from "react-router-dom";
 
 export default function HeroSection() {
   return (
     <Box
       sx={{
-        position:"fixed",
+        position:"relative",
         height: "100vh", // responsive
         width: "100vw",
         top: 0,
@@ -22,7 +23,7 @@ export default function HeroSection() {
         justifyContent: "flex-start",
         color: "deepskyblue",
         pt: "25vh",//height
-        pl: "5vw",//width
+        pl: "5vw",//widths
         gap: 2,
       }}
     >

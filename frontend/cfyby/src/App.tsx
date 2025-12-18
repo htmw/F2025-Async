@@ -5,6 +5,7 @@ import { createTheme, ThemeProvider, CssBaseline, Box, Button } from "@mui/mater
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import ArtistPage from "./pages/ArtistPage";
+import RegistrationPage from "./pages/RegistrationPage";
 
 const theme = createTheme({
   palette: {
@@ -88,15 +89,26 @@ export default function App() {
             Search
           </Button>
 
+          <Button
+            component={Link}
+            to="/register"
+            sx={{
+              color: "white",
+              textTransform: "none",
+              fontWeight: 600,
+              fontSize: "0.9rem"
+            }}
+          >
+            Register
+          </Button>
         </Box>
 
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/artist/:id" element={<ArtistPage />} />
+          <Route path="/register" element={<RegistrationPage />} />
         </Routes>
-
-        
       </Router>
     </ThemeProvider>
   );
