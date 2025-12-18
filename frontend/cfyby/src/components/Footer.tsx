@@ -1,4 +1,3 @@
-import { useState } from "react"; 
 import Box from "@mui/material/Box";
 import Grid2 from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -66,27 +65,28 @@ export default function Footer() {
               whiteSpace: "nowrap",
             }}
           >{/* right side footer content*/}
-            {["Home", "About","Contact Us"].map((label) => (
-              <Link
-                key={label}
-                href="#"
-                underline="hover"
-                sx={{
-                  fontSize: "0.8rem",
-                  color: "inherit",
-                }}
-              >
-                {label}
-              </Link>
-            ))}
+            <Link
+              component={RouterLink}
+              to="/"
+              underline="hover"
+              sx={{ fontSize: "0.8rem", color: "inherit" }}
+            >
+              Home
+            </Link>
+
+            <Link
+              component={RouterLink}
+              to="/about"
+              underline="hover"
+              sx={{ fontSize: "0.8rem", color: "inherit" }}
+            >
+              About Us
+            </Link>
             <Link
               component={RouterLink}
               to="/register"
               underline="hover"
-              sx={{
-                fontSize: "0.8rem",
-                color: "inherit",
-              }}
+              sx={{ fontSize: "0.8rem", color: "inherit" }}
             >
               Register
             </Link>
