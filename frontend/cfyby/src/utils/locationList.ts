@@ -34,7 +34,6 @@ export const LOCATION_LIST = [
   { location: "Houston, Texas, USA" },
   { location: "Indiana, USA" },
   { location: "Iowa, USA" },
-  { location: "Jacksonville, FLorida, USA" },
   { location: "Jacksonville, Florida, USA" },
   { location: "Jacksonville, Texas, U.S." },
   { location: "Kingsland, Arkansas, USA" },
