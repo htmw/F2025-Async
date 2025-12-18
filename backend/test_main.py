@@ -69,29 +69,96 @@ def test_get_artists_by_invalid_genre():
 
 
 def test_get_artists_by_location():
-    """Happy Path: Tests filtering artists by location."""
-    db.artists.insert_one({"name": "Artist 1", "location": "Seattle, Washington, USA"})
+    """Happy Path: Tests filtering artists by location with radius and coordinates."""
+    # Insert artists with coordinates
+    db.artists.insert_one({
+        "name": "Artist 1",
+        "location": "Seattle, Washington, USA",
+        "genre": "rock",
+        "coordinates": {"latitude": 47.6062, "longitude": -122.3321}
+    })
+    db.artists.insert_one({
+        "name": "Artist 2",
+        "location": "Portland, Oregon, USA",
+        "genre": "rock",
+        "coordinates": {"latitude": 45.5152, "longitude": -122.6784}  # ~280km from Seattle
+    })
+    
+    # Test 1: Location string filtering (original behavior)
     response = client.get("/artists?location=Seattle")
     assert response.status_code == 200
     data = response.json()
     assert len(data["results"]) == 1
     assert data["results"][0]["name"] == "Artist 1"
+    
+    # Test 2: Radius filtering with coordinates - should find only Seattle artist within 50km
+    response = client.get("/artists?genre=rock&latitude=47.6062&longitude=-122.3321&radius=50")
+    assert response.status_code == 200
+    data = response.json()
+    assert len(data["results"]) == 1
+    assert data["results"][0]["name"] == "Artist 1"
+    assert "distance_mi" in data["results"][0]
+    
+    # Test 3: Larger radius should find both artists
+    response = client.get("/artists?genre=rock&latitude=47.6062&longitude=-122.3321&radius=300")
+    assert response.status_code == 200
+    data = response.json()
+    assert len(data["results"]) == 2
 
 
 def test_get_artists_by_invalid_location():
-    """Sad Path: Tests filtering artists by an invalid location."""
+    """Sad Path: Tests filtering artists by an invalid location and radius with no matches."""
+    # Test 1: Original behavior - invalid location string returns 404
     response = client.get("/artists?location=nonexistentcity")
     assert response.status_code == 404
     assert response.json() == {
         "detail": "Location 'nonexistentcity' not found."
     }
+    
+    # Test 2: Radius filtering with coordinates but no artists in range
+    db.artists.insert_one({
+        "name": "Artist Far Away",
+        "location": "Tokyo, Japan",
+        "genre": "rock",
+        "coordinates": {"latitude": 35.6762, "longitude": 139.6503}
+    })
+    # Search from Seattle coordinates with small radius - Tokyo is ~7,700km away
+    response = client.get("/artists?genre=rock&latitude=47.6062&longitude=-122.3321&radius=50")
+    assert response.status_code == 200
+    data = response.json()
+    assert len(data["results"]) == 0  # No artists within 50km of Seattle
 
 
 def test_get_artists_no_results_found():
-    """Happy Path: Tests a valid filter combination that returns no results."""
+    """Happy Path: Tests valid filter combinations that return no results, including radius filtering."""
+    # Test 1: Original behavior - genre + country with no matches
     response = client.get("/artists?genre=rock&country=nonexistentcountry")
     assert response.status_code == 200
     assert response.json() == {"results": []}
+    
+    # Test 2: Genre filter with radius - artist exists but wrong genre
+    db.artists.insert_one({
+        "name": "Pop Artist",
+        "location": "Seattle, Washington, USA",
+        "genre": "pop",
+        "coordinates": {"latitude": 47.6062, "longitude": -122.3321}
+    })
+    response = client.get("/artists?genre=rock&latitude=47.6062&longitude=-122.3321&radius=50")
+    assert response.status_code == 200
+    assert response.json() == {"results": []}  # No rock artists near Seattle
+    
+    # Test 3: Artist without coordinates falls back to location string match when using radius
+    db.artists.insert_one({
+        "name": "No Coords Artist",
+        "location": "Seattle, Washington, USA",
+        "genre": "jazz"
+        # No coordinates field
+    })
+    response = client.get("/artists?genre=jazz&location=Seattle&latitude=47.6062&longitude=-122.3321&radius=50")
+    assert response.status_code == 200
+    data = response.json()
+    assert len(data["results"]) == 1  # Falls back to location string match
+    assert data["results"][0]["name"] == "No Coords Artist"
 
 
 # Tests for /artists/{name}

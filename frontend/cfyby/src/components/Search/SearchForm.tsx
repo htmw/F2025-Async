@@ -16,8 +16,17 @@ import { GENRE_LIST } from "../../utils/genreList";
 import { LOCATION_LIST } from "../../utils/locationList";
 import useGeolocation from "../../hooks/useGeolocation";
 
+type SearchValues = {
+  genre: string;
+  location?: string;
+  radius?: number;
+  useCurrentLocation?: boolean;
+  latitude?: number;
+  longitude?: number;
+};
+
 type Props = {
-  onSearch: (values: { genre: string; location: string }) => void;
+  onSearch: (values: SearchValues) => void;
   loading: boolean;
 };
 
@@ -43,7 +52,6 @@ export default function SearchForm({ onSearch, loading }: Props) {
   const [useCurrentLocation, setUseCurrentLocation] = useState(false);
 
   const { data } = useGeolocation(geoOptions);
-  console.log(data);
 
   const handleInputChange = (
     field: "genre" | "location" | "radius",
@@ -65,10 +73,27 @@ export default function SearchForm({ onSearch, loading }: Props) {
   }
 
   const handleClick = () => {
-    onSearch(values);
+    const searchValues: SearchValues = {
+      genre: values.genre,
+      radius: values.radius,
+      useCurrentLocation,
+    };
+
+    const latitude = (data as any)?.lat ?? (data as any)?.latitude;
+    const longitude = (data as any)?.lon ?? (data as any)?.longitude;
+
+    if (useCurrentLocation && latitude && longitude) {
+      searchValues.latitude = latitude;
+      searchValues.longitude = longitude;
+    } else {
+      searchValues.location = values.location;
+    }
+
+    onSearch(searchValues);
   };
 
-  const isDisabled = loading || !values.genre;
+  const hasLocation = useCurrentLocation || values.location.trim();
+  const isDisabled = loading || (!values.genre && !hasLocation);
 
   return (
 <Box
@@ -101,6 +126,7 @@ export default function SearchForm({ onSearch, loading }: Props) {
 
       <Autocomplete
         disablePortal={false}
+        disabled={useCurrentLocation}
         options={locationOptions}
         getOptionLabel={(option) => `${option.location}`}
         sx={{ width: 250 }}
@@ -122,17 +148,17 @@ export default function SearchForm({ onSearch, loading }: Props) {
       />
 
       <FormControl size="small" sx={{ minWidth: 100 }}>
-        <InputLabel id="radius-select-label">Radius (km)</InputLabel>
+        <InputLabel id="radius-select-label">Radius (mi)</InputLabel>
         <Select
           labelId="radius-select-label"
           id="radius-select"
           value={values.radius || null}
-          label="Radius (km)"
+          label="Radius (mi)"
           onChange={(e) => handleInputChange("radius", Number(e.target.value))}
         >
           {radiusOptions.map((r) => (
             <MenuItem key={r} value={r}>
-              {r} km
+              {r} mi
             </MenuItem>
           ))}
         </Select>

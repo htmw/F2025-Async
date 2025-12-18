@@ -1542,9 +1542,13 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 47.6038321,
+        "longitude": -122.330062
+      }
     },
-     {
+    {
       "name": "Keane",
       "location": "Battle, England",
       "summary": "Keane are an English alternative rock band from Battle, East Sussex, formed in 1997. The group currently comprises Tim Rice-Oxley (piano, synthesisers, backing vocals), Richard Hughes (drums, percussion, backing vocals), Jesse Quin (bass guitar, electric guitar, backing vocals) and Tom Chaplin (lead vocals, acoustic guitar). Their original line-up included founder and guitarist Dominic Scott, who left in 2001.\nKeane achieved mainstream success with the release of their debut album, Hopes and Fears, in 2004. The album won multiple awards and was the second best-selling British album of the year. Their second studio album, Under the Iron Sea, continued the band's success, topping the album charts in the UK and debuting at No.4 on the Billboard 200 chart. Their third album, Perfect Symmetry was released in October 2008. In May 2008, both Hopes and Fears (number 13) and Under the Iron Sea (number 8) were voted by readers of Q magazine as among the best British albums ever, with Keane, The Beatles, Oasis and Radiohead the only artists having two albums in the top 20. Their EP, Night Train, was released in May 2010. Their fourth studio album, Strangeland, was released in May 2012, and again peaked at No.1 on the UK Albums Chart.\nKeane are known for using a piano (or a synth) as the lead instrument instead of guitars, differentiating them from most other rock bands. The inclusion of a distorted piano effect in 2006 and various synthesisers were a common feature in their music that back then combined the piano rock sound used during their first album and the more electronic sound which developed on the second and third albums. Since the start of their career, the band has sold over 10 million albums worldwide.",
@@ -2458,7 +2462,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 50.9265004,
+        "longitude": 0.4757177
+      }
     },
     {
       "name": "Coldplay",
@@ -4958,7 +4966,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Alanis Morissette",
@@ -6370,7 +6382,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 50.000678,
+        "longitude": -86.000977
+      }
     },
     {
       "name": "Linkin Park",
@@ -8950,7 +8966,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 36.7014631,
+        "longitude": -118.755997
+      }
     },
     {
       "name": "Gorillaz",
@@ -10082,7 +10102,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Placebo",
@@ -11574,7 +11598,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Lostprophets",
@@ -11934,7 +11962,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.6001047,
+        "longitude": -3.3449362
+      }
     },
     {
       "name": "Radiohead",
@@ -14714,7 +14746,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.6714842,
+        "longitude": -1.2779715
+      }
     },
     {
       "name": "Blur",
@@ -16142,7 +16178,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "The Script",
@@ -16634,7 +16674,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.3493795,
+        "longitude": -6.2605593
+      }
     },
     {
       "name": "The Fray",
@@ -17238,7 +17282,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 39.7392364,
+        "longitude": -104.984862
+      }
     },
     {
       "name": "Supergrass",
@@ -17714,7 +17762,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.7520131,
+        "longitude": -1.2578499
+      }
     },
     {
       "name": "Bush",
@@ -19058,7 +19110,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Queens of the Stone Age",
@@ -20242,7 +20298,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 33.7288179,
+        "longitude": -116.382571
+      }
     },
     {
       "name": "Snow Patrol",
@@ -21210,7 +21270,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 56.4605938,
+        "longitude": -2.97019
+      }
     },
     {
       "name": "Red Hot Chili Peppers",
@@ -22846,7 +22910,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.0536909,
+        "longitude": -118.242766
+      }
     },
     {
       "name": "Fyfe Dangerfield",
@@ -22918,7 +22986,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 52.4473204,
+        "longitude": -1.8887846
+      }
     },
     {
       "name": "Them Crooked Vultures",
@@ -23018,7 +23090,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.0536909,
+        "longitude": -118.242766
+      }
     },
     {
       "name": "Gruff Rhys",
@@ -24866,7 +24942,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 50.5463385,
+        "longitude": -3.4957798
+      }
     },
     {
       "name": "The Cure",
@@ -27214,7 +27294,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.1103444,
+        "longitude": -0.1801094
+      }
     }
   ],
   "house": [
@@ -28420,7 +28504,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 50.000678,
+        "longitude": -86.000977
+      }
     },
     {
       "name": "David Guetta",
@@ -30024,7 +30112,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 48.8588897,
+        "longitude": 2.320041
+      }
     },
     {
       "name": "Daft Punk",
@@ -30812,7 +30904,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 48.8588897,
+        "longitude": 2.320041
+      }
     }
   ],
   "pop": [
@@ -32166,7 +32262,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Lily Allen",
@@ -32614,7 +32714,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Jennifer Lopez",
@@ -33842,7 +33946,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Madonna",
@@ -36666,7 +36774,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 43.6211955,
+        "longitude": -84.6824346
+      }
     },
     {
       "name": "Elton John",
@@ -45862,7 +45974,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 59.3251172,
+        "longitude": 18.0710935
+      }
     },
     {
       "name": "Céline Dion",
@@ -48718,7 +48834,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 45.7255196,
+        "longitude": -73.4896922
+      }
     },
     {
       "name": "Backstreet Boys",
@@ -49862,7 +49982,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 27.7567667,
+        "longitude": -81.4639835
+      }
     },
     {
       "name": "Rod Stewart",
@@ -53086,7 +53210,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Britney Spears",
@@ -54730,7 +54858,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 31.2437872,
+        "longitude": -90.4531536
+      }
     },
     {
       "name": "George Michael",
@@ -56230,7 +56362,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5871881,
+        "longitude": -0.1648137
+      }
     },
     {
       "name": "Carpenters",
@@ -58570,7 +58706,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.0536909,
+        "longitude": -118.242766
+      }
     },
     {
       "name": "Cher",
@@ -60506,7 +60646,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.0536909,
+        "longitude": -118.242766
+      }
     },
     {
       "name": "Olivia Newton-John",
@@ -62138,7 +62282,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": -37.8142454,
+        "longitude": 144.9631732
+      }
     },
     {
       "name": "Gloria Estefan",
@@ -63538,7 +63686,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 25.7741566,
+        "longitude": -80.1935973
+      }
     },
     {
       "name": "Barry Manilow",
@@ -64798,7 +64950,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Spice Girls",
@@ -65338,7 +65494,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Robbie Williams",
@@ -67298,7 +67458,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.0162014,
+        "longitude": -2.1812607
+      }
     },
     {
       "name": "New Kids on the Block",
@@ -68098,7 +68262,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 42.3588336,
+        "longitude": -71.0578303
+      }
     },
     {
       "name": "Kylie Minogue",
@@ -70962,7 +71130,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": -37.8142454,
+        "longitude": 144.9631732
+      }
     },
     {
       "name": "Taylor Swift",
@@ -73090,7 +73262,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.9699889,
+        "longitude": -77.7278831
+      }
     },
     {
       "name": "Christina Aguilera",
@@ -74246,7 +74422,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "The Monkees",
@@ -76374,7 +76554,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.0536909,
+        "longitude": -118.242766
+      }
     },
     {
       "name": "MC Hammer",
@@ -77086,7 +77270,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 37.8044557,
+        "longitude": -122.271356
+      }
     },
     {
       "name": "Ace of Base",
@@ -78494,7 +78682,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 57.7072326,
+        "longitude": 11.9670171
+      }
     },
     {
       "name": "Utada",
@@ -78622,7 +78814,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 35.6768601,
+        "longitude": 139.7638947
+      }
     },
     {
       "name": "Cyndi Lauper",
@@ -79798,7 +79994,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "P!nk",
@@ -82170,7 +82370,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.9699889,
+        "longitude": -77.7278831
+      }
     },
     {
       "name": "Scissor Sisters",
@@ -82690,7 +82894,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Ronan Keating",
@@ -83622,7 +83830,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.3493795,
+        "longitude": -6.2605593
+      }
     },
     {
       "name": "Sandi Thom",
@@ -84266,7 +84478,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 57.6645459,
+        "longitude": -2.5217539
+      }
     },
     {
       "name": "Gwen Stefani",
@@ -84754,7 +84970,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 33.8708215,
+        "longitude": -117.929416
+      }
     },
     {
       "name": "Olly Murs",
@@ -85478,7 +85698,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.7704679,
+        "longitude": 0.4646698
+      }
     },
     {
       "name": "No Doubt",
@@ -87094,7 +87318,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 50.9445139,
+        "longitude": -0.0622673
+      }
     },
     {
       "name": "Maroon 5",
@@ -88058,7 +88286,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 36.7014631,
+        "longitude": -118.755997
+      }
     },
     {
       "name": "Lenka",
@@ -88330,7 +88562,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": -36.6780983,
+        "longitude": 149.8408283
+      }
     },
     {
       "name": "Jewel",
@@ -89214,7 +89450,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.0443989,
+        "longitude": -111.7321518
+      }
     },
     {
       "name": "Jack Johnson",
@@ -89966,7 +90206,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 19.5938015,
+        "longitude": -155.4283701
+      }
     },
     {
       "name": "Joss Stone",
@@ -90594,7 +90838,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.1251275,
+        "longitude": 1.3134228
+      }
     },
     {
       "name": "Kate Voegele",
@@ -90802,7 +91050,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.2253569,
+        "longitude": -82.6881395
+      }
     },
     {
       "name": "Lou Bega",
@@ -91514,7 +91766,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 33.7544657,
+        "longitude": -84.3898151
+      }
     },
     {
       "name": "Bonnie Tyler",
@@ -93410,7 +93666,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.6570639,
+        "longitude": -3.8469047
+      }
     },
     {
       "name": "Tarkan",
@@ -94774,7 +95034,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 49.7454561,
+        "longitude": 8.1130036
+      }
     },
     {
       "name": "Alizée",
@@ -95366,7 +95630,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 42.188098,
+        "longitude": 9.0683139
+      }
     },
     {
       "name": "Ed Sheeran",
@@ -96854,7 +97122,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.7229229,
+        "longitude": -1.8604874
+      }
     }
   ],
   "rock": [
@@ -100628,7 +100900,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Kings of Leon",
@@ -101248,7 +101524,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.9550817,
+        "longitude": -97.2684063
+      }
     },
     {
       "name": "Neil Diamond",
@@ -105000,7 +105280,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "The Kinks",
@@ -107832,7 +108116,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "The Beach Boys",
@@ -112320,7 +112608,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 33.9128272,
+        "longitude": -118.3426122
+      }
     },
     {
       "name": "Bon Jovi",
@@ -114412,7 +114704,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.0757384,
+        "longitude": -74.4041622
+      }
     },
     {
       "name": "Chicago",
@@ -117404,7 +117700,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 41.8755616,
+        "longitude": -87.6244212
+      }
     },
     {
       "name": "Bruce Springsteen",
@@ -124420,7 +124720,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.0757384,
+        "longitude": -74.4041622
+      }
     },
     {
       "name": "Dire Straits",
@@ -125732,7 +126036,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 54.9738474,
+        "longitude": -1.6131572
+      }
     },
     {
       "name": "Fleetwood Mac",
@@ -130056,7 +130364,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Bryan Adams",
@@ -131988,7 +132300,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 44.3054151,
+        "longitude": -76.4283781
+      }
     },
     {
       "name": "Tina Turner",
@@ -133660,7 +133976,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 35.698133,
+        "longitude": -89.408128
+      }
     },
     {
       "name": "Johnny Hallyday",
@@ -135612,7 +135932,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 48.8588897,
+        "longitude": 2.320041
+      }
     },
     {
       "name": "Paul McCartney",
@@ -138500,7 +138824,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.4071991,
+        "longitude": -2.99168
+      }
     },
     {
       "name": "Santana",
@@ -141496,7 +141824,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 37.7879363,
+        "longitude": -122.4075201
+      }
     },
     {
       "name": "B'z",
@@ -142732,7 +143064,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 36.5748441,
+        "longitude": 139.2394179
+      }
     },
     {
       "name": "Nirvana",
@@ -145148,7 +145484,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 38.8950368,
+        "longitude": -77.0365427
+      }
     },
     {
       "name": "Foreigner",
@@ -147192,7 +147532,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Def Leppard",
@@ -149884,7 +150228,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.3806626,
+        "longitude": -1.4702278
+      }
     },
     {
       "name": "Bob Seger",
@@ -150388,7 +150736,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 42.3222599,
+        "longitude": -83.1763145
+      }
     },
     {
       "name": "R.E.M.",
@@ -153060,7 +153412,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 33.9597677,
+        "longitude": -83.376398
+      }
     },
     {
       "name": "Michael Bolton",
@@ -153828,7 +154184,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 41.3082138,
+        "longitude": -72.9250518
+      }
     },
     {
       "name": "Tom Petty and The Heartbreakers",
@@ -156208,7 +156568,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 29.6519684,
+        "longitude": -82.3249846
+      }
     },
     {
       "name": "Lynyrd Skynyrd",
@@ -158260,7 +158624,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 30.3321838,
+        "longitude": -81.655651
+      }
     },
     {
       "name": "Carlos Santana",
@@ -158804,7 +159172,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 23.6585116,
+        "longitude": -102.0077097
+      }
     },
     {
       "name": "The Yardbirds",
@@ -159656,7 +160028,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "The Stooges",
@@ -159844,7 +160220,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 42.2813722,
+        "longitude": -83.7484616
+      }
     },
     {
       "name": "Eagles",
@@ -162592,7 +162972,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.0536909,
+        "longitude": -118.242766
+      }
     },
     {
       "name": "Phil Spector",
@@ -163340,7 +163724,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Eric Clapton",
@@ -168268,7 +168656,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.3002078,
+        "longitude": -0.4926788
+      }
     },
     {
       "name": "The Allman Brothers Band",
@@ -169524,7 +169916,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 32.3293809,
+        "longitude": -83.1137366
+      }
     },
     {
       "name": "The Band",
@@ -170496,7 +170892,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 43.6534817,
+        "longitude": -79.3839347
+      }
     },
     {
       "name": "Patti Smith",
@@ -171236,7 +171636,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "David Bowie",
@@ -177768,7 +178172,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "The Everly Brothers",
@@ -179328,7 +179736,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7655468,
+        "longitude": -95.3723535
+      }
     },
     {
       "name": "The Velvet Underground",
@@ -180136,7 +180548,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Jimi Hendrix",
@@ -184064,7 +184480,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 47.6038321,
+        "longitude": -122.330062
+      }
     },
     {
       "name": "Chuck Berry",
@@ -185688,7 +186108,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 38.7604815,
+        "longitude": -92.5617875
+      }
     },
     {
       "name": "Di-rect",
@@ -186132,7 +186556,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 52.0799838,
+        "longitude": 4.3113461
+      }
     },
     {
       "name": "Subsonica",
@@ -186548,7 +186976,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 45.0677551,
+        "longitude": 7.6824892
+      }
     },
     {
       "name": "Paul Weller",
@@ -188748,7 +189180,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.3201891,
+        "longitude": -0.5564726
+      }
     },
     {
       "name": "Oasis",
@@ -190372,7 +190808,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.4794892,
+        "longitude": -2.2451148
+      }
     },
     {
       "name": "Grinderman",
@@ -190672,7 +191112,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 47.4813896,
+        "longitude": 19.1460941
+      }
     },
     {
       "name": "Chris Rea",
@@ -192988,7 +193432,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 54.5760419,
+        "longitude": -1.2344047
+      }
     },
     {
       "name": "Ákos",
@@ -194248,7 +194696,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 47.4813896,
+        "longitude": 19.1460941
+      }
     }
   ],
   "indie": [
@@ -194466,7 +194918,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Kaiser Chiefs",
@@ -195586,7 +196042,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.7974185,
+        "longitude": -1.5437941
+      }
     },
     {
       "name": "Razorlight",
@@ -195894,7 +196354,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Morrissey",
@@ -197766,7 +198230,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.4546079,
+        "longitude": -2.3677347
+      }
     },
     {
       "name": "Gavin DeGraw",
@@ -198202,7 +198670,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 41.7045427,
+        "longitude": -74.6334276
+      }
     },
     {
       "name": "Florence + the Machine",
@@ -199130,7 +199602,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Interpol",
@@ -199566,7 +200042,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Imogen Heap",
@@ -199922,7 +200402,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5579262,
+        "longitude": 0.2498128
+      }
     }
   ],
   "electronic": [
@@ -201464,7 +201948,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5760462,
+        "longitude": 0.1822646
+      }
     },
     {
       "name": "The Chemical Brothers",
@@ -202832,7 +203320,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.4794892,
+        "longitude": -2.2451148
+      }
     },
     {
       "name": "Prefuse 73",
@@ -203620,7 +204112,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 25.7741566,
+        "longitude": -80.1935973
+      }
     },
     {
       "name": "Jean Michel Jarre",
@@ -206252,7 +206748,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 45.7578137,
+        "longitude": 4.8320114
+      }
     },
     {
       "name": "Faithless",
@@ -206988,7 +207488,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Crystal Castles",
@@ -207296,7 +207800,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 43.6534817,
+        "longitude": -79.3839347
+      }
     },
     {
       "name": "DJ BoBo",
@@ -208824,7 +209332,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 47.3352673,
+        "longitude": 8.0231804
+      }
     },
     {
       "name": "Edvin Marton",
@@ -209048,7 +209560,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 48.111071,
+        "longitude": 22.8378912
+      }
     },
     {
       "name": "Björk",
@@ -211180,7 +211696,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 64.145981,
+        "longitude": -21.9422367
+      }
     },
     {
       "name": "Zero 7",
@@ -211660,7 +212180,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     }
   ],
   "pop-rock": [
@@ -217986,7 +218510,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.4071991,
+        "longitude": -2.99168
+      }
     },
     {
       "name": "Electric Light Orchestra Part II",
@@ -218122,7 +218650,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 52.4796992,
+        "longitude": -1.9026911
+      }
     },
     {
       "name": "James Blunt",
@@ -218842,7 +219374,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.2373025,
+        "longitude": -1.661548
+      }
     },
     {
       "name": "Hanson",
@@ -219558,7 +220094,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.9550817,
+        "longitude": -97.2684063
+      }
     },
     {
       "name": "Avril Lavigne",
@@ -220550,7 +221090,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 44.2436328,
+        "longitude": -77.3607597
+      }
     },
     {
       "name": "Eros Ramazzotti",
@@ -223150,7 +223694,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 41.8933203,
+        "longitude": 12.4829321
+      }
     },
     {
       "name": "Sting",
@@ -225810,7 +226358,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 54.9738474,
+        "longitude": -1.6131572
+      }
     },
     {
       "name": "Oláh Ibolya",
@@ -225990,7 +226542,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 47.9557802,
+        "longitude": 21.7167982
+      }
     }
   ],
   "rock & roll": [
@@ -237484,7 +238040,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 35.1460249,
+        "longitude": -90.0517638
+      }
     },
     {
       "name": "Roy Orbison",
@@ -239104,7 +239664,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.1513105,
+        "longitude": -99.2860857
+      }
     },
     {
       "name": "Jerry Lee Lewis",
@@ -242404,7 +242968,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 33.5855677,
+        "longitude": -101.8470215
+      }
     },
     {
       "name": "Little Richard",
@@ -243424,7 +243992,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 32.3293809,
+        "longitude": -83.1137366
+      }
     }
   ],
   "heavy metal": [
@@ -245350,7 +245922,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Iron Maiden",
@@ -248390,7 +248966,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5696734,
+        "longitude": -0.015681
+      }
     },
     {
       "name": "Black Sabbath",
@@ -250594,7 +251174,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 52.4796992,
+        "longitude": -1.9026911
+      }
     }
   ],
   "progressive rock": [
@@ -255756,7 +256340,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Jethro Tull",
@@ -258836,7 +259424,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.891073,
+        "longitude": -0.4230304
+      }
     },
     {
       "name": "Kansas",
@@ -260040,7 +260632,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 39.049011,
+        "longitude": -95.677556
+      }
     },
     {
       "name": "Porcupine Tree",
@@ -261232,7 +261828,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.7511784,
+        "longitude": -0.472528
+      }
     },
     {
       "name": "Steven Wilson",
@@ -261788,7 +262388,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Rush",
@@ -264344,7 +264948,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 43.6534817,
+        "longitude": -79.3839347
+      }
     },
     {
       "name": "Anathema",
@@ -265072,7 +265680,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.4071991,
+        "longitude": -2.99168
+      }
     }
   ],
   "r&b": [
@@ -267558,7 +268170,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Janet Jackson",
@@ -268890,7 +269506,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.3270127,
+        "longitude": -86.1746933
+      }
     },
     {
       "name": "Rihanna",
@@ -270326,7 +270946,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 13.1182985,
+        "longitude": -59.6015783
+      }
     },
     {
       "name": "Usher",
@@ -271662,7 +272286,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 32.7762719,
+        "longitude": -96.7968559
+      }
     },
     {
       "name": "Boyz II Men",
@@ -272646,7 +273274,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 39.9527237,
+        "longitude": -75.1635262
+      }
     },
     {
       "name": "R. Kelly",
@@ -274310,7 +274942,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 41.8755616,
+        "longitude": -87.6244212
+      }
     },
     {
       "name": "Destiny's Child",
@@ -275350,7 +275986,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 29.7589382,
+        "longitude": -95.3676974
+      }
     },
     {
       "name": "Mary J. Blige",
@@ -276886,7 +277526,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Al Green",
@@ -278382,7 +279026,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 35.2048883,
+        "longitude": -92.4479108
+      }
     },
     {
       "name": "The Miracles",
@@ -278902,7 +279550,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 42.3315509,
+        "longitude": -83.0466403
+      }
     },
     {
       "name": "Fats Domino",
@@ -282718,7 +283370,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 35.7730076,
+        "longitude": -86.2820081
+      }
     }
   ],
   "disco": [
@@ -286248,7 +286904,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.4794892,
+        "longitude": -2.2451148
+      }
     },
     {
       "name": "Boney M.",
@@ -288288,7 +288948,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 50.0980311,
+        "longitude": 8.5463351
+      }
     },
     {
       "name": "Village People",
@@ -288872,7 +289536,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     }
   ],
   "hard rock": [
@@ -292562,7 +293230,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 42.3788774,
+        "longitude": -72.032366
+      }
     },
     {
       "name": "Guns N' Roses",
@@ -294822,7 +295494,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.0536909,
+        "longitude": -118.242766
+      }
     },
     {
       "name": "Scorpions",
@@ -297218,7 +297894,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 52.3744779,
+        "longitude": 9.7385532
+      }
     },
     {
       "name": "Van Halen",
@@ -298502,7 +299182,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.1476507,
+        "longitude": -118.144155
+      }
     },
     {
       "name": "Journey",
@@ -299978,7 +300662,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 37.7879363,
+        "longitude": -122.4075201
+      }
     },
     {
       "name": "Meat Loaf",
@@ -301022,7 +301710,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 32.7762719,
+        "longitude": -96.7968559
+      }
     },
     {
       "name": "Nickelback",
@@ -302098,7 +302790,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 55.001251,
+        "longitude": -115.002136
+      }
     }
   ],
   "location": [
@@ -304560,7 +305256,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 36.1563122,
+        "longitude": -95.9927516
+      }
     },
     {
       "name": "Kenny Rogers",
@@ -307372,7 +308072,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 29.7589382,
+        "longitude": -95.3676974
+      }
     },
     {
       "name": "Dolly Parton",
@@ -310600,7 +311304,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 35.8672932,
+        "longitude": -83.5657167
+      }
     },
     {
       "name": "Shania Twain",
@@ -312264,7 +312972,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 50.000678,
+        "longitude": -86.000977
+      }
     },
     {
       "name": "George Strait",
@@ -314760,7 +315472,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 28.8921939,
+        "longitude": -99.095033
+      }
     },
     {
       "name": "Reba McEntire",
@@ -317172,7 +317888,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.9334981,
+        "longitude": -95.7697934
+      }
     },
     {
       "name": "Alan Jackson",
@@ -319160,7 +319880,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 32.3293809,
+        "longitude": -83.1137366
+      }
     },
     {
       "name": "Willie Nelson",
@@ -322708,7 +323432,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 31.8899301,
+        "longitude": -97.0870831
+      }
     },
     {
       "name": "Johnny Cash",
@@ -330268,7 +330996,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 33.8600701,
+        "longitude": -92.2946707
+      }
     },
     {
       "name": "Hank Williams",
@@ -331960,7 +332692,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 31.7340713,
+        "longitude": -86.6754793
+      }
     },
     {
       "name": "Rascal Flatts",
@@ -332828,7 +333564,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 39.9622601,
+        "longitude": -83.0007065
+      }
     },
     {
       "name": "Lee Ann Womack",
@@ -333424,7 +334164,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 31.963778,
+        "longitude": -95.2705042
+      }
     }
   ],
   "thrash metal": [
@@ -336390,7 +337134,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.0536909,
+        "longitude": -118.242766
+      }
     }
   ],
   "latin": [
@@ -338180,7 +338928,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.416782,
+        "longitude": -3.703507
+      }
     },
     {
       "name": "Shakira",
@@ -339992,7 +340744,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 11.0101922,
+        "longitude": -74.8231794
+      }
     },
     {
       "name": "Ricky Martin",
@@ -341216,7 +341972,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 18.465299,
+        "longitude": -66.116666
+      }
     },
     {
       "name": "Enrique Iglesias",
@@ -343036,7 +343796,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.416782,
+        "longitude": -3.703507
+      }
     },
     {
       "name": "Vicente Fernández",
@@ -344748,7 +345512,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 20.6720375,
+        "longitude": -103.338396
+      }
     },
     {
       "name": "Elvis Crespo",
@@ -345232,7 +346000,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     }
   ],
   "soul": [
@@ -346570,7 +347342,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 33.2588817,
+        "longitude": -86.8295337
+      }
     },
     {
       "name": "Barry White",
@@ -348270,7 +349046,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 31.2638905,
+        "longitude": -98.5456116
+      }
     },
     {
       "name": "Sade",
@@ -349306,7 +350086,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 7.3786064,
+        "longitude": 3.8969928
+      }
     },
     {
       "name": "Curtis Mayfield",
@@ -350174,7 +350958,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 41.8755616,
+        "longitude": -87.6244212
+      }
     },
     {
       "name": "Diana Ross & The Supremes",
@@ -351838,7 +352626,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 42.3315509,
+        "longitude": -83.0466403
+      }
     },
     {
       "name": "Booker T. & The MG's",
@@ -352586,7 +353378,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 35.1460249,
+        "longitude": -90.0517638
+      }
     },
     {
       "name": "The Drifters",
@@ -353434,7 +354230,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Four Tops",
@@ -354862,7 +355662,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 42.3315509,
+        "longitude": -83.0466403
+      }
     },
     {
       "name": "The Shirelles",
@@ -355410,7 +356214,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 39.7837304,
+        "longitude": -100.445882
+      }
     },
     {
       "name": "Jackie Wilson",
@@ -357802,7 +358610,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 42.3315509,
+        "longitude": -83.0466403
+      }
     },
     {
       "name": "Otis Redding",
@@ -359234,7 +360046,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 32.3293809,
+        "longitude": -83.1137366
+      }
     },
     {
       "name": "Marvin Gaye",
@@ -360966,7 +361782,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 38.8950368,
+        "longitude": -77.0365427
+      }
     },
     {
       "name": "Sam Cooke",
@@ -362458,7 +363278,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 41.8755616,
+        "longitude": -87.6244212
+      }
     },
     {
       "name": "Ray Charles",
@@ -367794,7 +368618,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 31.5782062,
+        "longitude": -84.1556809
+      }
     },
     {
       "name": "James Brown",
@@ -371534,7 +372362,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 33.2641009,
+        "longitude": -81.4190808
+      }
     },
     {
       "name": "Adele",
@@ -372130,7 +372962,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5976955,
+        "longitude": -0.0672892
+      }
     },
     {
       "name": "Laura Izibor",
@@ -374526,7 +375362,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.4794892,
+        "longitude": -2.2451148
+      }
     }
   ],
   "synthpop": [
@@ -380084,7 +380924,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5702375,
+        "longitude": 0.4583573
+      }
     },
     {
       "name": "Eurythmics",
@@ -381436,7 +382280,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 54.9058512,
+        "longitude": -1.3828727
+      }
     },
     {
       "name": "Pet Shop Boys",
@@ -384092,7 +384940,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "New Order",
@@ -386332,7 +387184,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.4794892,
+        "longitude": -2.2451148
+      }
     }
   ],
   "classic rock": [
@@ -389554,7 +390410,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Creedence Clearwater Revival",
@@ -391102,7 +391962,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 36.7014631,
+        "longitude": -118.755997
+      }
     },
     {
       "name": "John Lennon",
@@ -394062,7 +394926,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.4071991,
+        "longitude": -2.99168
+      }
     }
   ],
   "opera": [
@@ -395108,7 +395976,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 44.5384728,
+        "longitude": 10.9359609
+      }
     }
   ],
   "hip-hop": [
@@ -398150,7 +399022,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 42.3315509,
+        "longitude": -83.0466403
+      }
     },
     {
       "name": "2Pac",
@@ -399978,7 +400854,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.6526006,
+        "longitude": -73.9497211
+      }
     },
     {
       "name": "The Black Eyed Peas",
@@ -401042,7 +401922,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 36.7014631,
+        "longitude": -118.755997
+      }
     },
     {
       "name": "Jay-Z",
@@ -403210,7 +404094,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Beastie Boys",
@@ -405658,7 +406546,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Dr. Dre",
@@ -406694,7 +407586,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 36.7014631,
+        "longitude": -118.755997
+      }
     },
     {
       "name": "Run-D.M.C.",
@@ -409030,7 +409926,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Public Enemy",
@@ -410554,7 +411454,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Wyclef Jean",
@@ -411246,7 +412150,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 18.5775444,
+        "longitude": -72.2296219
+      }
     }
   ],
   "funk": [
@@ -415576,7 +416484,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 45.9896587,
+        "longitude": -94.6113288
+      }
     },
     {
       "name": "Sly & The Family Stone",
@@ -416256,7 +417168,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 37.7879363,
+        "longitude": -122.4075201
+      }
     }
   ],
   "psychedelic rock": [
@@ -418466,7 +419382,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.0536909,
+        "longitude": -118.242766
+      }
     },
     {
       "name": "Cream",
@@ -419110,7 +420030,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Grateful Dead",
@@ -420146,7 +421070,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 37.7879363,
+        "longitude": -122.4075201
+      }
     },
     {
       "name": "The Byrds",
@@ -421066,7 +421994,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.0536909,
+        "longitude": -118.242766
+      }
     }
   ],
   "jazz": [
@@ -422692,7 +423624,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 47.6038321,
+        "longitude": -122.330062
+      }
     },
     {
       "name": "Nat King Cole",
@@ -426376,7 +427312,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 33.2588817,
+        "longitude": -86.8295337
+      }
     },
     {
       "name": "Tony Bennett",
@@ -429624,7 +430564,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Norah Jones",
@@ -430620,7 +431564,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Jamie Cullum",
@@ -431312,7 +432260,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.7704679,
+        "longitude": 0.4646698
+      }
     },
     {
       "name": "Katie Melua",
@@ -434022,7 +434974,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 55.0501027,
+        "longitude": -8.2322026
+      }
     },
     {
       "name": "Princess",
@@ -434158,7 +435114,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 47.4813896,
+        "longitude": 19.1460941
+      }
     }
   ],
   "folk": [
@@ -442024,7 +442984,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 45.9896587,
+        "longitude": -94.6113288
+      }
     },
     {
       "name": "Joni Mitchell",
@@ -443516,7 +444480,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 49.7267379,
+        "longitude": -113.4076001
+      }
     },
     {
       "name": "Van Morrison",
@@ -447836,7 +448804,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 54.5975805,
+        "longitude": -5.9277097
+      }
     },
     {
       "name": "Neil Young",
@@ -450944,7 +451916,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 43.6534817,
+        "longitude": -79.3839347
+      }
     },
     {
       "name": "Seth Lakeman",
@@ -451624,7 +452600,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 50.5657349,
+        "longitude": -3.9009713
+      }
     },
     {
       "name": "Regina Spektor",
@@ -452280,7 +453260,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Laura Marling",
@@ -452716,7 +453700,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.3533322,
+        "longitude": -0.8880944
+      }
     },
     {
       "name": "Amy Macdonald",
@@ -453912,7 +454900,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 55.9039659,
+        "longitude": -4.2244495
+      }
     },
     {
       "name": "Blackmore's Night",
@@ -454772,7 +455764,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 54.7023545,
+        "longitude": -3.2765753
+      }
     }
   ],
   "new wave": [
@@ -456390,7 +457386,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 52.4796992,
+        "longitude": -1.9026911
+      }
     },
     {
       "name": "The Police",
@@ -457758,7 +458758,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Talking Heads",
@@ -459462,7 +460466,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     }
   ],
   "reggae": [
@@ -461752,7 +462760,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 52.4796992,
+        "longitude": -1.9026911
+      }
     },
     {
       "name": "Bob Marley",
@@ -463336,7 +464348,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 18.32993,
+        "longitude": -77.2541816
+      }
     }
   ],
   "grunge": [
@@ -465962,7 +466978,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 47.6038321,
+        "longitude": -122.330062
+      }
     }
   ],
   "swing": [
@@ -467176,7 +468196,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 18.465299,
+        "longitude": -66.116666
+      }
     },
     {
       "name": "Michael Bublé",
@@ -468120,7 +469144,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 61.0666922,
+        "longitude": -107.991707
+      }
     },
     {
       "name": "Andy Williams",
@@ -469412,7 +470440,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 41.9216734,
+        "longitude": -93.3122705
+      }
     }
   ],
   "j-pop": [
@@ -470618,7 +471650,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 36.5748441,
+        "longitude": 139.2394179
+      }
     },
     {
       "name": "Ayumi Hamasaki",
@@ -472522,7 +473558,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 33.6251241,
+        "longitude": 130.6180016
+      }
     }
   ],
   "glam metal": [
@@ -473868,7 +474908,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 36.7014631,
+        "longitude": -118.755997
+      }
     }
   ],
   "soft rock": [
@@ -475202,7 +476246,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 45.1960403,
+        "longitude": -63.1653789
+      }
     }
   ],
   "orchestral": [
@@ -476892,7 +477940,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.0758196,
+        "longitude": 8.8071646
+      }
     }
   ],
   "big band": [
@@ -477990,7 +479042,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 41.9439695,
+        "longitude": -71.2804301
+      }
     }
   ],
   "drum & bass": [
@@ -478528,7 +479584,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": -31.9558967,
+        "longitude": 115.8605784
+      }
     }
   ],
   "trance": [
@@ -480246,7 +481306,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 52.1448863,
+        "longitude": 14.6294413
+      }
     },
     {
       "name": "Armin van Buuren",
@@ -486170,7 +487234,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 52.1518157,
+        "longitude": 4.4811089
+      }
     },
     {
       "name": "Blank & Jones",
@@ -489146,7 +490214,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 50.938361,
+        "longitude": 6.959974
+      }
     },
     {
       "name": "Aurosonic",
@@ -489246,7 +490318,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.1638175,
+        "longitude": 10.4478313
+      }
     },
     {
       "name": "Paul Oakenfold",
@@ -490258,7 +491334,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     }
   ],
   "rockabilly": [
@@ -490980,7 +492060,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 36.3783984,
+        "longitude": -89.4720193
+      }
     }
   ],
   "industrial metal": [
@@ -494722,7 +495806,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 41.4996574,
+        "longitude": -81.6936772
+      }
     }
   ],
   "country rock": [
@@ -496646,7 +497734,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 42.3588336,
+        "longitude": -71.0578303
+      }
     }
   ],
   "pop-punk": [
@@ -498468,7 +499560,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     }
   ],
   "experimental": [
@@ -502470,7 +503566,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 39.2908816,
+        "longitude": -76.610759
+      }
     }
   ],
   "punk rock": [
@@ -504236,7 +505336,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "The Clash",
@@ -505956,7 +507060,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     },
     {
       "name": "Ramones",
@@ -509372,7 +510480,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 40.7127281,
+        "longitude": -74.0060152
+      }
     },
     {
       "name": "Green Day",
@@ -512700,7 +513812,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 33.6811328,
+        "longitude": -117.2592037
+      }
     },
     {
       "name": "Iggy Pop",
@@ -513912,7 +515028,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 43.2341813,
+        "longitude": -86.2483921
+      }
     },
     {
       "name": "NOFX",
@@ -517380,7 +518500,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 33.9510011,
+        "longitude": -118.2062682
+      }
     }
   ],
   "blues": [
@@ -518478,7 +519602,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 32.9715285,
+        "longitude": -89.7348497
+      }
     },
     {
       "name": "Janis Joplin",
@@ -519178,7 +520306,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 29.8716577,
+        "longitude": -93.9332302
+      }
     },
     {
       "name": "Bo Diddley",
@@ -520638,7 +521770,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 31.2437872,
+        "longitude": -90.4531536
+      }
     },
     {
       "name": "Muddy Waters",
@@ -522538,7 +523674,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 32.9715285,
+        "longitude": -89.7348497
+      }
     }
   ],
   "dubstep": [
@@ -522692,7 +523832,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     }
   ],
   "unclassified": [
@@ -523022,7 +524166,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 49.2608724,
+        "longitude": -123.113952
+      }
     },
     {
       "name": "Alex Neilson",
@@ -523078,7 +524226,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.7974185,
+        "longitude": -1.5437941
+      }
     },
     {
       "name": "Monkey",
@@ -523934,7 +525086,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 29.9559145,
+        "longitude": -90.0730259
+      }
     },
     {
       "name": "Marusha",
@@ -524162,7 +525318,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 49.453872,
+        "longitude": 11.077298
+      }
     },
     {
       "name": "Brian Doerksen",
@@ -524474,7 +525634,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 49.0521162,
+        "longitude": -122.329479
+      }
     },
     {
       "name": "Storm Corrosion",
@@ -527616,7 +528780,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.550341,
+        "longitude": 10.000654
+      }
     },
     {
       "name": "Dune",
@@ -528024,7 +529192,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.9625101,
+        "longitude": 7.6251879
+      }
     },
     {
       "name": "2 Unlimited",
@@ -529052,7 +530224,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.2211097,
+        "longitude": 4.3997081
+      }
     },
     {
       "name": "Blümchen",
@@ -529936,7 +531112,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.550341,
+        "longitude": 10.000654
+      }
     }
   ],
   "sludge metal": [
@@ -531026,7 +532206,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.0536909,
+        "longitude": -118.242766
+      }
     }
   ],
   "symphonic metal": [
@@ -532320,7 +533504,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 52.0443437,
+        "longitude": 4.6415961
+      }
     }
   ],
   "progressive metal": [
@@ -532750,7 +533938,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 34.0536909,
+        "longitude": -118.242766
+      }
     },
     {
       "name": "Opeth",
@@ -533870,7 +535062,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 59.3251172,
+        "longitude": 18.0710935
+      }
     }
   ],
   "garage rock": [
@@ -534872,7 +536068,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 42.3315509,
+        "longitude": -83.0466403
+      }
     }
   ],
   "nu metal": [
@@ -537310,7 +538510,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 35.3738712,
+        "longitude": -119.019463
+      }
     }
   ],
   "metal": [
@@ -538284,7 +539488,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 60.2049651,
+        "longitude": 24.6559808
+      }
     }
   ],
   "rap": [
@@ -538886,7 +540094,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 41.1992456,
+        "longitude": 16.5968279
+      }
     }
   ],
   "alternative metal": [
@@ -539648,7 +540860,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 30.3321838,
+        "longitude": -81.655651
+      }
     },
     {
       "name": "Alice in Chains",
@@ -540724,7 +541940,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 47.6038321,
+        "longitude": -122.330062
+      }
     }
   ],
   "acoustic": [
@@ -541674,7 +542894,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 37.627722,
+        "longitude": -77.3538176
+      }
     },
     {
       "name": "James Morrison",
@@ -542154,7 +543378,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 52.3726682,
+        "longitude": -1.2620038
+      }
     },
     {
       "name": "KT Tunstall",
@@ -542770,7 +543998,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 56.3403902,
+        "longitude": -2.7955844
+      }
     }
   ],
   "gospel": [
@@ -543544,7 +544776,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": -28.8166236,
+        "longitude": 24.991639
+      }
     }
   ],
   "post-rock": [
@@ -543706,7 +544942,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 31.2638905,
+        "longitude": -98.5456116
+      }
     }
   ],
   "ambient": [
@@ -544504,7 +545744,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 69.6516345,
+        "longitude": 18.9558585
+      }
     }
   ],
   "dance": [
@@ -546738,7 +547982,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 43.8150793,
+        "longitude": 28.5830306
+      }
     }
   ],
   "acid jazz": [
@@ -547452,7 +548700,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     }
   ],
   "euro dance": [
@@ -547658,7 +548910,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 50.1106444,
+        "longitude": 8.6820917
+      }
     },
     {
       "name": "Ann Lee",
@@ -547882,7 +549138,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 53.3806626,
+        "longitude": -1.4702278
+      }
     }
   ],
   "musical": [
@@ -549608,7 +550868,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     }
   ],
   "trip hop": [
@@ -550554,7 +551818,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.4538022,
+        "longitude": -2.5972985
+      }
     }
   ],
   "grime": [
@@ -551056,7 +552324,11 @@
             }
           ]
         }
-      ]
+      ],
+      "coordinates": {
+        "latitude": 51.5074456,
+        "longitude": -0.1277653
+      }
     }
   ]
 }

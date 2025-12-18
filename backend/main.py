@@ -17,6 +17,8 @@ from typing import Optional, List
 # Import database
 from database import db
 
+from utils.geolocation import geocode_location, haversine_distance
+
 # Import cloud service client
 from services.cloud_service_client import (
     CloudServiceAuthenticationError,
@@ -72,13 +74,13 @@ def get_artists_by_genre(genre: str, n: int):
 
 
 @app.get("/artists/location")
-def get_artists_by_genre_city(genre: str, city: str, n: int):
+def get_artists_by_genre_location(genre: str, location: str, n: int):
     """
     Returns an array of N artists based on a genre and city
     """
     artists = db.artists.find({
         "genre": genre.lower(),
-        "location": {"$regex": city, "$options": "i"}
+        "location": {"$regex": location, "$options": "i"}
     }).limit(n)
     output_list = [serialize_doc(artist) for artist in artists]
     return {"results": output_list}
@@ -110,7 +112,13 @@ def get_audio_db():
 
 @app.get("/artists")
 def get_artists(
-    genre: str = None, country: str = None, city: str = None, location: str = None
+    genre: str = None,
+    country: str = None,
+    city: str = None,
+    location: str = None,
+    latitude: Optional[float] = None,
+    longitude: Optional[float] = None,
+    radius: Optional[float] = None
 ):
     query = {}
     if genre:
@@ -127,8 +135,57 @@ def get_artists(
     if and_query:
         query["$and"] = and_query
 
+
+    use_radius_filtering = radius is not None and radius > 0
+    search_lat = latitude
+    search_lon = longitude
+
+    if use_radius_filtering and (latitude is None or longitude is None) and location:
+        coords = geocode_location(location)
+        if coords:
+            search_lat, search_lon = coords
+            logger.info(f"Geocoded '{location}' to ({search_lat}, {search_lon})")
+        else:
+            logger.warning(f"Could not geocode location '{location}', falling back to string matching")
+            use_radius_filtering = False
+
+    if use_radius_filtering and (search_lat is None or search_lon is None):
+        use_radius_filtering = False
+
+    if not use_radius_filtering:
+        and_query = []
+        if country:
+            and_query.append({"location": {"$regex": country, "$options": "i"}})
+        if city:
+            and_query.append({"location": {"$regex": city, "$options": "i"}})
+        if location:
+            and_query.append({"location": {"$regex": location, "$options": "i"}})
+
+        if and_query:
+            query["$and"] = and_query
+
     artists = db.artists.find(query)
-    results = [serialize_doc(artist) for artist in artists]
+    all_artists = [serialize_doc(artist) for artist in artists]
+
+    if use_radius_filtering:
+        results = []
+        for artist in all_artists:
+            coords = artist.get("coordinates")
+            if coords and "latitude" in coords and "longitude" in coords:
+                artist_lat = coords["latitude"]
+                artist_lon = coords["longitude"]
+                distance = haversine_distance(search_lat, search_lon, artist_lat, artist_lon)
+                if distance <= radius:
+                    artist["distance_mi"] = round(distance, 2)
+                    results.append(artist)
+            else:
+                artist_location = artist.get("location", "")
+                if location and location.lower() in artist_location.lower():
+                    results.append(artist)
+
+        results.sort(key=lambda x: x.get("distance_mi", float("inf")))
+    else:
+        results = all_artists
 
     if not results and location is not None:
         raise HTTPException(
