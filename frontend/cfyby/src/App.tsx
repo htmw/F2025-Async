@@ -5,6 +5,7 @@ import { createTheme, ThemeProvider, CssBaseline, Box, Button } from "@mui/mater
 import Home from "./pages/Home";
 import Search from "./pages/Search";
 import ArtistPage from "./pages/ArtistPage";
+import AboutUs from "./pages/AboutUs.tsx";
 
 const theme = createTheme({
   palette: {
@@ -94,6 +95,7 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/search" element={<Search />} />
           <Route path="/artist/:id" element={<ArtistPage />} />
+          <Route path="/aboutus" element={<AboutUs />} />
         </Routes>
 
         

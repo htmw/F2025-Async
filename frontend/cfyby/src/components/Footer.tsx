@@ -2,6 +2,8 @@ import Box from "@mui/material/Box";
 import Grid2 from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Link from "@mui/material/Link";
+import {Link as RouterLink} from "react-router-dom";
+
 //had to change import style due to outdated Grid component
 
 export default function Footer() {
@@ -50,8 +52,6 @@ export default function Footer() {
             Team Cache Me If You Can
           </Typography>
         </Grid2>
-
-        
         <Grid2
           sx={{
             pr: "5vw", 
@@ -65,19 +65,31 @@ export default function Footer() {
               whiteSpace: "nowrap",
             }}
           >{/* right side footer content*/}
-            {["Home", "About", "Services", "Contact Us"].map((label) => (
-              <Link
-                key={label}
-                href="#"
-                underline="hover"
-                sx={{
-                  fontSize: "0.8rem",
-                  color: "inherit",
-                }}
-              >
-                {label}
-              </Link>
-            ))}
+            <Link
+              component={RouterLink}
+              to="/"
+              underline="hover"
+              sx={{ fontSize: "0.8rem", color: "inherit" }}
+            >
+              Home
+            </Link>
+
+            <Link
+              component={RouterLink}
+              to="/about"
+              underline="hover"
+              sx={{ fontSize: "0.8rem", color: "inherit" }}
+            >
+              About Us
+            </Link>
+            <Link
+              component={RouterLink}
+              to="/register"
+              underline="hover"
+              sx={{ fontSize: "0.8rem", color: "inherit" }}
+            >
+              Register
+            </Link>
           </Box>
         </Grid2>
       </Grid2>
