@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Search from "./pages/Search";
 import ArtistPage from "./pages/ArtistPage";
 import AboutUs from "./pages/AboutUs.tsx";
+import RegistrationPage from "./pages/RegistrationPage";
 
 const theme = createTheme({
   palette: {
@@ -89,6 +90,18 @@ export default function App() {
             Search
           </Button>
 
+          <Button
+            component={Link}
+            to="/register"
+            sx={{
+              color: "white",
+              textTransform: "none",
+              fontWeight: 600,
+              fontSize: "0.9rem"
+            }}
+          >
+            Register
+          </Button>
         </Box>
 
         <Routes>
@@ -96,9 +109,8 @@ export default function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/artist/:id" element={<ArtistPage />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/register" element={<RegistrationPage />} />
         </Routes>
-
-        
       </Router>
     </ThemeProvider>
   );

@@ -57,17 +57,16 @@ export default function ResultList({ results, show }: Props) {
               }}
             >
               <ListItemText
-
                 primary={
                   item.name || item.title || item.artistName || "Unknown Artist"
                 }
                 secondary={
                   <Typography variant="body2" sx={{ color: "rgba(0,0,0,0.6)" }}>
-                    {item.genre || item.location
-                      ? `${item.genre || ""}${
-                          item.genre && item.city ? " • " : ""
-                        }${item.location ? `${item.location}` : ""}`
-                      : ""}
+                    {[
+                      item.location,
+                      item.genre,
+                      item.distance_mi !== undefined ? `${item.distance_mi} mi away` : null
+                    ].filter(Boolean).join(" • ")}
                   </Typography>
                 }
               />

@@ -13,10 +13,10 @@ def seed_database():
     
     print("Reading data from JSON file...")
     try:
-        with open('resources/audioDB_200_test.json', 'r', encoding='utf-8') as f:
+        with open('resources/audioDB_200_in_order.json', 'r', encoding='utf-8') as f:
             data = json.load(f)
     except FileNotFoundError:
-        print("Error: audioDB_200_test.json not found. Make sure the file is in the 'resources' directory.")
+        print("Error: audioDB_200_in_order.json not found. Make sure the file is in the 'resources' directory.")
         return
     
     all_artists = []

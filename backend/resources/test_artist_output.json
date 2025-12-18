@@ -1,0 +1,1547 @@
+{
+  "test_artist": {
+    "name": "Foo Fighters",
+    "country": "Seattle, USA",
+    "city": null,
+    "summary": "Foo Fighters are an American rock band formed in 1994 in Seattle, Washington. The band was founded by former Nirvana drummer Dave Grohl as a one-man project following the dissolution of Nirvana after the suicide of Kurt Cobain. The group took its name from foo fighter, a nickname coined by Allied aircraft pilots for UFOs and other aerial phenomena. Over the course of their career, Foo Fighters have won 12 Grammy Awards, including Best Rock Album four times. They were inducted into the Rock and Roll Hall of Fame in 2021, their first year of eligibility.\n\nPrior to the release of Foo Fighters' 1995 debut album Foo Fighters, which featured Grohl as the only official member, Grohl recruited bassist Nate Mendel and drummer William Goldsmith, both formerly of Sunny Day Real Estate, as well as Nirvana touring guitarist Pat Smear. The band began with performances in Portland, Oregon. Goldsmith quit during the recording of their second album The Colour and the Shape (1997); most of the drum parts were re-recorded by Grohl. Smear departed soon afterward but appeared as a guest with the band frequently from 2005; he rejoined in 2010.\n\nSmear and Goldsmith were replaced by Franz Stahl and Taylor Hawkins; Stahl was fired before the recording of the group's third album, There Is Nothing Left to Lose (1999). The band briefly continued as a trio until Chris Shiflett joined on guitar after the completion of There Is Nothing Left to Lose. Foo Fighters released their fourth album, One by One, in 2002. It was followed with the two-disc In Your Honor (2005), which was split between acoustic songs and heavier material. Foo Fighters released their sixth album, Echoes, Silence, Patience & Grace, in 2007.\n\nFor Foo Fighters' seventh studio album, Wasting Light (2011), produced by Butch Vig, Smear returned as a full member. Sonic Highways (2014) was released as the soundtrack to the television miniseries directed by Grohl. Concrete and Gold (2017) was the second Foo Fighters album to reach number one in the United States and their first studio album to feature longtime session and touring keyboardist Rami Jaffee as a full member. The band's tenth album, Medicine at Midnight (2021), was the last to feature Hawkins, who died in March 2022.",
+    "image": "https://r2.theaudiodb.com/images/media/artist/thumb/vuvqxr1352453964.jpg",
+    "albums": [
+      {
+        "title": "Echoes, Silence, Patience & Grace",
+        "year": "2007",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/echoes-silence-patience--grace-4dd180eb9fbfb.jpg",
+        "rating": "8",
+        "tracks": [
+          {
+            "title": "The Pretender",
+            "duration": "4:29"
+          },
+          {
+            "title": "Let It Die",
+            "duration": "4:05"
+          },
+          {
+            "title": "Erase/Replace",
+            "duration": "4:13"
+          },
+          {
+            "title": "Long Road to Ruin",
+            "duration": "3:44"
+          },
+          {
+            "title": "Come Alive",
+            "duration": "5:10"
+          },
+          {
+            "title": "Stranger Things Have Happened",
+            "duration": "5:21"
+          },
+          {
+            "title": "Cheer Up, Boys (Your Make Up Is Running)",
+            "duration": "3:41"
+          },
+          {
+            "title": "Summer's End",
+            "duration": "4:37"
+          },
+          {
+            "title": "Ballad of the Beaconsfield Miners",
+            "duration": "2:32"
+          },
+          {
+            "title": "Statues",
+            "duration": "3:47"
+          },
+          {
+            "title": "But, Honestly",
+            "duration": "4:35"
+          },
+          {
+            "title": "Home",
+            "duration": "4:53"
+          }
+        ]
+      },
+      {
+        "title": "There Is Nothing Left to Lose",
+        "year": "1999",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/yrvyqs1367232208.jpg",
+        "rating": "5.8",
+        "tracks": [
+          {
+            "title": "Stacked Actors",
+            "duration": "4:16"
+          },
+          {
+            "title": "Breakout",
+            "duration": "3:20"
+          },
+          {
+            "title": "Learn to Fly",
+            "duration": "3:55"
+          },
+          {
+            "title": "Gimme Stitches",
+            "duration": "3:42"
+          },
+          {
+            "title": "Generator",
+            "duration": "3:49"
+          },
+          {
+            "title": "Aurora",
+            "duration": "5:51"
+          },
+          {
+            "title": "Live-In Skin",
+            "duration": "3:52"
+          },
+          {
+            "title": "Next Year",
+            "duration": "4:38"
+          },
+          {
+            "title": "Headwires",
+            "duration": "4:37"
+          },
+          {
+            "title": "Ain't It the Life",
+            "duration": "4:14"
+          },
+          {
+            "title": "M.I.A.",
+            "duration": "4:07"
+          },
+          {
+            "title": "Fraternity",
+            "duration": "3:10"
+          }
+        ]
+      },
+      {
+        "title": "In Your Honor",
+        "year": "2005",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/rppvxy1367232125.jpg",
+        "rating": "7.5",
+        "tracks": [
+          {
+            "title": "In Your Honor",
+            "duration": "3:50"
+          },
+          {
+            "title": "No Way Back",
+            "duration": "3:16"
+          },
+          {
+            "title": "Best of You",
+            "duration": "4:15"
+          },
+          {
+            "title": "DOA",
+            "duration": "4:12"
+          },
+          {
+            "title": "Hell",
+            "duration": "1:57"
+          },
+          {
+            "title": "The Last Song",
+            "duration": "3:19"
+          },
+          {
+            "title": "Free Me",
+            "duration": "4:38"
+          },
+          {
+            "title": "Resolve",
+            "duration": "4:48"
+          },
+          {
+            "title": "The Deepest Blues Are Black",
+            "duration": "3:58"
+          },
+          {
+            "title": "End Over End",
+            "duration": "5:54"
+          }
+        ]
+      },
+      {
+        "title": "Foo Fighters",
+        "year": "1995",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/mblre21605172447.jpg",
+        "rating": "7.8",
+        "tracks": [
+          {
+            "title": "This Is a Call",
+            "duration": "3:53"
+          },
+          {
+            "title": "I'll Stick Around",
+            "duration": "3:53"
+          },
+          {
+            "title": "Big Me",
+            "duration": "2:12"
+          },
+          {
+            "title": "Alone + Easy Target",
+            "duration": "4:05"
+          },
+          {
+            "title": "Good Grief",
+            "duration": "4:01"
+          },
+          {
+            "title": "Floaty",
+            "duration": "4:30"
+          },
+          {
+            "title": "Weenie Beenie",
+            "duration": "2:45"
+          },
+          {
+            "title": "Oh, George",
+            "duration": "3:00"
+          },
+          {
+            "title": "For All the Cows",
+            "duration": "3:30"
+          },
+          {
+            "title": "X-Static",
+            "duration": "4:13"
+          },
+          {
+            "title": "Wattershed",
+            "duration": "2:15"
+          },
+          {
+            "title": "Exhausted",
+            "duration": "5:44"
+          }
+        ]
+      },
+      {
+        "title": "The Colour and the Shape",
+        "year": "1997",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/rtqvvx1367232246.jpg",
+        "rating": "8.3",
+        "tracks": [
+          {
+            "title": "Doll",
+            "duration": "1:23"
+          },
+          {
+            "title": "Monkey Wrench",
+            "duration": "3:51"
+          },
+          {
+            "title": "Hey, Johnny Park!",
+            "duration": "4:08"
+          },
+          {
+            "title": "My Poor Brain",
+            "duration": "3:33"
+          },
+          {
+            "title": "Wind Up",
+            "duration": "2:32"
+          },
+          {
+            "title": "Up in Arms",
+            "duration": "2:15"
+          },
+          {
+            "title": "My Hero",
+            "duration": "4:20"
+          },
+          {
+            "title": "See You",
+            "duration": "2:26"
+          },
+          {
+            "title": "Enough Space",
+            "duration": "2:37"
+          },
+          {
+            "title": "February Stars",
+            "duration": "4:49"
+          },
+          {
+            "title": "Everlong",
+            "duration": "4:10"
+          },
+          {
+            "title": "Walking After You",
+            "duration": "5:03"
+          },
+          {
+            "title": "New Way Home",
+            "duration": "5:40"
+          }
+        ]
+      },
+      {
+        "title": "Wasting Light",
+        "year": "2011",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/rpppuw1367231809.jpg",
+        "rating": "7.3",
+        "tracks": [
+          {
+            "title": "Bridge Burning",
+            "duration": "4:48"
+          },
+          {
+            "title": "Rope",
+            "duration": "4:21"
+          },
+          {
+            "title": "Dear Rosemary",
+            "duration": "4:28"
+          },
+          {
+            "title": "White Limo",
+            "duration": "3:24"
+          },
+          {
+            "title": "Arlandria",
+            "duration": "4:29"
+          },
+          {
+            "title": "These Days",
+            "duration": "5:00"
+          },
+          {
+            "title": "Back & Forth",
+            "duration": "3:53"
+          },
+          {
+            "title": "A Matter of Time",
+            "duration": "4:38"
+          },
+          {
+            "title": "Miss the Misery",
+            "duration": "4:34"
+          },
+          {
+            "title": "I Should Have Known",
+            "duration": "4:17"
+          },
+          {
+            "title": "Walk",
+            "duration": "4:17"
+          }
+        ]
+      },
+      {
+        "title": "One by One",
+        "year": "2002",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/vtyytx1367232196.jpg",
+        "rating": "7.8",
+        "tracks": [
+          {
+            "title": "All My Life",
+            "duration": "4:23"
+          },
+          {
+            "title": "Low",
+            "duration": "4:28"
+          },
+          {
+            "title": "Have It All",
+            "duration": "4:58"
+          },
+          {
+            "title": "Times Like These",
+            "duration": "4:26"
+          },
+          {
+            "title": "Disenchanted Lullaby",
+            "duration": "4:33"
+          },
+          {
+            "title": "Tired of You",
+            "duration": "5:11"
+          },
+          {
+            "title": "Halo",
+            "duration": "5:06"
+          },
+          {
+            "title": "Lonely as You",
+            "duration": "4:37"
+          },
+          {
+            "title": "Overdrive",
+            "duration": "4:30"
+          },
+          {
+            "title": "Burn Away",
+            "duration": "4:58"
+          },
+          {
+            "title": "Come Back",
+            "duration": "7:47"
+          },
+          {
+            "title": "Walking a Line",
+            "duration": "3:56"
+          },
+          {
+            "title": "Sister Europe",
+            "duration": "5:10"
+          },
+          {
+            "title": "Danny Says",
+            "duration": "2:58"
+          },
+          {
+            "title": "Life of Illusion",
+            "duration": "3:40"
+          },
+          {
+            "title": "For All the Cows (live)",
+            "duration": "3:32"
+          },
+          {
+            "title": "Monkey Wrench (live)",
+            "duration": "4:02"
+          }
+        ]
+      },
+      {
+        "title": "Greatest Hits",
+        "year": "2009",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/qssuvs1367231984.jpg",
+        "rating": "8.3",
+        "tracks": [
+          {
+            "title": "All My Life",
+            "duration": "4:24"
+          },
+          {
+            "title": "Best of You",
+            "duration": "4:16"
+          },
+          {
+            "title": "Everlong",
+            "duration": "4:10"
+          },
+          {
+            "title": "The Pretender",
+            "duration": "4:27"
+          },
+          {
+            "title": "My Hero",
+            "duration": "4:18"
+          },
+          {
+            "title": "Learn to Fly",
+            "duration": "3:56"
+          },
+          {
+            "title": "Times Like These",
+            "duration": "4:27"
+          },
+          {
+            "title": "Monkey Wrench",
+            "duration": "3:52"
+          },
+          {
+            "title": "Big Me",
+            "duration": "2:14"
+          },
+          {
+            "title": "Breakout",
+            "duration": "3:21"
+          },
+          {
+            "title": "Long Road to Ruin",
+            "duration": "3:48"
+          },
+          {
+            "title": "This Is a Call",
+            "duration": "3:54"
+          },
+          {
+            "title": "Skin and Bones",
+            "duration": "4:03"
+          },
+          {
+            "title": "Wheels",
+            "duration": "4:38"
+          },
+          {
+            "title": "Word Forward",
+            "duration": "3:48"
+          },
+          {
+            "title": "Everlong (acoustic)",
+            "duration": "4:10"
+          }
+        ]
+      },
+      {
+        "title": "Skin and Bones",
+        "year": "2006",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/yrtrty1367232105.jpg",
+        "rating": "10",
+        "tracks": [
+          {
+            "title": "Razor",
+            "duration": "6:48"
+          },
+          {
+            "title": "Over and Out",
+            "duration": "5:56"
+          },
+          {
+            "title": "Walking After You",
+            "duration": "5:18"
+          },
+          {
+            "title": "Marigold",
+            "duration": "3:19"
+          },
+          {
+            "title": "My Hero",
+            "duration": "4:51"
+          },
+          {
+            "title": "Next Year",
+            "duration": "4:34"
+          },
+          {
+            "title": "Another Round",
+            "duration": "4:55"
+          },
+          {
+            "title": "Big Me",
+            "duration": "3:01"
+          },
+          {
+            "title": "Cold Day in the Sun",
+            "duration": "3:26"
+          },
+          {
+            "title": "Skin and Bones",
+            "duration": "4:00"
+          },
+          {
+            "title": "February Stars",
+            "duration": "5:51"
+          },
+          {
+            "title": "Times Like These",
+            "duration": "5:25"
+          },
+          {
+            "title": "Friend of a Friend",
+            "duration": "4:01"
+          },
+          {
+            "title": "Best of You",
+            "duration": "5:02"
+          },
+          {
+            "title": "Everlong",
+            "duration": "6:37"
+          }
+        ]
+      },
+      {
+        "title": "Live at Wembley Stadium",
+        "year": "2008",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/srvwxu1367232049.jpg",
+        "rating": "10",
+        "tracks": [
+          {
+            "title": "The Pretender",
+            "duration": "0:00"
+          },
+          {
+            "title": "Times Like These",
+            "duration": "0:00"
+          },
+          {
+            "title": "No Way Back",
+            "duration": "0:00"
+          },
+          {
+            "title": "Cheer up, Boys (Your Makeup Is Running)",
+            "duration": "0:00"
+          },
+          {
+            "title": "Learn To Fly",
+            "duration": "0:00"
+          },
+          {
+            "title": "Long Road To Ruin",
+            "duration": "0:00"
+          },
+          {
+            "title": "Breakout",
+            "duration": "0:00"
+          },
+          {
+            "title": "Stacked Actors",
+            "duration": "0:00"
+          },
+          {
+            "title": "Skin And Bones",
+            "duration": "0:00"
+          },
+          {
+            "title": "Marigold",
+            "duration": "0:00"
+          },
+          {
+            "title": "My Hero",
+            "duration": "0:00"
+          },
+          {
+            "title": "Cold Day In The Sun",
+            "duration": "0:00"
+          },
+          {
+            "title": "Everlong",
+            "duration": "0:00"
+          },
+          {
+            "title": "Monkey Wrench",
+            "duration": "0:00"
+          },
+          {
+            "title": "All My Life",
+            "duration": "0:00"
+          },
+          {
+            "title": "Rock And Roll",
+            "duration": "0:00"
+          },
+          {
+            "title": "Ramble On",
+            "duration": "0:00"
+          },
+          {
+            "title": "Best Of You",
+            "duration": "0:00"
+          }
+        ]
+      },
+      {
+        "title": "Five Songs and a Cover",
+        "year": "2005",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/swywvv1367232166.jpg",
+        "rating": null,
+        "tracks": [
+          {
+            "title": "Best of You (live)",
+            "duration": "4:41"
+          },
+          {
+            "title": "DOA (demo)",
+            "duration": "4:11"
+          },
+          {
+            "title": "Skin and Bones",
+            "duration": "3:36"
+          },
+          {
+            "title": "World (demo)",
+            "duration": "5:40"
+          },
+          {
+            "title": "I Feel Free",
+            "duration": "2:56"
+          },
+          {
+            "title": "FFL",
+            "duration": "2:29"
+          }
+        ]
+      },
+      {
+        "title": "Quiet before the Storm",
+        "year": "2005",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/60kuzv1642170438.jpg",
+        "rating": null,
+        "tracks": [
+          {
+            "title": "In Your Honor",
+            "duration": "0:00"
+          },
+          {
+            "title": "All My Life",
+            "duration": "0:00"
+          },
+          {
+            "title": "Times Like These",
+            "duration": "0:00"
+          },
+          {
+            "title": "My Hero",
+            "duration": "0:00"
+          },
+          {
+            "title": "Best of You",
+            "duration": "0:00"
+          },
+          {
+            "title": "Tired",
+            "duration": "0:00"
+          },
+          {
+            "title": "Up in Arms",
+            "duration": "0:00"
+          },
+          {
+            "title": "Learn to Fly",
+            "duration": "0:00"
+          },
+          {
+            "title": "The One",
+            "duration": "0:00"
+          },
+          {
+            "title": "Stacked Actors",
+            "duration": "0:00"
+          },
+          {
+            "title": "Everlong",
+            "duration": "0:00"
+          },
+          {
+            "title": "Monkeywrench",
+            "duration": "0:00"
+          },
+          {
+            "title": "Breakout",
+            "duration": "0:00"
+          }
+        ]
+      },
+      {
+        "title": "Sonic Highways",
+        "year": "2014",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/sonic-highways-53f7755b42c87.jpg",
+        "rating": "6.8",
+        "tracks": [
+          {
+            "title": "Something From Nothing",
+            "duration": "4:49"
+          },
+          {
+            "title": "The Feast and the Famine",
+            "duration": "3:50"
+          },
+          {
+            "title": "Congregation",
+            "duration": "5:12"
+          },
+          {
+            "title": "What Did I Do?/God as My Witness",
+            "duration": "5:44"
+          },
+          {
+            "title": "Outside",
+            "duration": "5:15"
+          },
+          {
+            "title": "In the Clear",
+            "duration": "4:04"
+          },
+          {
+            "title": "Subterranean",
+            "duration": "6:08"
+          },
+          {
+            "title": "I Am a River",
+            "duration": "7:09"
+          }
+        ]
+      },
+      {
+        "title": "Medium Rare",
+        "year": "2011",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/medium-rare-53fdceacd4423.jpg",
+        "rating": "5",
+        "tracks": [
+          {
+            "title": "Band on the Run",
+            "duration": "5:08"
+          },
+          {
+            "title": "I Feel Free",
+            "duration": "2:55"
+          },
+          {
+            "title": "Life of Illusion",
+            "duration": "3:39"
+          },
+          {
+            "title": "Young Man Blues",
+            "duration": "5:41"
+          },
+          {
+            "title": "Bad Reputation",
+            "duration": "2:33"
+          },
+          {
+            "title": "Darling Nikki",
+            "duration": "3:22"
+          },
+          {
+            "title": "Down in the Park",
+            "duration": "4:10"
+          },
+          {
+            "title": "Baker Street",
+            "duration": "5:35"
+          },
+          {
+            "title": "Danny Says",
+            "duration": "2:59"
+          },
+          {
+            "title": "Have a Cigar",
+            "duration": "4:04"
+          },
+          {
+            "title": "Never Talking to You Again",
+            "duration": "1:53"
+          },
+          {
+            "title": "Gas Chamber",
+            "duration": "0:56"
+          },
+          {
+            "title": "This Will Be Our Year",
+            "duration": "2:33"
+          }
+        ]
+      },
+      {
+        "title": "The Wireless",
+        "year": "1992",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/the-wireless-5c64ec3e618db.jpg",
+        "rating": null,
+        "tracks": [
+          {
+            "title": "Intro",
+            "duration": "0:49"
+          },
+          {
+            "title": "Monkey Wrench",
+            "duration": "3:45"
+          },
+          {
+            "title": "Enough Space",
+            "duration": "2:54"
+          },
+          {
+            "title": "Big Me",
+            "duration": "2:20"
+          },
+          {
+            "title": "The Colour and the Shape",
+            "duration": "3:22"
+          },
+          {
+            "title": "For All the Cows",
+            "duration": "3:34"
+          },
+          {
+            "title": "Watershed",
+            "duration": "2:40"
+          },
+          {
+            "title": "Up in Arms",
+            "duration": "3:03"
+          },
+          {
+            "title": "Weenie Beenie",
+            "duration": "2:54"
+          },
+          {
+            "title": "Everlong",
+            "duration": "4:32"
+          },
+          {
+            "title": "New Way Home",
+            "duration": "6:58"
+          },
+          {
+            "title": "Cactus",
+            "duration": "0:16"
+          },
+          {
+            "title": "This Is a Call",
+            "duration": "4:11"
+          },
+          {
+            "title": "Requiem",
+            "duration": "4:06"
+          },
+          {
+            "title": "I'll Stick Around",
+            "duration": "4:00"
+          }
+        ]
+      },
+      {
+        "title": "2007-08-17: BBC Radio 1, Brighton, England, UK",
+        "year": "0",
+        "image": null,
+        "rating": null,
+        "tracks": [
+          {
+            "title": "The Pretender",
+            "duration": "4:29"
+          },
+          {
+            "title": "Cheer Up, Boys (Your Makeup Is Running)",
+            "duration": "3:32"
+          },
+          {
+            "title": "My Hero",
+            "duration": "4:50"
+          },
+          {
+            "title": "Enough Space",
+            "duration": "2:33"
+          },
+          {
+            "title": "Times Like These",
+            "duration": "5:29"
+          },
+          {
+            "title": "Cold Day In The Sun",
+            "duration": "3:40"
+          },
+          {
+            "title": "Keep The Car Running (Arcade Fire Cover)",
+            "duration": "3:19"
+          },
+          {
+            "title": "Come Alive",
+            "duration": "5:26"
+          },
+          {
+            "title": "Everlong",
+            "duration": "4:31"
+          },
+          {
+            "title": "Monkey Wrench",
+            "duration": "4:35"
+          },
+          {
+            "title": "Best Of You",
+            "duration": "6:23"
+          },
+          {
+            "title": "All My Life",
+            "duration": "4:26"
+          }
+        ]
+      },
+      {
+        "title": "Live at Roswell",
+        "year": "2005",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/tqi4wf1642450229.jpg",
+        "rating": null,
+        "tracks": [
+          {
+            "title": "In Your Honor",
+            "duration": "0:00"
+          },
+          {
+            "title": "The Last Song",
+            "duration": "0:00"
+          },
+          {
+            "title": "Free Me",
+            "duration": "0:00"
+          },
+          {
+            "title": "Stacked Actors",
+            "duration": "0:00"
+          },
+          {
+            "title": "Monkey Wrench",
+            "duration": "0:00"
+          },
+          {
+            "title": "All My Life",
+            "duration": "0:00"
+          },
+          {
+            "title": "This is a Call",
+            "duration": "0:00"
+          }
+        ]
+      },
+      {
+        "title": "Everywhere But Home",
+        "year": "2003",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/everywhere-but-home-5ff273b8c8be2.jpg",
+        "rating": null,
+        "tracks": [
+          {
+            "title": "All My Life",
+            "duration": "5:02"
+          },
+          {
+            "title": "My Hero",
+            "duration": "5:29"
+          },
+          {
+            "title": "Breakout",
+            "duration": "4:00"
+          },
+          {
+            "title": "Have It All",
+            "duration": "8:23"
+          },
+          {
+            "title": "Generator",
+            "duration": "3:40"
+          },
+          {
+            "title": "Learn to Fly",
+            "duration": "4:03"
+          },
+          {
+            "title": "For All the Cows",
+            "duration": "6:37"
+          },
+          {
+            "title": "Stacked Actors",
+            "duration": "12:31"
+          },
+          {
+            "title": "Low",
+            "duration": "4:23"
+          },
+          {
+            "title": "Hey, Johnny Park!",
+            "duration": "4:07"
+          },
+          {
+            "title": "Monkey Wrench",
+            "duration": "9:22"
+          },
+          {
+            "title": "Times Likes These",
+            "duration": "5:19"
+          },
+          {
+            "title": "Aurora",
+            "duration": "9:04"
+          },
+          {
+            "title": "Tired of You",
+            "duration": "5:56"
+          },
+          {
+            "title": "Everlong",
+            "duration": "4:51"
+          },
+          {
+            "title": "Doll",
+            "duration": "1:15"
+          },
+          {
+            "title": "See You",
+            "duration": "2:33"
+          },
+          {
+            "title": "For All the Cows",
+            "duration": "4:30"
+          },
+          {
+            "title": "Everlong",
+            "duration": "4:11"
+          },
+          {
+            "title": "All My Life",
+            "duration": "0:00"
+          },
+          {
+            "title": "Everlong",
+            "duration": "0:00"
+          },
+          {
+            "title": "All My Life",
+            "duration": "0:00"
+          },
+          {
+            "title": "The One",
+            "duration": "0:00"
+          },
+          {
+            "title": "Times Likes These",
+            "duration": "0:00"
+          },
+          {
+            "title": "My Hero",
+            "duration": "0:00"
+          },
+          {
+            "title": "Learn to Fly",
+            "duration": "0:00"
+          },
+          {
+            "title": "Have It All",
+            "duration": "0:00"
+          },
+          {
+            "title": "For All the Cows",
+            "duration": "0:00"
+          },
+          {
+            "title": "Breakout",
+            "duration": "0:00"
+          },
+          {
+            "title": "Generator",
+            "duration": "0:00"
+          },
+          {
+            "title": "Stacked Actors",
+            "duration": "0:00"
+          },
+          {
+            "title": "Low",
+            "duration": "0:00"
+          },
+          {
+            "title": "Hey, Johnny Park!",
+            "duration": "0:00"
+          },
+          {
+            "title": "Monkey Wrench",
+            "duration": "0:00"
+          },
+          {
+            "title": "Aurora",
+            "duration": "0:00"
+          },
+          {
+            "title": "Weenie Beenie",
+            "duration": "0:00"
+          },
+          {
+            "title": "Tired of You",
+            "duration": "0:00"
+          },
+          {
+            "title": "Everlong",
+            "duration": "0:00"
+          },
+          {
+            "title": "All My Life",
+            "duration": "0:00"
+          },
+          {
+            "title": "Breakout",
+            "duration": "0:00"
+          },
+          {
+            "title": "The One",
+            "duration": "0:00"
+          },
+          {
+            "title": "My Hero",
+            "duration": "0:00"
+          },
+          {
+            "title": "Aurora",
+            "duration": "0:00"
+          },
+          {
+            "title": "Low",
+            "duration": "0:00"
+          },
+          {
+            "title": "Everlong",
+            "duration": "0:00"
+          }
+        ]
+      },
+      {
+        "title": "Brain Damage",
+        "year": "2001",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/brain-damage-5d6e914da1e65.jpg",
+        "rating": null,
+        "tracks": [
+          {
+            "title": "My Hero",
+            "duration": "4:40"
+          },
+          {
+            "title": "For All the Cows",
+            "duration": "3:58"
+          },
+          {
+            "title": "I'll Stick Around",
+            "duration": "4:14"
+          },
+          {
+            "title": "Big Me",
+            "duration": "3:09"
+          },
+          {
+            "title": "Stacked Actors",
+            "duration": "6:28"
+          },
+          {
+            "title": "This Is a Call",
+            "duration": "4:29"
+          },
+          {
+            "title": "Next Year",
+            "duration": "4:27"
+          },
+          {
+            "title": "Monkey Wrench",
+            "duration": "5:30"
+          },
+          {
+            "title": "Everlong",
+            "duration": "5:12"
+          },
+          {
+            "title": "Learn to Fly",
+            "duration": "4:32"
+          },
+          {
+            "title": "Up in Arms",
+            "duration": "2:21"
+          },
+          {
+            "title": "Ain't It the Life",
+            "duration": "5:31"
+          },
+          {
+            "title": "Monkey Wrench",
+            "duration": "4:16"
+          },
+          {
+            "title": "Hey, Johnny Park!",
+            "duration": "4:08"
+          },
+          {
+            "title": "Alone + Easy Target",
+            "duration": "3:51"
+          },
+          {
+            "title": "Everlong",
+            "duration": "4:25"
+          }
+        ]
+      },
+      {
+        "title": "Saint Cecilia EP",
+        "year": "2015",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/saint-cecilia-573100f6c6c2d.jpg",
+        "rating": null,
+        "tracks": [
+          {
+            "title": "Saint Cecilia",
+            "duration": "3:42"
+          },
+          {
+            "title": "Sean",
+            "duration": "2:11"
+          },
+          {
+            "title": "Savior Breath",
+            "duration": "3:11"
+          },
+          {
+            "title": "Iron Rooster",
+            "duration": "4:11"
+          },
+          {
+            "title": "The Neverending Sigh",
+            "duration": "4:45"
+          }
+        ]
+      },
+      {
+        "title": "Concrete and Gold",
+        "year": "2017",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/cm7hct1605172297.jpg",
+        "rating": "7.4",
+        "tracks": [
+          {
+            "title": "T‐Shirt",
+            "duration": "1:22"
+          },
+          {
+            "title": "Run",
+            "duration": "5:23"
+          },
+          {
+            "title": "Make It Right",
+            "duration": "4:39"
+          },
+          {
+            "title": "The Sky Is a Neighborhood",
+            "duration": "4:04"
+          },
+          {
+            "title": "La Dee Da",
+            "duration": "4:02"
+          },
+          {
+            "title": "Dirty Water",
+            "duration": "5:20"
+          },
+          {
+            "title": "Arrows",
+            "duration": "4:26"
+          },
+          {
+            "title": "Happy Ever After (Zero Hour)",
+            "duration": "3:40"
+          },
+          {
+            "title": "Sunday Rain",
+            "duration": "6:11"
+          },
+          {
+            "title": "The Line",
+            "duration": "3:38"
+          },
+          {
+            "title": "Concrete and Gold",
+            "duration": "5:31"
+          }
+        ]
+      },
+      {
+        "title": "2000-05-16: The Howard Stern Show: New York, NY, USA",
+        "year": "2000",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/flstro1598652009.jpg",
+        "rating": null,
+        "tracks": [
+          {
+            "title": "Monkey Wrench",
+            "duration": "4:24"
+          },
+          {
+            "title": "Learn to Fly",
+            "duration": "4:07"
+          },
+          {
+            "title": "Everlong",
+            "duration": "0:00"
+          }
+        ]
+      },
+      {
+        "title": "2020-11-07: Saturday Night Live, New York, NY, USA",
+        "year": "2020",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/pvfx6t1605144911.jpg",
+        "rating": null,
+        "tracks": [
+          {
+            "title": "Shame Shame",
+            "duration": "4:06"
+          },
+          {
+            "title": "Times Like These",
+            "duration": "4:53"
+          }
+        ]
+      },
+      {
+        "title": "Medicine at Midnight",
+        "year": "2021",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/o23o0w1612560517.jpg",
+        "rating": "6",
+        "tracks": [
+          {
+            "title": "Making a Fire",
+            "duration": "4:15"
+          },
+          {
+            "title": "Shame Shame",
+            "duration": "4:17"
+          },
+          {
+            "title": "Cloudspotter",
+            "duration": "3:53"
+          },
+          {
+            "title": "Waiting on a War",
+            "duration": "4:13"
+          },
+          {
+            "title": "Medicine at Midnight",
+            "duration": "3:29"
+          },
+          {
+            "title": "No Son of Mine",
+            "duration": "3:28"
+          },
+          {
+            "title": "Holding Poison",
+            "duration": "4:24"
+          },
+          {
+            "title": "Chasing Birds",
+            "duration": "4:12"
+          },
+          {
+            "title": "Love Dies Young",
+            "duration": "4:21"
+          }
+        ]
+      },
+      {
+        "title": "The Essential Foo Fighters",
+        "year": "2022",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/2sc0v81667057721.jpg",
+        "rating": null,
+        "tracks": [
+          {
+            "title": "Everlong",
+            "duration": "4:11"
+          },
+          {
+            "title": "Making a Fire",
+            "duration": "4:15"
+          },
+          {
+            "title": "Times Like These",
+            "duration": "4:27"
+          },
+          {
+            "title": "Rope",
+            "duration": "4:20"
+          },
+          {
+            "title": "Monkey Wrench",
+            "duration": "3:53"
+          },
+          {
+            "title": "My Hero",
+            "duration": "4:21"
+          },
+          {
+            "title": "Cold Day in the Sun",
+            "duration": "3:29"
+          },
+          {
+            "title": "Big Me",
+            "duration": "2:12"
+          },
+          {
+            "title": "Long Road to Ruin",
+            "duration": "3:47"
+          },
+          {
+            "title": "Shame Shame",
+            "duration": "4:17"
+          },
+          {
+            "title": "Best of You",
+            "duration": "4:17"
+          },
+          {
+            "title": "All My Life",
+            "duration": "4:24"
+          },
+          {
+            "title": "The Pretender",
+            "duration": "4:28"
+          },
+          {
+            "title": "This Is a Call",
+            "duration": "3:55"
+          },
+          {
+            "title": "Waiting on a War",
+            "duration": "4:14"
+          },
+          {
+            "title": "Walk",
+            "duration": "4:17"
+          },
+          {
+            "title": "Learn to Fly",
+            "duration": "3:57"
+          },
+          {
+            "title": "The Sky Is a Neighborhood",
+            "duration": "4:06"
+          },
+          {
+            "title": "Breakout",
+            "duration": "3:23"
+          },
+          {
+            "title": "These Days",
+            "duration": "4:59"
+          },
+          {
+            "title": "Everlong (Acoustic)",
+            "duration": "4:12"
+          }
+        ]
+      },
+      {
+        "title": "But Here We Are",
+        "year": "2023",
+        "image": "https://r2.theaudiodb.com/images/media/album/thumb/fwckhg1685729529.jpg",
+        "rating": null,
+        "tracks": [
+          {
+            "title": "Rescued",
+            "duration": "4:18"
+          },
+          {
+            "title": "Under You",
+            "duration": "3:39"
+          },
+          {
+            "title": "Hearing Voices",
+            "duration": "3:48"
+          },
+          {
+            "title": "But Here We Are",
+            "duration": "4:43"
+          },
+          {
+            "title": "The Glass",
+            "duration": "3:49"
+          },
+          {
+            "title": "Nothing at All",
+            "duration": "3:27"
+          },
+          {
+            "title": "Show Me How",
+            "duration": "4:53"
+          },
+          {
+            "title": "Beyond Me",
+            "duration": "3:54"
+          },
+          {
+            "title": "The Teacher",
+            "duration": "10:04"
+          },
+          {
+            "title": "Rest",
+            "duration": "5:33"
+          }
+        ]
+      }
+    ]
+  }
+}

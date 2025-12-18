@@ -11,25 +11,36 @@ export default function LocationSearch() {
 
   const handleSearch = async (values: {
     genre: string;
-    location: string;
+    location?: string;
+    radius?: number;
+    useCurrentLocation?: boolean;
+    latitude?: number;
+    longitude?: number;
   }) => {
     setLoading(true);
     try {
       const params = new URLSearchParams();
+      
       if (values.genre.trim()) params.append("genre", values.genre);
-      if (values.location.trim()) params.append("location", values.location);
-      params.append("n", "50");
+      
+      if (values.useCurrentLocation && values.latitude && values.longitude) {
+        params.append("latitude", values.latitude.toString());
+        params.append("longitude", values.longitude.toString());
+      } else if (values.location?.trim()) {
+        params.append("location", values.location);
+      }
+      
+      if (values.radius) {
+        params.append("radius", values.radius.toString());
+      }
 
       const request_url = `http://localhost:8001/artists?${params.toString()}`;
-      console.log("Request URL:", request_url);
 
       const response = await fetch(request_url);
       const data = await response.json();
       const payload = Array.isArray(data)
         ? data
         : data.results || data.artists || [];
-
-      console.log(payload)
 
       setResults(payload);
       setShowResults(true);

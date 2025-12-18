@@ -1,4 +1,0 @@
-10/05/25
-
-- MusicBrainz API is very particular about spelling in search params. Case sensitive and things like US vs USA can make all the difference in a search.
-- Countires have to be two chars eg. US, DE (Germany), UK, FR (France)
